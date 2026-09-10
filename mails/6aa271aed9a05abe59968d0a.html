@@ -1,0 +1,502 @@
+<div><br><br><div><div>---------- Forwarded message ---------<br>From: <b>amir reza</b> <span>&lt;<a href="mailto:rezaamir731@gmail.com">rezaamir731@gmail.com</a>&gt;</span><br>Date: Thu, Sep 10, 2026 at 12:26 PM<br>Subject: Fwd: N-central 0-day patched 🚨, PostGREShell 12yr flaw 🐘, Wiz AI hacks Snowflake ❄️<br>To:  &lt;<a href="mailto:wilowviolet@dcpa.net">wilowviolet@dcpa.net</a>&gt;<br></div><br><br><div><br><br><div><div>---------- Forwarded message ---------<br>From: <b>TLDR InfoSec</b> <span>&lt;<a href="mailto:dan@tldrnewsletter.com" target="_blank">dan@tldrnewsletter.com</a>&gt;</span><br>Date: Tue, Sep 8, 2026 at 4:42 PM<br>Subject: N-central 0-day patched 🚨, PostGREShell 12yr flaw 🐘, Wiz AI hacks Snowflake ❄️<br>To:  &lt;<a href="mailto:rezaamir731@gmail.com" target="_blank">rezaamir731@gmail.com</a>&gt;<br></div><br><br><div><u></u><div>
+
+
+
+<div>Unauthenticated attackers can execute code on internet-exposed N-central RMM servers through a low-complexity attack exploiting CVE-2026-86218 ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌  ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ </div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/iYCiXOH2oIGsegCRrTSF2RgATqaQs_KJep9Nr5kwAj8=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/s3s1ILA_u3bQSY80PDz2qS5jvbkryv51kwmfqDLk-xQ=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=5c44339e-ab3f-11f1-ab55-69c4b0e76bba%26pt=campaign%26t=1788873165%26s=b7e84ab2782274da048e8eed0ce495946b5965bd159e7d6e552e1eb7ff214150/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/m9l_09mnUSEj9Mfs0mG4EhLYnuMBCu-yllnbIPUheX8=452" target="_blank"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><b>Together With </b>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.netscout.com%2Fcybersecurity%3Futm_source=tldr%26utm_medium=display%26utm_campaign=brand-campaign%26utm_content=campaign_page_header_threat_hunting_search%26utm_keyword=tldr-nl-0908/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/s-j3n3E0y6c6uqWraDNCSEVoBuEhbLHniP-Dw8H1itI=452" target="_blank"><img src="https://images.tldr.tech/netscout2.png" alt="NetScout"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><b>TLDR Information Security <span>2026-09-08</span></b></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.netscout.com%2Fcybersecurity%3Futm_source=tldr%26utm_medium=display%26utm_campaign=brand-campaign%26utm_content=campaign_page_header_threat_hunting_search%26utm_keyword=tldr-nl-0908/2/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/EgbCIvakShdq0ctE6bk1TjQb3dUwjRa53zuWAQI-pJ4=452" target="_blank">
+                                    <span>
+                                        <b>Threat Hunting Is a Search for Proof, Not Just Signals (Sponsor)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Most security programs still frame threat hunting as a search for known indicators of compromise. Leaders approach it by trying to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.netscout.com%2Fblog%2Funderstanding-network-traffic-threat-hunting%3Futm_source=tldr%26utm_medium=display%26utm_campaign=brand-campaign%26utm_content=blog_post_Body_prove_hypothesis%26utm_keyword=tldr-nl-0908/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/DhYceJ9rfx5KmiNHV3MihmB8v96q1yQh1dqN-Dzonvc=452" rel="noopener noreferrer nofollow" target="_blank"><span>prove a hypothesis </span></a>like,
+
+<p></p>
+
+<p>“Could an attacker be moving laterally between internal systems?”</p>
+
+<p>or,</p>
+
+<p>“Is a service account being used outside of expected patterns?”</p>
+
+<p>To answer those questions, you need context, sequence, and evidence. Logs and endpoint data are fragmented. You need network visibility that can expose <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.netscout.com%2Fresources%2Fsolution-briefs%2Fexpose-shadow-it-to-reduce-risk-and-improve-control%3Futm_source=tldr%26utm_medium=display%26utm_campaign=brand-campaign%26utm_content=solution_brief_Body_hidden_unauthorized_activity%26utm_keyword=tldr-nl-0908/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/sCJsmBFV4s4kWkuxM3Txo2TkckpUrRXR8VwoOBl0uQk=452" rel="noopener noreferrer nofollow" target="_blank"><span>hidden and unauthorized activity</span></a>.</p>
+
+<p>NETSCOUT closes the intelligence gap by generating continuous, packet-level network evidence analyzed at the point of collection.</p>
+
+<p>Get faster validation and more confident scoping to accelerate your response and limit business impacts. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.netscout.com%2Fcybersecurity%3Futm_source=tldr%26utm_medium=display%26utm_campaign=brand-campaign%26utm_content=campaign_page_cta_how%26utm_keyword=tldr-nl-0908/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/02QQ88Kk7p14kD4YWEn9OZ6c6_QKQhS_E9e5Euqw0r0=452" rel="noopener noreferrer nofollow" target="_blank"><span>See how →</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><b>Attacks &amp; Vulnerabilities</b></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fos5Tdh/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/tG-s3Tjz36YrS9U5Bfn06S9M1b7XbR0JgTlBWxpZxtc=452" target="_blank">
+                                    <span>
+                                        <b>N-able patches max-severity N-central flaw amid ongoing attacks (3 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Unauthenticated attackers can execute code on internet-exposed N-central RMM servers through a low-complexity attack exploiting CVE-2026-86218. Huntress has flagged it as a potential zero-day after finding a compromised customer instance whose logs had already rotated. Shadowserver counts nearly 1,500 exposed N-central servers, most in the United States and Europe. On-premises operators need N-central 2026.3 Hotfix 4 immediately, since HF3 systems remain vulnerable to this flaw despite last week&#39;s fixes for the authentication-bypass pair CVE-2026-86206 and CVE-2026-86207.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.cyera.com%2Fpt-br%2Fresearch%2Fpostgreshell-the-database-powering-much-of-the-internet-had-an-open-door-for-12-years%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/bdFpXMLuFpbyXTA8l13JoJ-gfJTZkGuH58csdDfxSxA=452" target="_blank">
+                                    <span>
+                                        <b>PostGREShell: The database powering much of the internet had an open door for 12 years (9 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CVE-2026-6471 affects PostgreSQL 9.4 through 18. A low-privilege REPLICATION account could supply an unchecked output-plugin path, load attacker code, gain PostgreSQL superuser access, and establish persistence, while Windows targets could fetch a DLL over SMB. It is recommended to patch PostgreSQL, remove unused replication privileges, restrict pg_hba.conf, block outbound SMB and NFS, and monitor suspicious replication slots.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FkguNLQ/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/uVV-VPZJF1g7DltF7pf2TiBkjgaxp34KAEDojFw6oGA=452" target="_blank">
+                                    <span>
+                                        <b>Mathspace Discloses Data Breach Affecting Over 1M People (2 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Online math learning software Mathspace disclosed a data breach affecting over 1M students, guardians, school staff, and Mathspace staff from Australia and New Zealand. The attackers exploited a vulnerability in a self-hosted Metabase instance used for internal reporting. Mathspace did not disclose exactly what data was breached but stated that academic records, authentication credentials, or any data linking records to a school (other than potentially email domains) were not leaked.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><b>Strategies &amp; Tactics</b></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fmatheuzsecurity.github.io%2Fhacking%2Ffileless-loader-bypassing-elastic-memfd%2F%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/l3uAQbs4wAfRA0xZ63AmiM6TrNjukISqH-G9iZsjbNw=452" target="_blank">
+                                    <span>
+                                        <b>Fileless ELF Execution via O_TMPFILE (5 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A red-team loader chains O_TMPFILE with execveat(AT_EMPTY_PATH) to run an ELF that never gets a directory entry, allocating a real inode on /tmp with no dentry so ls, find, inotify, and fanotify never see it, then reopening the fd read-only through /proc/self/fd/ to clear ETXTBSY and executing it directly with no path string ever constructed. The technique sidesteps fileless detection built for memfd_create because it produces none of the expected artifacts: no memfd: prefix, no 00:01 device, no syscall 319, and the only residual signal is the (deleted) suffix that countless legitimate open-unlink-exec programs also generate. Defenders should stop keying fileless detection on memfd_create specifics and instead watch execveat with AT_EMPTY_PATH against anonymous /tmp/# (deleted) executables, correlating prctl(PR_SET_NAME) renames and loaders that unlink /proc/self/exe, since this combination is absent from Elastic&#39;s FENIX 15-technique matrix.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fzatona.dev%2Fblog%2Ftamper-evident-audit-logs%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/DDLVdw-D2KkNBg1VFuhAXynczaQTc9Oas9nMHbeI8h4=452" target="_blank">
+                                    <span>
+                                        <b>Tamper-Evident Audit Logs: Hash Chains, Merkle Trees, and External Anchoring (30 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    This article explains how access control addresses the key questions an auditor has about logs by introducing specific mechanisms: hash chains for integrity, Merkle trees with signed checkpoints for an append-only history, and trusted time anchors like RFC 3161 or OpenTimestamps. It provides an implementation perspective on creating a cryptographically verifiable audit trail, including data structures, proof algorithms, and working Rust code. The guidance is based on established standards.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.wiz.io%2Fblog%2Fred-agent-snowflake-copilot-cicd-bug%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/HZOD7jC4dRzHYOJ1qMcia7Iqbu26KkvTPHB8hnjGK58=452" target="_blank">
+                                    <span>
+                                        <b>Wiz Red Agent Finds Its Way Into Snowflake&#39;s Internal Jira Through a Flaw in a GitHub Copilot-Assisted PR (4 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Wiz Research&#39;s Red Agent autonomous security research tool discovered a vulnerability in a GitHub Actions workflow in the snowflakedb/snowflake-connector-net repository that allowed attackers to gain access to Snowflake&#39;s internal Jira. The vulnerability stemmed from a regression introduced in a PR that was reviewed and approved by GitHub Copilot, enabling code execution via template injection. Users of AI-assisted code generation tools should rigorously review code for introduced vulnerabilities. In this case, Copilot introduced a vulnerability by replacing a safe env + jq parsing pattern with direct string interpolation.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><b>Launches &amp; Tools</b></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.avepoint.com%2Fevents%2Fai-virtual-summit%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=global_ai-confidence_cmp-15082-v0q5n-headline%26utm_content=tldr-infosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/9gkz1cFlikr25wbKg2rAR_R0xGv2pX1dw1QlXpmXy_0=452" target="_blank">
+                                    <span>
+                                        <b>AI agents are already making decisions inside your enterprise (Sponsor)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    <b>The real question: can you trust what they do?</b> AvePoint&#39;s<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.avepoint.com%2Fevents%2Fai-virtual-summit%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=global_ai-confidence_cmp-15082-v0q5n-body%26utm_content=tldr-infosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/BinO25FmSgvjcgSPn1pvquKFvfz6jEx-ROPsL40gW4Q=452" rel="noopener noreferrer nofollow" target="_blank"><span> live AI Virtual Summit </span></a>shows how to govern agentic AI using the trusted governance methods you already know, turning AI potential into measurable, controlled outcomes. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.avepoint.com%2Fevents%2Fai-virtual-summit%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=global_ai-confidence_cmp-15082-v0q5n-body%26utm_content=tldr-infosec/2/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/pNRdHybP_6gxWyqWomhYjmIt1qAr0EMK2KnWathykvo=452" rel="noopener noreferrer nofollow" target="_blank"><span>Register for Thursday&#39;s event.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fgadievron%2Fraptor%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/_xM9EVkr39BE3jZSVX5izZMTLpjcBnEy84H6FdGpSYs=452" target="_blank">
+                                    <span>
+                                        <b>RAPTOR (GitHub Repo)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    RAPTOR is an autonomous security research framework built on Claude Code that integrates static analysis, binary analysis, LLM-driven vulnerability validation, exploit generation, and patch writing into a single workflow. It ships over 200 custom Semgrep, Coccinelle, and CodeQL rules, a six-stage exploitability validation pipeline that filters scanner noise before a finding is called real, and optional Z3 pre-screening that drops provably unreachable dataflow paths. Subprocesses that handle untrusted repositories are sandboxed using Linux namespaces, Landlock, and seccomp, and the analysis layer accepts Anthropic, OpenAI, Gemini, Mistral, or local Ollama models with a per-run cost cap.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fv9q7QQ/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/EWkLPHiUvIP2fHduLrk3VzzGna7kFUIbr1DVNT4ka8A=452" target="_blank">
+                                    <span>
+                                        <b>Daybreak for Frontline Defenders: $1B to protect essential services (5 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    OpenAI has committed $1 billion in subsidized Daybreak access, training, and technical support for resource-constrained defenders, with consumption targeted over the next six months and prioritizing water and wastewater utilities, electric grid operators, state and local governments, community banks, nonprofits, and open-source maintainers. Daybreak Blue covers routine defensive work on mainline models. Daybreak Red provides approved organizations with specialized cyber models. Roughly 2,000 organizations have already onboarded, and more than 35 partner products are shipping through the Daybreak Defense Network.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><b><h1>Miscellaneous</h1></b></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.sekoia.com%2Fblog%2Fbeyond-lazarus-organization-of-dprk-cyber-capabilities%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/gYI6k-QbzE7Iss2DabVht18lAkowvqVFDRTj9fisF0c=452" target="_blank">
+                                    <span>
+                                        <b>Beyond Lazarus: How North Korea Organizes Its Cyber Operations (30 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    North Korea has been shown to run offensive cyber as a self-funding arm of the state, with theft revenue estimated at over a billion dollars annually feeding sanctioned weapons programs. Sekoia and Kudelski Security mapped the hierarchy behind that model, covering the GRIB (ex-RGB), the NIA (ex-MSS), renamed in June, and the decomposition of the Lazarus umbrella into APT38, Andariel, Famous Chollima, and the Sleet sub-clusters. The paper also traces the enabling layer of IT worker units, Chinese and Russian academic pipelines, and front companies such as Ryonbong and Chinyong, while cautioning that constant institutional reshuffling limits how long any DPRK org chart stays accurate.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fjsceal-malware-can-bypass-google.html%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/N5V43IQqpBtNLIiKJILZw_njLn3F4ud_jVfRWqVsdaU=452" target="_blank">
+                                    <span>
+                                        <b>JSCeal Malware Can Bypass Google Authentication Using Stolen Session Cookies (3 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    JSCeal is distributed via fake TradingView installers advertised on Facebook and Google. It harvests browser passwords, cookies, OAuth tokens, and profile information from Chromium browsers. Stolen Google cookies can restore authenticated sessions and bypass login screens. The malware also logs keystrokes, takes screenshots, and sets up a local proxy that manipulates traffic for Binance, Bybit, Ledger, and various other services.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F07%2Fhackers-drain-320m-in-bitcoin-from-liquid-network-claim-theyre-the-good-guys%2F5294770%3Futm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/PyHyxRldPm6bLmXrqUWbdF9PLQdyq4QoKB5bHSytUJg=452" target="_blank">
+                                    <span>
+                                        <b>Hackers drain $320M in Bitcoin from Liquid Network, claim they&#39;re the good guys (2 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers withdrew about 4,000 BTC, roughly 95% of Liquid&#39;s federation wallet. Liquid disabled bridge nodes and asked exchanges to halt L-BTC deposits and withdrawals. The attackers used SideSwap&#39;s peg-out process, though Liquid says no Peg-out Authorization Key was compromised. They claim they will return most funds after every node receives a fix.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><b>Quick Links</b></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.www.cloudflare.com%2Fconnect2026%3Futm_medium=display%26utm_source=direct%26utm_campaign=2026-q3-acq-namer-connectivity-ge-he-general-connect/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/JIlQjWiRgBESIxzYo0IICUqkolKRcSusq1r2LZx0lAg=452" target="_blank">
+                                    <span>
+                                        <b>Build for the Agentic Internet at Cloudflare Connect 2026, Oct. 19-21 in San Francisco: (Sponsor)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    100+ sessions, five tracks, top speakers, hands-on labs, and practical AI, security, and networking guidance. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.www.cloudflare.com%2Fconnect2026%3Futm_medium=display%26utm_source=direct%26utm_campaign=2026-q3-acq-namer-connectivity-ge-he-general-connect/2/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/6tKpzabmM6E-pFWe9zIPDe84hl4nIPYPrtDvHdHRQas=452" rel="noopener noreferrer nofollow" target="_blank"><span>Register Now</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fs5joRW/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/x1tS-r8MZpUcO4ZNT-cjZlGwOMMtAfIg-rB8cfI9PaA=452" target="_blank">
+                                    <span>
+                                        <b>ConnectWise warns of new ScreenConnect flaw without patch (2 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    ConnectWise disclosed an unpatched file transfer flaw affecting both cloud and on-premises ScreenConnect deployments.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FwhfUA2/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/hStkYFQublGKN9N0OX0fCqWHBXBfBrUSfjOYcmzJqZA=452" target="_blank">
+                                    <span>
+                                        <b>Manchester Airports Group Data on 8.8 Million People Leaked After Ransom Refusal (2 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    FulcrumSec leaked about 550GB allegedly stolen from Manchester Airports Group after MAG declined a ransom.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fnaturalresources.wales%2Fabout-us%2Fnews-and-blogs%2Fnews%2Fstatement-notice-of-personal-data-breach-affecting-former-and-current-employees%2F%3Flang=en%26utm_source=tldrinfosec/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/Ynx2jmpO05o0bbKwEiX743PTJXzMzDe-eJBPMzQWsdQ=452" target="_blank">
+                                    <span>
+                                        <b>Statement: Notice of personal data breach affecting former and current employees (1 minute read)</b>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Natural Resources Wales disclosed a spreadsheet containing diversity-monitoring data for people employed between April 2013 and March 2018.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/dtjBL57EePpdG8PYwg10KLSO39BKbcHrOWPTb-Im1fA=452" target="_blank"><b><span>advertise with us</span></b></a>.
+</div>
+<br>
+
+
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/GR1lP-0NOGlMLwrMLMiODanhAnXmWf-b8mqeFJ1GR8o=452" rel="noopener noreferrer" target="_blank"><b>Apply here</b></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/aoblKlKvHG6wyqauD8akZGFbIAp0nZwRGTVGLZtWs4I=452" rel="noopener noreferrer" target="_blank"><b>create your own role</b></a> or send a friend&#39;s resume to <a href="mailto:jobs@tldr.tech" target="_blank">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/QQYe2RauU5OTaEJOJu6Dmny8QnEygYY_oXp-PVed8dU=452" rel="noopener noreferrer" target="_blank"><b>Inc.&#39;s Best Bootstrapped businesses</b></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/QT2O-qXnbx2OG_sT_yOPbuLC979nfMja-ENRt_Qfol0=452" target="_blank"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/emW_ORaAhUFruFjBwkJf_1KkWgIMmH2oHRgmoMoHhh4=452" target="_blank"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/voiYwpmT0Jy40q6kJbHdploLiG8Hq308YfwQyL5ClU8=452" target="_blank"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/TpHu_3vvzlo3ao6iwGLngMOpprAmbfrXyj9Cf3sgX7o=452" target="_blank">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn&#39;t for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=5c44339e-ab3f-11f1-ab55-69c4b0e76bba%26pt=campaign%26pv=5%26spa=1788872466%26t=1788873165%26s=4f5b0ea0e5b5550d4d5c4bcfac4bd9c1cf8938803368032d6da3c3e980b2bb88/1/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/HuT8uEj-CHxIxgQfoSHjqxUHCZAvODT3tpg5x4UudyE=452" target="_blank">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a081264a30-107f5ac1-1cf4-421a-ab78-1ecd67fd764f-000000/Olr89N1eMEgA3RJQypTBrf8u9qNWULdgrJcjpz1ZPQ8=452">
+</div></div></div></div>
+</div></div>
