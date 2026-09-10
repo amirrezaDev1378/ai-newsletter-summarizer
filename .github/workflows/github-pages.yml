@@ -1,10 +1,16 @@
 name: GitHub Pages
 
 on:
+  push:
+    branches:
+      - main
+      - master
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: github-pages
@@ -13,9 +19,16 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -23,11 +36,11 @@ jobs:
       - name: Resolve Pages base path
         id: base
         run: |
-          REPO="${{ github.event.repository.name }}"
-          if [[ "$REPO" == *.github.io ]]; then
+          BASE="${{ steps.pages.outputs.base_path }}"
+          if [[ -z "$BASE" || "$BASE" == "/" ]]; then
             echo "path=/" >> "$GITHUB_OUTPUT"
           else
-            echo "path=/${REPO}/" >> "$GITHUB_OUTPUT"
+            echo "path=${BASE%/}/" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Install dependencies
@@ -41,9 +54,11 @@ jobs:
           VITE_BASE_PATH: ${{ steps.base.outputs.path }}
           VITE_PUBLIC_API_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/refs/heads/${{ github.event.repository.default_branch }}/api/list.json
 
-      - name: Publish gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: newsletter-client/build/client
-          force_orphan: true
+          path: newsletter-client/build/client
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
