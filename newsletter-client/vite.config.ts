@@ -46,6 +46,22 @@ export default defineConfig({
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff,woff2,webmanifest}"],
         navigateFallback: "index.html",
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/raw\.githubusercontent\.com\/.*/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "github-content-cache",
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
       },
     }),
   ],
