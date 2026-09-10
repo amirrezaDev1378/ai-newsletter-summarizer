@@ -1,0 +1,967 @@
+{
+  "name": "AI news letter",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -256,
+        -176
+      ],
+      "id": "6cab2d91-bda7-4ed5-bb68-a7a9f068e818",
+      "name": "Schedule Trigger",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "content": "## Fetch and store \nemails from mail.tm and GitHub",
+        "height": 96
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -256,
+        -288
+      ],
+      "typeVersion": 1,
+      "id": "656b3660-d54f-4522-8e17-879aac486ee2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mail.tm/token",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"address\":\"{{ $('Workflow Config').item.json.email }}\",\"password\":\"{{ $('Workflow Config').item.json.email_secret }}\"}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        128,
+        -176
+      ],
+      "id": "09c4fd45-6473-49f5-a3b4-d629a73d5183",
+      "name": "Request Token",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "url": "https://api.mail.tm/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        352,
+        -176
+      ],
+      "id": "d99e8b36-079c-4ffa-ac8e-5526445a2fb3",
+      "name": "Request Email List"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mail.tm/messages/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Request Token').item.json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        544,
+        -176
+      ],
+      "id": "6958a351-f7f8-44f9-bb7b-a37a964f3ee9",
+      "name": "Fetch Each Email"
+    },
+    {
+      "parameters": {
+        "jsCode": "function cleanHTMLString(html) {\n  // 1. Remove script, style, and iframe tags along with their contents\n  let clean = html.replace(/<script\\b[^<]*(?:(?!<\\/script>)<[^<]*)*<\\/script>/gi, '');\n  clean = clean.replace(/<style\\b[^<]*(?:(?!<\\/style>)<[^<]*)*<\\/style>/gi, '');\n  clean = clean.replace(/<iframe\\b[^<]*(?:(?!<\\/iframe>)<[^<]*)*<\\/iframe>/gi, '');\n\n  // 2. Allowed attributes whitelist\n  const allowedAttrs = new Set([\n    'href', 'src', 'srcset', 'alt', 'title', \n    'width', 'height', 'target', 'rel'\n  ]);\n\n  // 3. Process every HTML tag\n  return clean.replace(/<([a-zA-Z0-9]+)(\\s[^>]*)?(\\/?)>/g, (match, tagName, attrs, closingSlash) => {\n    if (!attrs) return match;\n\n    const keptAttrs = [];\n    // Matches key=\"value\", key='value', or bare key=value\n    const attrRegex = /([a-zA-Z0-9_-]+)(?:\\s*=\\s*(?:\"([^\"]*)\"|'([^']*)'|([^\\s>]+)))?/g;\n    let attrMatch;\n\n    while ((attrMatch = attrRegex.exec(attrs)) !== null) {\n      const name = attrMatch[1].toLowerCase();\n      const value = attrMatch[2] ?? attrMatch[3] ?? attrMatch[4] ?? '';\n\n      // Skip event handlers (onclick, onload, etc.)\n      if (name.startsWith('on')) continue;\n\n      // Skip pseudo-protocols like href=\"javascript:...\"\n      if ((name === 'href' || name === 'src') && /^javascript:/i.test(value.trim())) {\n        continue;\n      }\n\n      // Keep only whitelisted attributes\n      if (allowedAttrs.has(name)) {\n        keptAttrs.push(`${name}=\"${value}\"`);\n      }\n    }\n\n    const attrString = keptAttrs.length > 0 ? ' ' + keptAttrs.join(' ') : '';\n    const slash = closingSlash ? ' /' : '';\n    return `<${tagName}${attrString}${slash}>`;\n  });\n}\n\nlet htmls = []\n\nfor (const item of $input.all()) {\n  htmls.push({content:cleanHTMLString(item.json.html.join(\"\\n\")) , id:item.json.id})\n}\n\nreturn htmls"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1008,
+        -144
+      ],
+      "id": "24caef3b-2d1c-42b1-8c88-44d29a8afd5e",
+      "name": "Parse and minify emails"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "=mails/{{ $json.id }}.html",
+        "fileContent": "={{ $json.content }}",
+        "commitMessage": "=Add new mail with id : {{ $json.id }}",
+        "additionalParameters": {
+          "author": {
+            "name": "N8N",
+            "email": "amir@n8n.cloud"
+          },
+          "branch": {
+            "branch": "master"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1616,
+        -128
+      ],
+      "id": "8bdebc35-4e61-45d2-8756-8f88ea2d1742",
+      "name": "Store Files In Github",
+      "webhookId": "700c7e5b-d44f-4bc0-ac73-c46923ad4a8e",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "={{ $json.path }}",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        176,
+        448
+      ],
+      "id": "7ece3f41-940f-4326-911b-e14b8f231b35",
+      "name": "Get a file",
+      "webhookId": "b1ecb843-a00c-4590-990b-511755ebe951",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "/mails"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        -48,
+        448
+      ],
+      "id": "41e5e3dd-744e-481c-a9bf-9ff6cbda82f0",
+      "name": "List files",
+      "webhookId": "ec38e4e7-0cb7-4b89-bd14-f9be1e4fb4a8",
+      "executeOnce": true,
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "=summerized/{{ $now.format('yyyy-MM-dd') }}/{{ $('Parse GitHub Content').item.json.id }}.md",
+        "fileContent": "={{ $json.content.parts[0].text }}",
+        "commitMessage": "=Add summery : {{ $('Parse GitHub Content').item.json.id }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1552,
+        576
+      ],
+      "id": "e79d6e9f-cfeb-4e0a-ac85-3b00fec95619",
+      "name": "Create a file",
+      "webhookId": "34fb3914-0cc2-4089-b60d-8490f2e6bad2",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-3.6-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-3.6-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are an expert content editor. Summarize the core message and valuable takeaways of the newsletter provided below.\n\n### Rules:\n\n1. **Quality Check:** If the content is purely promotional, spam, an ad with no editorial value, or contains no usable substance, output **only** this exact string and nothing else:\n`CONTENT_UNUSABLE`\n2. **Clean Output:** Remove all paid promotions, sponsored segments, affiliate links, boilerplate headers/footers, and unsubscribe notices.\n3. **Images:** Keep relevant contextual images inline using Markdown (`![alt text](url)`), but discard tracking pixels, social media icons, spacer images, and banner ads.\n4. **Format:** Return strictly raw Markdown. Do not include any conversational preamble, greetings, or postscripts (e.g., no \"Here is your summary:\").\n\n---\n\n### Newsletter Content:\n\n{{ $json.content }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        448
+      ],
+      "id": "387accb3-7b3f-49d4-ae22-6faf8531b4b0",
+      "name": "Message a model",
+      "executeOnce": false,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "oXP3TdalAjbvrHRL",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Process mails by AI and store in markdown.",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        336
+      ],
+      "typeVersion": 1,
+      "id": "6fa01d8c-0746-4002-827c-b12cb4e5ea67",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nlet items = []\nfor (const item of $input.all()) {\n  items.push({content:atob(item.json.content) , id:item.json.name.replace(\".html\" , \"\")})\n}\n\nreturn items"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        448
+      ],
+      "id": "dced9b31-bc48-49cc-9e88-063d138f5994",
+      "name": "Parse GitHub Content"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "0e2e739b-6acc-4ee7-960b-9f070d7e1ba5",
+              "leftValue": "={{ $json.content.parts[0].text }}",
+              "rightValue": "CONTENT_UNUSABLE",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1120,
+        448
+      ],
+      "id": "85d0a265-dfc5-4ddf-b95c-5e05b67df441",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "content": "Remove CONTENT_UNUSABLE",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1120,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "b328ff81-7f94-45c6-9225-b8d26770061d",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "=mails/{{ $json.id }}.html",
+        "fileContent": "={{ $json.content }}",
+        "commitMessage": "=Add new mail with id : {{ $json.id }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1312,
+        -144
+      ],
+      "id": "0b7240e0-8723-476b-91b1-54aa68575b47",
+      "name": "Update File If Exists",
+      "webhookId": "700c7e5b-d44f-4bc0-ac73-c46923ad4a8e",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "=summerized/{{ $now.format('yyyy-MM-dd') }}/{{ $('Parse GitHub Content').item.json.id }}.md",
+        "fileContent": "={{ $json.content.parts[0].text }}",
+        "commitMessage": "=Add summery : {{ $('Parse GitHub Content').item.json.id }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1536,
+        352
+      ],
+      "id": "c6049731-81ae-4665-9258-48ca7342305c",
+      "name": "Edit a file",
+      "webhookId": "34fb3914-0cc2-4089-b60d-8490f2e6bad2",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Delete old GitHub emails",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2304,
+        -80
+      ],
+      "typeVersion": 1,
+      "id": "336f6bcb-270a-4897-aeaa-2793bf66b6af",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Delete email to save space",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2304,
+        208
+      ],
+      "typeVersion": 1,
+      "id": "6e314151-3155-4e76-9dd9-29384232b817",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://api.mail.tm/messages/{{ $('Parse GitHub Content').item.json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Request Token').item.json.token }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        2304,
+        304
+      ],
+      "id": "3b9ddf43-7364-43fc-a2ff-ad5471990f1e",
+      "name": "Delete Email To Save Space"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "/mails"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2304,
+        32
+      ],
+      "id": "2cf48fd6-3b5b-433d-b4c8-7354f6ad7319",
+      "name": "List mail file on github",
+      "webhookId": "ec38e4e7-0cb7-4b89-bd14-f9be1e4fb4a8",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "delete",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "=mails/{{ $json.name }}",
+        "commitMessage": "=Delete temp mail : {{ $json.name }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2656,
+        -32
+      ],
+      "id": "dcfe95e0-6dcb-477d-a338-d69b4d339029",
+      "name": "Delete mails",
+      "webhookId": "54bac74c-3d0a-4288-80f1-52df46861f63",
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "function transformList(githubList) {\n  const dateGroups = {};\n\n  for (const item of githubList) {\n    // Expected path format: \"summerized/{date}/{filename}.md\"\n    const parts = item.path.split('/');\n    const date = parts.length >= 2 ? parts[1] : 'unknown';\n    \n    // Extract ID by removing the file extension\n    const id = item.name.replace(/\\.[^/.]+$/, '');\n\n    // Convert raw URL to the `refs/heads/...` structure if needed\n    const markdownLink = item.download_url\n      ? item.download_url.replace('/master/', '/refs/heads/master/')\n      : '';\n\n    if (!dateGroups[date]) {\n      dateGroups[date] = [];\n    }\n\n    dateGroups[date].push({\n      id,\n      markdownLink\n    });\n  }\n\n  return Object.entries(dateGroups).map(([date, items]) => ({\n    date,\n    items\n  }));\n}\n\n\nconst files = $(\"List Date Files\").all().map(i=>i.json)\n\nreturn {listJson:JSON.stringify(transformList(files))}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2880,
+        800
+      ],
+      "id": "a4305415-a297-4dc0-ab79-6d2fa2ab47dd",
+      "name": "Parse config.json",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "=api/list.json",
+        "fileContent": "={{ $json.listJson }}",
+        "commitMessage": "=update list json {{ $now }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        3392,
+        800
+      ],
+      "id": "14cf996c-b555-48fd-8a6f-11cf4e13acad",
+      "name": "Update list json",
+      "webhookId": "34fb3914-0cc2-4089-b60d-8490f2e6bad2",
+      "executeOnce": true,
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "### Update list.json\n",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2256,
+        672
+      ],
+      "typeVersion": 1,
+      "id": "41b592c9-b7e2-4f08-82f9-ac735c81a451",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "/summerized"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2256,
+        800
+      ],
+      "id": "63365393-dbf5-4433-b7b9-b83d90f05a02",
+      "name": "List summery dates",
+      "webhookId": "ec38e4e7-0cb7-4b89-bd14-f9be1e4fb4a8",
+      "executeOnce": true,
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.github }}",
+          "mode": "url"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Workflow Config').item.json.repo }}",
+          "mode": "url"
+        },
+        "filePath": "={{ $json.path }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2544,
+        800
+      ],
+      "id": "eadcc82b-322f-4bc0-9d3a-54fd899da242",
+      "name": "List Date Files",
+      "webhookId": "ec38e4e7-0cb7-4b89-bd14-f9be1e4fb4a8",
+      "executeOnce": false,
+      "credentials": {
+        "githubApi": {
+          "id": "FGndyeAw39APJjzA",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"email\": \"your-email\",\n  \"email_secret\": \"your-secret\",\n  \"github\":\"amirrezaDev1378\",\n  \"repo\":\"ai-newsletter-summarizer\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -48,
+        -176
+      ],
+      "id": "b434d3bd-9668-4e47-a854-1405ce14d524",
+      "name": "Workflow Config"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Workflow Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request Token": {
+      "main": [
+        [
+          {
+            "node": "Request Email List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request Email List": {
+      "main": [
+        [
+          {
+            "node": "Fetch Each Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Each Email": {
+      "main": [
+        [
+          {
+            "node": "Parse and minify emails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse and minify emails": {
+      "main": [
+        [
+          {
+            "node": "Update File If Exists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store Files In Github": {
+      "main": [
+        [
+          {
+            "node": "List files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Parse GitHub Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List files": {
+      "main": [
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse GitHub Content": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit a file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Update File If Exists": {
+      "main": [
+        [
+          {
+            "node": "List files",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Store Files In Github",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit a file": {
+      "main": [
+        [
+          {
+            "node": "List mail file on github",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete Email To Save Space",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "List summery dates",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List mail file on github": {
+      "main": [
+        [
+          {
+            "node": "Delete mails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a file": {
+      "main": [
+        [
+          {
+            "node": "List mail file on github",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete Email To Save Space",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "List summery dates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse config.json": {
+      "main": [
+        [
+          {
+            "node": "Update list json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List summery dates": {
+      "main": [
+        [
+          {
+            "node": "List Date Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Date Files": {
+      "main": [
+        [
+          {
+            "node": "Parse config.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Config": {
+      "main": [
+        [
+          {
+            "node": "Request Token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "64b4c1ac-5467-4096-ab74-dfccf79a0f53",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5ac20b77d912a24eb81f821a1e7fca4b6fa302e810d4520704d2e1bc9b4c95e5"
+  },
+  "nodeGroups": [],
+  "id": "vy0hfyNHwb4XuCav",
+  "tags": []
+}
