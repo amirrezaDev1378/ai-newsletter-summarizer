@@ -23,6 +23,7 @@ import { formatGroupDate, titleFromMarkdown } from "~/lib/format";
 export function NewsletterReader() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const listQuery = useSummaryList();
   const selected = findSummary(
     listQuery.data,
@@ -98,22 +99,34 @@ export function NewsletterReader() {
 
         {selected ? (
           <Badge variant="outline" className="hidden sm:inline-flex">
-            {formatGroupDate(selected.date)}
+            {new Date().toLocaleDateString(undefined, {
+              weekday: "short",
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
           </Badge>
         ) : null}
 
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => {
-            void listQuery.mutate();
-            void markdownQuery.mutate();
+          onClick={async () => {
+            setIsRefreshing(true);
+            try {
+              await Promise.all([
+                listQuery.mutate(),
+                markdownQuery.mutate(),
+              ]);
+            } finally {
+              setIsRefreshing(false);
+            }
           }}
-          disabled={listQuery.isValidating || markdownQuery.isValidating}
+          disabled={isRefreshing || listQuery.isValidating || markdownQuery.isValidating}
         >
           <RefreshCwIcon
             className={
-              listQuery.isValidating || markdownQuery.isValidating
+              isRefreshing || listQuery.isValidating || markdownQuery.isValidating
                 ? "animate-spin"
                 : undefined
             }
@@ -174,9 +187,27 @@ export function NewsletterReader() {
               </p>
               <MarkdownView content={markdownQuery.data} />
               <Separator className="mt-10" />
-              <p className="mt-4 text-xs text-muted-foreground">
-                Source file {selected.item.id}.md
-              </p>
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+                <p>Source file {selected.item.id}.md</p>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://github.com/amirrezaDev1378"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://github.com/amirrezaDev1378/ai-newsletter-summarizer"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    Project Repo
+                  </a>
+                </div>
+              </div>
             </div>
           )}
         </main>
