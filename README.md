@@ -1,20 +1,23 @@
-<div align="center">
-  <img src="app.png" alt="AI Newsletter Summarizer App Interface" width="600" />
-</div>
-
-<br />
-
-<div align="center">
-  <img src="workflow.png" alt="n8n Workflow" width="600" />
-</div>
-
-<br />
-
 # AI Newsletter Summarizer 🚀
 
-Welcome to the **AI Newsletter Summarizer**! 
+Welcome to the **AI Newsletter Summarizer**!
 
 Are you tired of cluttered inboxes full of newsletters that you don't have time to read? Do you wish you could just get the main points without scrolling through ads, promotions, and irrelevant content?
+
+
+<div align="center">
+  <img src="screenshots/app.png" alt="AI Newsletter Summarizer App Interface" width="600" />
+</div>
+
+________________________
+
+
+<div align="center">
+  <img src="screenshots/workflow.png" alt="n8n Workflow" width="600" />
+</div>
+
+_______________
+
 
 **This project is the solution.**
 
