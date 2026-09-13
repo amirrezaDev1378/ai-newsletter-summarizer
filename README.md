@@ -6,14 +6,14 @@ Are you tired of cluttered inboxes full of newsletters that you don't have time 
 
 
 <div align="center">
-  <img src="screenshots/app.png" alt="AI Newsletter Summarizer App Interface" width="600" />
+  <img src="screenshots/app.png" alt="AI Newsletter Summarizer App Interface" width="1000" />
 </div>
 
 ________________________
 
 
 <div align="center">
-  <img src="screenshots/workflow.png" alt="n8n Workflow" width="600" />
+  <img src="screenshots/workflow.png" alt="n8n Workflow" width="1000" />
 </div>
 
 _______________
