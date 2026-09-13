@@ -5,7 +5,10 @@
       "parameters": {
         "rule": {
           "interval": [
-            {}
+            {
+              "triggerAtHour": 9,
+              "triggerAtMinute": 30
+            }
           ]
         }
       },
@@ -125,13 +128,13 @@
         "resource": "file",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "=mails/{{ $json.id }}.html",
         "fileContent": "={{ $json.content }}",
@@ -168,13 +171,13 @@
         "operation": "get",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "={{ $json.path }}",
         "asBinaryProperty": false,
@@ -202,13 +205,13 @@
         "operation": "list",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "/mails"
       },
@@ -234,13 +237,13 @@
         "resource": "file",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "=summerized/{{ $now.format('yyyy-MM-dd') }}/{{ $('Parse GitHub Content').item.json.id }}.md",
         "fileContent": "={{ $json.content.parts[0].text }}",
@@ -266,14 +269,14 @@
       "parameters": {
         "modelId": {
           "__rl": true,
-          "value": "models/gemini-3.6-flash",
+          "value": "models/gemini-3.5-flash-lite",
           "mode": "list",
-          "cachedResultName": "models/gemini-3.6-flash"
+          "cachedResultName": "models/gemini-3.5-flash-lite"
         },
         "messages": {
           "values": [
             {
-              "content": "=You are an expert content editor. Summarize the core message and valuable takeaways of the newsletter provided below.\n\n### Rules:\n\n1. **Quality Check:** If the content is purely promotional, spam, an ad with no editorial value, or contains no usable substance, output **only** this exact string and nothing else:\n`CONTENT_UNUSABLE`\n2. **Clean Output:** Remove all paid promotions, sponsored segments, affiliate links, boilerplate headers/footers, and unsubscribe notices.\n3. **Images:** Keep relevant contextual images inline using Markdown (`![alt text](url)`), but discard tracking pixels, social media icons, spacer images, and banner ads.\n4. **Format:** Return strictly raw Markdown. Do not include any conversational preamble, greetings, or postscripts (e.g., no \"Here is your summary:\").\n\n---\n\n### Newsletter Content:\n\n{{ $json.content }}"
+              "content": "=You are an expert content editor. Take this HTML document and convert it to well organized markdown document.\n\n### Rules:\n\n1. **Quality Check:** If the content is purely promotional, spam, an ad with no editorial value, or contains no usable substance, output **only** this exact string and nothing else:\n`CONTENT_UNUSABLE`\n2. **Clean Output:** Remove all paid promotions, sponsored segments, affiliate links, boilerplate headers/footers, and unsubscribe notices.\n3. **Images:** Keep relevant contextual images inline using Markdown (`![alt text](url)`), but discard tracking pixels, spacer images, and banner ads.\n4. **Format:** Return strictly raw Markdown. Keep the formating clean you are allowed to use diffrent elements. Do not include any conversational preamble, greetings, or postscripts (e.g., no \"Here is your summary:\").\n5. **Links** Keep any links that are relevent, format them with markdown.\n---\n\n### Newsletter Content:\n\n{{ $json.content }}"
             }
           ]
         },
@@ -283,18 +286,21 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1.2,
       "position": [
-        624,
+        656,
         448
       ],
       "id": "387accb3-7b3f-49d4-ae22-6faf8531b4b0",
       "name": "Message a model",
       "executeOnce": false,
+      "retryOnFail": false,
+      "waitBetweenTries": 5000,
       "credentials": {
         "googlePalmApi": {
           "id": "oXP3TdalAjbvrHRL",
           "name": "Google Gemini(PaLM) Api account"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -341,6 +347,16 @@
                 "type": "string",
                 "operation": "notContains"
               }
+            },
+            {
+              "id": "52f0e2d9-003d-4d75-9c15-7e1a2605d5c4",
+              "leftValue": "={{ $json?.content?.parts?.[0]?.text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
             }
           ],
           "combinator": "and"
@@ -376,13 +392,13 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "=mails/{{ $json.id }}.html",
         "fileContent": "={{ $json.content }}",
@@ -411,13 +427,13 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "=summerized/{{ $now.format('yyyy-MM-dd') }}/{{ $('Parse GitHub Content').item.json.id }}.md",
         "fileContent": "={{ $json.content.parts[0].text }}",
@@ -498,13 +514,13 @@
         "operation": "list",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "/mails"
       },
@@ -531,13 +547,13 @@
         "operation": "delete",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "=mails/{{ $json.name }}",
         "commitMessage": "=Delete temp mail : {{ $json.name }}"
@@ -556,7 +572,8 @@
           "id": "FGndyeAw39APJjzA",
           "name": "GitHub account"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -578,13 +595,13 @@
         "operation": "edit",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "=api/list.json",
         "fileContent": "={{ $json.listJson }}",
@@ -628,13 +645,13 @@
         "operation": "list",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "/summerized"
       },
@@ -661,13 +678,13 @@
         "operation": "list",
         "owner": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.github }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.github }}"
         },
         "repository": {
           "__rl": true,
-          "value": "={{ $('Workflow Config').item.json.repo }}",
-          "mode": "url"
+          "mode": "name",
+          "value": "={{ $('Workflow Config').item.json.repo }}"
         },
         "filePath": "={{ $json.path }}"
       },
@@ -691,7 +708,7 @@
     {
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "{\n  \"email\": \"your-email\",\n  \"email_secret\": \"your-secret\",\n  \"github\":\"amirrezaDev1378\",\n  \"repo\":\"ai-newsletter-summarizer\"\n}",
+        "jsonOutput": "{\n  \"email\": \"your-email@dcpa.net\",\n  \"email_secret\": \"your secret\",\n  \"github\":\"amirrezaDev1378\",\n  \"repo\":\"ai-newsletter-summarizer\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.set",
@@ -702,6 +719,110 @@
       ],
       "id": "b434d3bd-9668-4e47-a854-1405ce14d524",
       "name": "Workflow Config"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        416,
+        720
+      ],
+      "id": "5eb62098-4264-4118-b1b0-95ca571b94f2",
+      "name": "Wait",
+      "webhookId": "e78320fe-e0e2-4ba1-8940-2fb30532cf6d"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-flash-latest",
+          "mode": "list",
+          "cachedResultName": "models/gemini-flash-latest"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are an expert content editor. Take this HTML document and convert it to well organized markdown document.\n\n### Rules:\n\n1. **Quality Check:** If the content is purely promotional, spam, an ad with no editorial value, or contains no usable substance, output **only** this exact string and nothing else:\n`CONTENT_UNUSABLE`\n2. **Clean Output:** Remove all paid promotions, sponsored segments, affiliate links, boilerplate headers/footers, and unsubscribe notices.\n3. **Images:** Keep relevant contextual images inline using Markdown (`![alt text](url)`), but discard tracking pixels, spacer images, and banner ads.\n4. **Format:** Return strictly raw Markdown. Keep the formating clean you are allowed to use diffrent elements. Do not include any conversational preamble, greetings, or postscripts (e.g., no \"Here is your summary:\").\n5. **Links** Keep any links that are relevent, format them with markdown.\n---\n\n### Newsletter Content:\n\n{{ $json.content }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        720
+      ],
+      "id": "17f5bd45-3b45-4c65-8160-ba5b1af69ec7",
+      "name": "Message a model1",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "oXP3TdalAjbvrHRL",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        432,
+        944
+      ],
+      "id": "834505ac-00e8-43bb-ae77-d0bdd29ad902",
+      "name": "Wait1",
+      "webhookId": "e78320fe-e0e2-4ba1-8940-2fb30532cf6d"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are an expert content editor. Take this HTML document and convert it to well organized markdown document.\n\n### Rules:\n\n1. **Quality Check:** If the content is purely promotional, spam, an ad with no editorial value, or contains no usable substance, output **only** this exact string and nothing else:\n`CONTENT_UNUSABLE`\n2. **Clean Output:** Remove all paid promotions, sponsored segments, affiliate links, boilerplate headers/footers, and unsubscribe notices.\n3. **Images:** Keep relevant contextual images inline using Markdown (`![alt text](url)`), but discard tracking pixels, spacer images, and banner ads.\n4. **Format:** Return strictly raw Markdown. Keep the formating clean you are allowed to use diffrent elements. Do not include any conversational preamble, greetings, or postscripts (e.g., no \"Here is your summary:\").\n5. **Links** Keep any links that are relevent, format them with markdown.\n---\n\n### Newsletter Content:\n\n{{ $json.content }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        656,
+        944
+      ],
+      "id": "f149edb9-9239-4070-9a05-e856e64a765b",
+      "name": "Message a model2",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "oXP3TdalAjbvrHRL",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      },
+      "onError": "continueErrorOutput"
     }
   ],
   "pinData": {},
@@ -799,6 +920,13 @@
         [
           {
             "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
             "type": "main",
             "index": 0
           }
@@ -949,14 +1077,70 @@
           }
         ]
       ]
+    },
+    "Delete mails": {
+      "main": [
+        []
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Message a model1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Message a model2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "64b4c1ac-5467-4096-ab74-dfccf79a0f53",
+  "versionId": "f8416406-bc99-4303-8edd-032dc3b71650",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "5ac20b77d912a24eb81f821a1e7fca4b6fa302e810d4520704d2e1bc9b4c95e5"
