@@ -1,0 +1,490 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Spacelift Flows brings Day 2 infrastructure operations into a visual, auditable workflow platform, enabling teams to automate incident response&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/pvGNdQad3F5QqDli6sIH8T7ae3hlHfjl260Io4yISOA=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/hoo8IJG8uUKkMEaaSr8XMQRPsw5oAv9qJt7t7hGlhy4=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=a90e8e2a-b000-11f1-89f9-35a98dc0bc05%26pt=campaign%26t=1789385047%26s=abf3e3e7892fabd1814145ed055d5326eead5873b2dda728de539bd78ed23c56/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/-lv_e4eY-RQxfc7TRrpNANEt3BUWbx9sEW2RmwrF-6U=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.linuxfoundation.org%2Fopensearchcon-north-america%2F%3Futm_source=tldrdatapri%26utm_medium=banner%26utm_campaign=50584845-Q3%2BOpenSearchCon%2BNA%2B2026%26utm_content=090326_header_uber_cern_apple/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/amb4r0wELLeNHvWyTCTIQnSC0Ih9KipFgKe12mmNczc=452"><img src="https://images.tldr.tech/linuxfoundation.png" alt="The Linux Foundation"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-09-14</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.linuxfoundation.org%2Fopensearchcon-north-america%2F%3Futm_source=tldrdatapri%26utm_medium=banner%26utm_campaign=50584845-Q3%2BOpenSearchCon%2BNA%2B2026%26utm_content=090326_header_uber_cern_apple/2/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/gLHzIEEGIEb_NiVZE--HYFerDEPrpG3TP3vN-tV-3vY=452">
+                                    <span>
+                                        <strong>Uber, CERN, and Apple have an open secret (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    They're all going to<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.linuxfoundation.org%2Fopensearchcon-north-america%2F%3Futm_source=tldrdatapri%26utm_medium=banner%26utm_campaign=50584845-Q3%2BOpenSearchCon%2BNA%2B2026%26utm_content=090326_Body_opensearchcon_north_america/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/KwxYBnjFnC95Ryz14u2AXbUYxXT-bv7XG6rBQernOT8=452" rel="noopener noreferrer nofollow" target="_blank"><span> <strong>OpenSearchCon North America</strong></span></a> to share how they run search, observability, and data infrastructure at massive scale.
+
+<p></p>
+
+<p>Are you coming? <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.linuxfoundation.org%2Fopensearchcon-north-america%2F%3Futm_source=tldrdatapri%26utm_medium=banner%26utm_campaign=50584845-Q3%2BOpenSearchCon%2BNA%2B2026%26utm_content=090326_Body_ticket/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/pUbsY8DJQBUB6Kv1sTtONzwEuk4WhLwEq8ZpkFUhhgI=452" rel="noopener noreferrer nofollow" target="_blank"><span>Get your ticket</span></a> to three days of hands-on sessions including:</p>
+
+<ul>
+<li>Search relevance tuning, plugin development, AI-powered observability, and vector database optimization</li>
+<li>Build a full <strong>OpenTelemetry observability stack </strong>or an <strong>agentic AI search app </strong>yourself in two hands-on <strong>Developer Workshops</strong></li>
+</ul>
+
+<p>Attend live September 22 to 24 and claim your <strong>$250 certification voucher </strong>toward the Linux Foundation's OpenSearch Certified Associate exam.&nbsp;</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.linuxfoundation.org%2Fopensearchcon-north-america%2F%3Futm_source=tldrdatapri%26utm_medium=banner%26utm_campaign=50584845-Q3%2BOpenSearchCon%2BNA%2B2026%26utm_content=090326_cta_full_schedule/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/H77v2nKrfOl2RuGQz7oxEFve9dTJ-p-WD6-WDu6_Wa0=452" rel="noopener noreferrer nofollow" target="_blank"><span>See the full schedule</span></a> and grab a seat before they fill up.
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fabout-aws%2Fwhats-new%2F2026%2F09%2Faws-cloudformation-contract-tests-v2-resource-types%2F%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/yPmWhXoqUIxdnMW6Buke1IS3jnzpd20OmbQ6XiREO7g=452">
+                                    <span>
+                                        <strong>AWS CloudFormation now supports contract tests v2 for resource types (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS CloudFormation contract tests v2 provide deeper validation across resource handler operations, including live-state verification, schema compatibility checks, and input linting for hardcoded environment values. Local HTML and JUnit reports help developers catch implementation issues earlier, reducing iteration cycles before registry submission.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fspacelift.io%2Fblog%2Fspacelift-flows-is-live%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/CqSkfx75P24fV5NYgXXcfbqE70t5GWPqf4et_7LYz_U=452">
+                                    <span>
+                                        <strong>Spacelift Flows Is Live: Bring IaC Rigor to Day 2 (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Spacelift Flows brings Day 2 infrastructure operations into a visual, auditable workflow platform, enabling teams to automate incident response, provisioning, drift handling, and routine requests without scattered scripts or credentials. Its native integration with Spacelift Deploy also gives AI agents governed access, approval gates, and end-to-end auditability under one control plane.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fkubernetes.io%2Fblog%2F2026%2F09%2F11%2Fkubernetes-v1-37-native-histograms-beta%2F%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/I5rYgntvIn18Ksu9Mnan78WFTNxGdU6R7evr_2u8nuw=452">
+                                    <span>
+                                        <strong>Kubernetes v1.37: Native Histograms Graduates to Beta (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Native histogram support for Kubernetes metrics has graduated to Beta and is enabled by default in Kubernetes v1.37. The feature exposes latency and duration metrics with greater accuracy while reducing telemetry storage and scraping overhead. Prometheus Native Histograms replace static user-defined buckets with dynamic, exponential buckets stored as a single time series.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.harness.io%2Fblog%2Fcatch-ai-regressions-before-they-ship-with-ai-evals-in-ci-cd%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/QzHJEWTo0ueuc76SGw3effJaJixd68bxFDGNd24OehE=452">
+                                    <span>
+                                        <strong>Catch AI Regressions Before They Ship with AI Evals in CI/CD (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Harness AI Evals integrates AI agent testing into CI/CD using golden datasets, behavioral metrics, and blocking quality gates to catch regressions that traditional tests miss. Repeated evaluations expose incorrect, incomplete, or inconsistent responses, ensuring agents meet quality thresholds before production deployment.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fplanetscale.com%2Fblog%2Fthe-lifecycle-of-a-sharded-postgres-query%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/JMeD1itMrjKqaEmuveK0hj3Ong3_1duYFAAwSUOdi70=452">
+                                    <span>
+                                        <strong>The lifecycle of a sharded Postgres query (23 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    PlanetScale's Neki router makes a sharded Postgres deployment appear as a single database by handling authentication, protocol parsing, shard-aware planning, connection pooling, and distributed execution across many Postgres nodes. Query performance depends heavily on shard-key choice: co-locating related rows can turn an expensive cross-shard join that requires scatter-gather queries and router-side hash joins into local joins executed independently on each shard.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fchalk.ai%2Fblog%2Fwhat-is-a-context-engine%3Futm_source=tldr%26utm_medium=referral%26utm_campaign=2026-09-14_contextengineblog%26utm_term=tldrdev/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/n4s1DASVp7k6VJU3c0GAyfsXnftQJvyC3e_DVB2YDsQ=452">
+                                    <span>
+                                        <strong>Stale data makes agents fail confidently (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Most AI agents fail confidently, not loudly. They act on stale data and produce wrong refunds, outdated quotes, and contradictory decisions. A <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fchalk.ai%2Fblog%2Fwhat-is-a-context-engine%3Futm_source=tldr%26utm_medium=referral%26utm_campaign=2026-09-14_contextengineblog%26utm_term=tldrdev/2/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/xsmblpTooKUdbL77YTcSavS92-Y86SfhYomGRkE7Wbg=452" rel="noopener noreferrer nofollow" target="_blank"><span>context engine</span></a> computes real-time values at the moment of each decision, so your agents act on current, accurate context. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fchalk.ai%2Fblog%2Fwhat-is-a-context-engine%3Futm_source=tldr%26utm_medium=referral%26utm_campaign=2026-09-14_contextengineblog%26utm_term=tldrdev/3/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/6VSDJ_EJPbgV2K00pW7zJ_l7swg2wdAbosfirFBbHa4=452" rel="noopener noreferrer nofollow" target="_blank"><span>See exactly how it works.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FSnailSploit%2FClaude-Red%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/Yjtgc74YU_iGiXZGQuIV0h9jv-AdlayQGsl4c9h7ZI4=452">
+                                    <span>
+                                        <strong>Claude-Red (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Claude-Red is a curated library of offensive security skills for the Claude AI system. It offers structured SKILL.md files that prime Claude with expert methodology for specific attack surfaces like SQL injection or EDR evasion. The project targets roughly 130 skills across 23 categories.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FJustVugg%2Fcolibri%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/y4NQjrNeB16NWWXqjgBXq9JF_tMJzTF6GbZMIrKDoC8=452">
+                                    <span>
+                                        <strong>Colibrì (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Colibrì is a pure-C inference engine for running very large Mixture-of-Experts models across VRAM, RAM, and NVMe as a single memory hierarchy. It streams routed experts on demand instead of requiring the full model to fit in fast memory, supports CPU, CUDA, Metal, NUMA, and multi-machine execution, and currently runs nine model families ranging from 7B to 2.8T parameters.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.datadoghq.com%2Fblog%2Ffrom-traces-to-experiments-a-loop-for-improving-ai-agents%2F%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/lYXMhNF1QjxtlLCZeOJT2eZr-zPO4bto0MYpT0iDsjI=452">
+                                    <span>
+                                        <strong>From traces to experiments: A loop for improving AI agents (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Agent optimization should use a continuous loop of trace analysis, hypothesis formation, offline evaluation, controlled production experiments, and post rollout monitoring. Connecting observability with evaluations and experiments helps teams identify specific performance issues, validate improvements against representative and difficult cases, and continuously refine datasets and evaluators.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fb0WS4z/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/8JOqakTMPUPMNzQen0vkMF5Nw92QmSpFQX8ZIak_6n0=452">
+                                    <span>
+                                        <strong>Rapidly scaling online storage to serve over 1 billion ChatGPT users (13 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    OpenAI's Habitat storage platform now handles over 70 million requests per second and serves more than 500 petabytes of data. The team recently rewrote the service in Rust, which is 6x more CPU efficient and 15x more memory efficient than the previous Python version. Habitat first launched as a Python library at DevDay 2023 to support GPTs and evolved into a complex distributed system supporting over 1 billion weekly users across nearly 40 regions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.rubyhack.ai%2F%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/v8IIiJ0AnP1hyhrx8hUobcpiR7NieXZnnnVUqK3Upjc=452">
+                                    <span>
+                                        <strong>OpenAI agents carried out an undisclosed cyber-attack on RubyGems (20 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Researchers investigating the May 2026 GemStuffer campaign attribute more than 2,000 malicious RubyGems package uploads to an OpenAI agent swarm based on package contents, naming patterns, and other public evidence. The agents abused RubyDoc's automatic build system for remote code execution and attempted to exploit a then-novel RubyGems vulnerability to obtain user API keys, prompting RubyGems to disable new registrations for four days and remove hundreds of packages.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.www.cloudflare.com%2Fconnect2026%3Futm_medium=display%26utm_source=direct%26utm_campaign=2026-q3-acq-namer-connectivity-ge-he-general-connect/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/W8V5-JVsJaYbakxUiwAMxWMDsNn_S77atFD7l2XMLio=452">
+                                    <span>
+                                        <strong>Build for the Agentic Internet at Cloudflare Connect 2026, Oct. 19-21 in San Francisco: (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    100+ sessions, five tracks, top speakers, hands-on labs, and practical AI, security, and networking guidance. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fevents.www.cloudflare.com%2Fconnect2026%3Futm_medium=display%26utm_source=direct%26utm_campaign=2026-q3-acq-namer-connectivity-ge-he-general-connect/2/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/6EJWUa9lmGw0Ldsa7kUlsqfa8BE8I4PhG5kh3xD8tSE=452" rel="noopener noreferrer nofollow" target="_blank"><span>Register Now</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.cncf.io%2Fblog%2F2026%2F09%2F09%2Fwhose-gpus-are-these-anyway-secure-self-service-metrics-for-multi-tenant-kubernetes%2F%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/LB3mZ9_U5aCJ79rj8twomXK7VopfY-9mCFDpKi3Jo60=452">
+                                    <span>
+                                        <strong>Whose GPUs are these, anyway? Secure, self-service metrics for multi-tenant Kubernetes (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A multi-tenant Prometheus proxy can safely expose curated, namespace-isolated metrics to Kubernetes teams without opening the shared infrastructure store or creating noisy-neighbor problems.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fcasb-policies%2F%3Futm_source=tldrdevops/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/pQNbxWTBpJOKrWnweeEi6cxP1pfYeMlLKVVperlIgQ4=452">
+                                    <span>
+                                        <strong>Introducing automatic remediation policies with Cloudflare CASB (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare CASB now supports automatic remediation policies.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/yc4LAYF4vrfcaZYlIyTqvpR3Dx6UHjp0rCfc3s91aZg=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/ArWY2KpoVsvE8OLIVMteuuBIz5etoRFg45D0LVQRYYM=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/40_74DjIo8uBZ1pN1L0g6AI11Im_wTOsyiQyp-I0JR4=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/eNEoZXzJ1D6Latp-scNXFXp18cEgxMqvZDEfvAI7j_E=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/VWjpXIS5lhVPcWRylhnBF8vRNLqr5GaT-ERZcFrpt0I=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/Dp6GxjKRf4gVOfOeFlEB-qOeGhyZT6EjGQ8ra9MuOok=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/4J7mOdjPYZ2bumf8Q2JgwFZFCpbYn9erxUKp-HJtTIs=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/JTty0pUouYkv0PsDJWEfYpJ8fHnZ6LI5pdr8tnY-cII=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/GTLN1TwuN2P-flhzxMgPK2Jfv3TayXViEVgrSFlIdh4=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=a90e8e2a-b000-11f1-89f9-35a98dc0bc05%26pt=campaign%26pv=5%26spa=1789383673%26t=1789385047%26s=da62be7234e42a6b498419dd7a55a955fe21fa1c2b052f7197ab4be7eb1722a3/1/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/rTq5uO6-fJjTPXC1OxgDfB5iLwWQbmzY8FwPhzyNOXo=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a09fa8fe4e-64b7cc2b-f3e3-4284-8e5d-94014fa474ab-000000/fM8VY45x0y3QZ9XYtCYul-ylrbEwAEdvX2eknZLA0bQ=452">
+</body></html>
