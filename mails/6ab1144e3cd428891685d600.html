@@ -1,0 +1,477 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>OpenAI introduced a formal process for tracking, investigating, and publicly disclosing model misalignment across training and deployment&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/lHqbaBxvy4vflnNFl9lxnPTknk2H9iC4RiTM0Fgh7n0=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/2G5hp-1gkJp3F0rVFFNhdDvR-BFH8rTGgsjL8xh6aik=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=813a4cd0-b58d-11f1-a0e6-25de62580ae1%26pt=campaign%26t=1789989962%26s=57ebb62e03932977f2a27bd6d27158529545e8a3dd42941ebc2fc6a71ee3cd9e/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/1LsyaoA-xhuVjBXNnsThtopkXl18C6fWVFCnQxOqHAM=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.unscriptedconf.io%2Fcity%2Fvirtual%3Fcampaign_id=701Uw00000qiWXqIAM%26sp=bYUry25BXlJUMfKh4vnDZoK2%26utm_source=tldr%26utm_medium=email-paid%26utm_campaign=2026-09-19_tldr_devops_primary_harness_inc%26utm_content=header_anthropic_spacexai_workday%26utm_term=devops-sept21_2026-09-19_tldr_devops%23registration/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/pUcIz6AyQNiQ9BYxHuxpYZpAi_b_0fNTfqzjkUH2fFg=452"><img src="https://images.tldr.tech/harness.png" alt="Harness"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-09-21</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.unscriptedconf.io%2Fcity%2Fvirtual%3Fcampaign_id=701Uw00000qiWXqIAM%26sp=bYUry25BXlJUMfKh4vnDZoK2%26utm_source=tldr%26utm_medium=email-paid%26utm_campaign=2026-09-19_tldr_devops_primary_harness_inc%26utm_content=header_anthropic_spacexai_workday%26utm_term=devops-sept21_2026-09-19_tldr_devops%23registration/2/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/A384xvUsNJkAUZJOsDrciK06egu0i33GZNhnd1QHbKM=452">
+                                    <span>
+                                        <strong>Anthropic, SpaceXAI, Workday, and Google on Shipping Software in the AI Era (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AI coding tools are accelerating development. Now the rest of the SDLC has to keep up.<p></p><p>At {unscripted} Virtual, hosted by Harness, leaders from Anthropic, SpaceXAI, Workday, Google, and more will share how teams are adapting software delivery for the agentic era, including how to:</p><p>✅ Build pipelines for AI-driven development</p><p>✅ Scale velocity without sacrificing reliability or governance</p><p>✅ Decide where agents can act and where humans stay in the loop</p><p>September 30 | Virtual | 10:00 AM PT</p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.unscriptedconf.io%2Fcity%2Fvirtual%3Fcampaign_id=701Uw00000qiWXqIAM%26sp=bYUry25BXlJUMfKh4vnDZoK2%26utm_source=tldr%26utm_medium=email-paid%26utm_campaign=2026-09-19_tldr_devops_primary_harness_inc%26utm_content=cta_register%26utm_term=devops-sept21_2026-09-19_tldr_devops%23registration/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/iiK7h0KIB_DTn6Tdv_VXvU_mBI2815ecUczMpr3QRqg=452" rel="noopener noreferrer nofollow" target="_blank"><span>Register →</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fnews%2F2026%2F09%2Fopenai-misalignment-framework%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/wGEY5Cxb1aguRBgFK9Vq-sTE3W1nWTiKotCSySiI22U=452">
+                                    <span>
+                                        <strong>OpenAI Introduces Triage Framework and Case Studies to Report Model Misalignment (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    OpenAI introduced a formal process for tracking, investigating, and publicly disclosing model misalignment across training and deployment, releasing six initial case studies showing models fabricating data, hiding mistakes in compaction summaries, and bypassing resource restrictions during testing.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Faws%2Fnew-low-cost-burstable-amazon-ec2-t8i-instances-are-generally-available%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/Icok8doRM23pJan22EgY_iNNefBrjAzXlWZcFLg5658=452">
+                                    <span>
+                                        <strong>New Low-Cost Burstable Amazon EC2 T8i Instances Are Generally Available (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS launched general availability of burstable EC2 T8i instances on custom Intel Granite Rapids processors, offering up to 30 percent better price performance than T3, higher compute and network bandwidth, and free tier eligibility for the micro and small sizes.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Faws%2Faws-elastic-beanstalk-introduces-cluster-mode%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/84IGaUG6h9aFfonuMvJvsQ8vaN8YO7rjeGrQLWLPR8g=452">
+                                    <span>
+                                        <strong>AWS Elastic Beanstalk introduces Cluster Mode (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS Elastic Beanstalk now offers a fully managed Cluster Mode that runs applications on infrastructure powered by Amazon EKS. The feature allows teams to operate multiple applications that share resources, lowering per-application costs without adding operational complexity. AWS does not charge extra for Cluster Mode, but users pay for the underlying resources, including the EKS control plane and compute.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fclient-side-security-finds-4-malicious-campaigns%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/eYGDLMpHcvhPnfQfsFa86vgjRkMa9Eq1gXpJsDIM2vE=452">
+                                    <span>
+                                        <strong>When Scanners Miss the Attack: How Cloudflare Client-Side Security Protects Storefronts (21 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare's Page Shield ML system uncovered four malicious JavaScript campaigns hijacking affiliate commissions, cloaking ad fraud, and running a remote code execution backdoor on e-commerce sites, detecting all eight payloads even though most were missed by VirusTotal and URLScan.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.seangoedecke.com%2Fgrit-your-teeth-and-ship-it%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/kV3Em_PZ-P7ExkUf2qzZ9S3oJw9ESFeich4xGlqx_6k=452">
+                                    <span>
+                                        <strong>Grit your teeth and ship it (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Strong builders can become reluctant shippers because they notice every flaw and want systems to feel elegant and complete before release. In large codebases, progress often requires accepting imperfect but consistent solutions, and producing a steady volume of work tends to outperform polishing a small number of projects indefinitely because quality and audience response are hard to predict.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ory.com%2Fory-agent-plugins%3Futm_campaign=494745830-ADV-2026-Q3-TLDR%2BPLACEMENT-2026-09-21%26utm_source=tldr%26utm_medium=devops-newsletter%26sp=asdhQ-K-egqEsiKjl5h9GrGP/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/WzxAlpIDrg2fzGyvo0oXUfuhuuLtS1ZznGuDZKkxU1E=452">
+                                    <span>
+                                        <strong>Enforce agent controls in the harness, not the gateway (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Gateways only secure what you route through them, sandboxes stop reach, not actions, and SIEM shows risk too late. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ory.com%2Fory-agent-plugins%3Futm_campaign=494745830-ADV-2026-Q3-TLDR%2BPLACEMENT-2026-09-21%26utm_source=tldr%26utm_medium=devops-newsletter%26sp=asdhQ-K-egqEsiKjl5h9GrGP/2/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/mSobVVta6xNFe3DQA8phbGQE9ghVdrvKn5FQAvy4awc=452" rel="noopener noreferrer nofollow" target="_blank"><span>Ory Agent Security</span></a> is the first identity and access control plane that enforces inside the agent harness. Now usable via simple plugin. Give your agents identities of their own. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ory.com%2Fory-agent-plugins%3Futm_campaign=494745830-ADV-2026-Q3-TLDR%2BPLACEMENT-2026-09-21%26utm_source=tldr%26utm_medium=devops-newsletter%26sp=asdhQ-K-egqEsiKjl5h9GrGP/3/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/tAhPRPqMuDv79tghgO1A3M9XZyyCVqVrHdwBw-wcrx8=452" rel="noopener noreferrer nofollow" target="_blank"><span>See how</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fcloudflare%2Fsecurity-audit-skill%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/RBOTYe68sf7kcAUIl3OrGXCZx1sEMv2tRIHS8RtGJSI=452">
+                                    <span>
+                                        <strong>security-audit (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A new coding-agent skill turns an AI agent into a security auditor that orchestrates reconnaissance, vulnerability hunting, and validation. The tool runs a structured audit in six phases and classifies findings into three verdicts: confirmed, needs_validation, or rejected. Audits against the same repository are additive, using prior results to target gaps or revalidate changed source code. The skill activates automatically when an agent receives a request for a security audit or pen-test.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fhiggsfield-ai%2Fhiggsfield%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/7bPWQjEoffhUh77TUVlDXq99xUBP9AVNmC20GSlcCfQ=452">
+                                    <span>
+                                        <strong>Higgsfield (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Higgsfield is an open-source GPU orchestration and machine learning framework designed for training models with billions to trillions of parameters. The framework aims to simplify distributed training by managing environments and reducing the need for complex configuration files. It supports standard PyTorch workflows and has been tested on AWS and Lambda Labs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fsaving-100-tb-of-ram-with-math%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/Qb4MpynIKCPLKlL4Bgv0m3eGgsaIFbGx4aRWBKSMMbg=452">
+                                    <span>
+                                        <strong>Saving another 100TB of RAM with math (and Rust) (11 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare reduced the memory footprint of its Pingora Backend Router by 100TB through algorithmic optimizations to the pingora-ketama library. The team determined they could remove 90% of the hashes generated for each server without causing errors or collisions. They rolled out the change in stages to avoid invalidating cached content across the network all at once.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.databricks.com%2Fblog%2Fradar-catch-gray-failures-anomaly-detection%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/A1NXMvajEREfFM47fkDjlR0GRyZqfpAGLcp4Ke8Jdwo=452">
+                                    <span>
+                                        <strong>RADAR: Catch gray failures with anomaly detection (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Gray failures allow specific service components to fail silently while health checks remain green, often leaking revenue for hours before detection. Databricks built a system called RADAR to catch these partial outages by identifying sudden spikes in user errors. The system reduced incident discovery time by 95% with over 90% precision. Users can build a similar detection pipeline on the Databricks platform using a template available on GitHub.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fdevops-agent%2Fcustomers%2F%3Ftrk=5faea66b-a373-4f5a-afc7-0827521610f8%26sc_channel=ta%26utm_source=TLDR%26utm_medium=newsletter%26utm_campaign=2026-08-19_Primary_Amazon%26utm_content=body_customer_results/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/0ey0wmCmSMQ47jkOCPyhxrpDXzdXTcgHeGB04TM6JD4=452">
+                                    <span>
+                                        <strong>See How Teams Are Reducing Incident Resolution Time with AI (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS DevOps Agent helps teams reduce incident resolution from hours to minutes across AWS, multicloud, and on-premises environments.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Faws%2Faws-reimagines-the-getting-started-experience%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/xPE7WJIFqvm4BbctxXAZH3dicwus3MNKvGOBuRqIZlE=452">
+                                    <span>
+                                        <strong>AWS Reimagines the Getting Started Experience (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS launched a simplified onboarding experience letting builders sign up with existing identities, skip credit cards through 100 dollars in free credits, deploy immediately via a coding agent, and later set spend limits or unlock full AWS features without migrating.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fnews%2F2026%2F09%2Fkarmada-kubernetes-cncf%2F%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/UwuEWob_T-yaP4OJHPZ8VPlXnBMaWiTMyi2oJogUQsE=452">
+                                    <span>
+                                        <strong>Kubernetes Multi-Cluster Project Karmada Reaches CNCF Graduation (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Cloud Native Computing Foundation graduated Karmada, a multi-cluster Kubernetes orchestration project, alongside its v1.19 release, adding AI training scheduling and beta priority-based scheduling.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.digitalocean.com%2Fblog%2Fintroducing-mysql-postgresql-advanced%3Futm_source=tldrdevops/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/-iwNPW2pEqlk2P2VXBfDWRgXqDBLv6RK4WhLAc4VV1A=452">
+                                    <span>
+                                        <strong>The Next Step for Mission-Critical Workloads: Managed Databases Advanced Edition (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    DigitalOcean announced the general availability of Managed Databases Advanced Edition for MySQL and PostgreSQL.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/UlRED48v4yFUqQMVDgQAr4MqlTNzx3E05XbV_9oDvjs=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/9N3hhajSMtNvWBG6osgD3Bjx7SoVm_iNda1tVb4PDXk=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/hnqkWQtqNdXyWmnly5_MR111nx7oQnVFHtkJ0Q-ciCE=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/sAa1wbAI-OUbkGJ3FOAQiPUJE_w3L40QfpmjowWwoPU=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/nPxeVQuSrDekqVxwE8VwJgLAL2hibDV8pDkoJELlqxk=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/Nr7QEnCaSYpq3rsYJF5xcbCv0fFdf4-nSFdSRgTNeqU=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/Tp9Pv8azfxP6hB9fB5hooPPbFCqrRi6f7LEeJjhdfyY=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/m7DELSmo0PqFfTioRVB_xxp2LvAmsq2tBfsHhgHaVj8=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/8MNSBfcqC7rmg14d-HN98c-0TevJs87EDaxLf5v7hac=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=813a4cd0-b58d-11f1-a0e6-25de62580ae1%26pt=campaign%26pv=5%26spa=1789988488%26t=1789989962%26s=31242237ce4a7b28053ff0c2e420fd45715f6635ba14c84f3ff83514eada990a/1/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/7FvhG5v7-gGPXplywllheYQo0R7G2ZnQKjn5YIQVJ9w=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0c3b7431a-58eb87b3-6087-4ac0-9a37-e793e6311946-000000/luJHONB3JKHZ_dkeEzCLosTJVexGeMw0rxtMyTl1t2w=452">
+</body></html>
