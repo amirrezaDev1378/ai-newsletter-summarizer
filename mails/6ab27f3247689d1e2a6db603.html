@@ -1,0 +1,811 @@
+<!DOCTYPE html><html><head>
+		<meta>
+		<meta>
+		<meta>
+		<meta>
+		<title>TLDR InfoSec</title>
+		<meta>
+		<meta>
+		
+		<!--[if mso | ie]>
+		
+			<![endif]-->
+	</head>
+	<body>
+
+
+		<div>Docker fixed CVE-2026-77179 in Sandboxes 0.42.0, which allowed malicious guest code on macOS to abuse virtio-fs symlink handling to access or&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+		<div>
+			<br>
+		</div>
+
+		<table>
+			<tbody>
+				<tr>
+					<td>
+
+						<table width="600">
+							<tbody>
+								<tr>
+									<td>
+
+										<table width="100%">
+											<tbody>
+												<tr>
+													<td>
+
+														<table width="100%">
+															<tbody>
+																<tr>
+																	<td>
+
+
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/59hbgbtlnyOuFW41ILo03YygtQzZMf0f1Me9NmdzRB8=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+																											|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/94Z-Dx0cVr8qxCmHUWP0wCehonHaonxcO2PmMO8oe20=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=a486dff0-b669-11f1-b4e7-77ba7df85eec%26pt=campaign%26t=1790082862%26s=ccbd97cdcf38c085aa4d90def86e26aec0f91d696567003b1aa1613db9d74831/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/JU6HpsGV8qZ1_od-z0E-yknIwt11bvCz-nLzcO5J5q4=452"><span>View Online</span></a></span>
+																											<br>
+																											</span></div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+																										<br>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<br>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td height="20" width="100%"><strong>Together With </strong>
+																										<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.humansecurity.com%2Fcisos-guide-to-ai-agentic-traffic%2F%3Futm_source=tldr_infosec%26utm_medium=newsletter%26utm_campaign=brand_agentic_trust%26utm_content=cisos_guide_to_ai_agentic_traffic%26sp=4HSlFq6MLaizaeAbFOCN0XHK/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/dza7DFS0hRO20qJlvGcrmFyYc9IGvnfkQ8pSiKfCIsQ=452"><img src="https://images.tldr.tech/human.png" alt="Human Security"></a></td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+
+																											<h1><strong>TLDR Information Security <span>2026-09-22</span></strong></h1>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.humansecurity.com%2Fcisos-guide-to-ai-agentic-traffic%2F%3Futm_source=tldr_infosec%26utm_medium=newsletter%26utm_campaign=brand_agentic_trust%26utm_content=cisos_guide_to_ai_agentic_traffic%26sp=4HSlFq6MLaizaeAbFOCN0XHK/2/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/32ikGYnbBxMQzX16yGBFnmujkvTLchlcyDGkBNSczAY=452">
+                                    <span>
+                                        <strong>Blocking Every AI Agent Isn't a Security Strategy (Sponsor)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    AI agent traffic surged 7,851% over the last year, making legitimate AI activity increasingly difficult to distinguish from malicious automation.<br><br>In traffic observed by HUMAN, <strong>just 0.5% of behavioral signals separated trusted AI assistants from malicious automation.</strong> Block everything, and you disrupt legitimate users. Allow everything, and you create a new attack surface.<br><br><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.humansecurity.com%2Fcisos-guide-to-ai-agentic-traffic%2F%3Futm_source=tldr_infosec%26utm_medium=newsletter%26utm_campaign=brand_agentic_trust%26utm_content=cisos_guide_to_ai_agentic_traffic%26sp=4HSlFq6MLaizaeAbFOCN0XHK/3/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/BKT2nRLrEqMw9l3ILjC7_CJRNnakE4TdlxuyMzbKaRs=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>The CISO's Guide to AI and Agentic Traffic</strong></span></a><strong> shows how to:</strong>
+
+																											<p></p>
+
+																											<p>🔎 Distinguish legitimate AI activity from malicious automation.</p>
+
+																											<p>🛡️ Verify intent across browsing, accounts, and transactions.</p>
+
+																											<p>⚙️ Let trusted agents through while stopping real threats.
+																												<br>
+																												<br><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.humansecurity.com%2Fcisos-guide-to-ai-agentic-traffic%2F%3Futm_source=tldr_infosec%26utm_medium=newsletter%26utm_campaign=brand_agentic_trust%26utm_content=cisos_guide_to_ai_agentic_traffic%26sp=4HSlFq6MLaizaeAbFOCN0XHK/4/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/h3rPkkDJLK0rVl1g9C5e7DARI8yqjsVH13m2qoo5rSM=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Get the Guide</strong></span></a>
+
+
+																											</p>
+																											</span></span></div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+																																											</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+
+														<table width="100%">
+															<tbody>
+																<tr>
+																	<td>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div><span>🔓</span></div></div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div>
+
+																								<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+																							</div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infostealers.com%2Farticle%2Frevolut-hackers-used-infostealers-for-elaborate-social-engieering%2F%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/oTgguZF6y3ar-shuUemMhKut9SeUakranVtUUvPaZEY=452">
+                                    <span>
+                                        <strong>Revolut Hackers Used Infostealers for Elaborate Social Engineering (4 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Attackers reportedly used stolen Italian government webmail credentials to send fraudulent European Investigation Orders to Revolut Bank UAB. They added recovery addresses, monitored inboxes, deleted outbound messages, and removed replies as .eml files. Hudson Rock identified roughly 300 compromised pec.interno.it logins, suggesting attackers may have used existing infostealer logs.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fcritical-docker-sandboxes-flaw-lets.html%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/ypP0dmvR-6gr9QFaWtm8o-61t0NOMTbRV4j3zxjnjzQ=452">
+                                    <span>
+                                        <strong>Critical Docker Sandboxes Flaw Lets Malicious Guest Code Read and Modify macOS Host Files (3 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Docker fixed CVE-2026-77179 in Sandboxes 0.42.0, which allowed malicious guest code on macOS to abuse virtio-fs symlink handling to access or modify host files as the VM monitor user. Version 0.42.0 also fixes CVE-2026-79994, a socket-relay race. Update to 0.42.0 or later ASAP.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcyberinsider.com%2Fwordpress-click2shell-flaw-enables-rce-after-one-admin-click%2F%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/Hwxrl81C9nhJhE75XJzCN4ICWH82nLaaqHI4pd0d2Fg=452">
+                                    <span>
+                                        <strong>WordPress Click2Shell flaw enables RCE after one admin click (3 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Click2Shell exploited an unsanitized theme slug passed into WordPress's admin panel jQuery selector, letting an attacker silently trigger theme installation using the logged-in administrator's own session token. When chained with a missing nonce/capability check in the Mobile Repair Zone 2.5.4 theme's AJAX handler, the flaw escalated to full RCE without the attacker needing any WordPress account. No CVE had been assigned at disclosure. Defenders should patch to WordPress 7.1.1 (or backports 7.0.5, 6.9.8, and 6.8.9) and set DISALLOW_FILE_MODS to block the installation stage entirely.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div><span>🧠</span></div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div>
+
+																								<h1><strong>Strategies &amp; Tactics</strong></h1>
+																							</div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fdarkmarc.substack.com%2Fp%2Fhijacking-ai-agents-how-an-agents%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/yzt6gcnLAHaCLbn_2cT5IG8V67atNIlw0mYtoFTbQsg=452">
+                                    <span>
+                                        <strong>AI Agent Goal Hijack: How Attackers Turn an Agent's Own Tools Against It (19 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Attackers may plant instructions in pages, emails, calendar invites, code repositories, and agent messages, and Agents may treat that content as commands, then use existing tools and permissions. Cases include a Grok-linked wallet transfer, poisoned Nx packages that harvested developer secrets, and zero-click data theft through Microsoft 365 Copilot, ChatGPT Deep Research, Salesforce Agentforce, and GitHub Copilot. Limit tool permissions, require for high-impact actions, track goal changes, sanitize retrieved content, and test injected-goal scenarios.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frainpwn.blog%2Fblog%2Fuania-os-rce%2F%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/0IZeDy8FKLhNqurZckhBXJJmKFs6GjK_8bBkmd5b6Lk=452">
+                                    <span>
+                                        <strong>UANIA OS: Authenticated Remote Code Execution (6 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    The UaniaBOX admin panel gives no shell, only a web GUI. A researcher found that the packet capture download function let him swap the file path parameter to read /etc/passwd, then traced backend calls to an exposed OpenWrt UBUS JSON-RPC endpoint. ACLs blocked most writes except one: /etc/firewall.user, a root-run shell script triggered on firewall reload, where it allowed writing a command there and triggering a reload via the GUI executed code as root, confirmed by reading back uid=0. Affected versions are UaniaOS 2.1 through 3.0.0. It was fixed in 3.0.1. Vendor UANIA reproduced the bug, attributed it to excessive ACL permissions in their OpenWrt customization feeds, and patched it, though the MITRE CVE filing stalled for months due to a broken submission form.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fprojectzero.google%2F2026%2F09%2Fwindows-dangling-com.html%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/40YM1_NnfjLCrSBfV4q8sJK0S6aWV2lQ1n0kYt0Slkc=452">
+                                    <span>
+                                        <strong>Windows Exploitation Techniques: Dangling COM Object Registrations (7 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    A Windows COM class stayed registered to a missing DLL in the user-writable ProgramData folder, letting any user plant code for a SYSTEM process to load (CVE-2026-66804, an incomplete fix for "Dark Elevator"). The exploit sent a custom-marshaled object pointing to the dangling CLSID to the Shell Create Object Handler, a SYSTEM COM server that ordinary users can start via a scheduled task and that allows custom marshaling. Defenders should patch, audit InProcServer32 registrations for DLLs that don't resolve in writable paths, and make sure privileged COM servers set EOAC_NO_CUSTOM_MARSHAL or the strong unmarshaling policy.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div><span>🧑‍💻</span></div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div>
+
+																								<h1><strong>Launches &amp; Tools</strong></h1>
+																							</div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftigerbytecyber.us%2F%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/dNCOB7rKQsCys8x-KUXOsyhdtxQQO9hutn2wV3tC9qM=452">
+                                    <span>
+                                        <strong>TigerByte Cyber (Product Launch)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    TigerByte Cyber's Cyber Protection Suite hardens legacy and edge devices with data validation, packet inspection, network segmentation, and post-quantum encryption. It targets aircraft, drones, satellites, vehicles, and other mission-critical systems.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FRurixis%2FMSRKit%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/zIicEK3WSin-J0vzQFiQFpH7N-UrikLq3qIdBSejHVM=452">
+                                    <span>
+                                        <strong>MSRKit (GitHub Repo)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    MSRKit is a Windows kernel exploitation library and CLI that hijacks IA32_LSTAR via a ROP chain through AmdTools64.sys to call arbitrary kernel functions and map unsigned drivers without HVCI. The ROP chain temporarily clears SMEP/SMAP in CR4, dispatches the target, then restores both CR4 and LSTAR cleanly before returning to user mode via sysretq. The library supports all Windows 10/11 builds and KPTI, but requires HVCI to be disabled. Concurrent callers across processes will BSOD.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FBert-JanP%2FEntraTrace%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/MJ3sninKbvultdt0ab0xTq7lo0Sh8wRRewWpFUP_css=452">
+                                    <span>
+                                        <strong>EntraTrace (GitHub Repo)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    EntraTrace is a defensive security research tool for documenting and identifying the observable behavior of offensive tooling targeting Microsoft Entra ID. The project builds an automated knowledge base on tools such as AzureHound, AADInternals, O365Enum, PingCastle, and others, focusing on the User-Agent and API artifacts they generate.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div><span>🎁</span></div></div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div><strong><h1>Miscellaneous</h1></strong></div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.firstpost.com%2Ftech%2Fhow-google-infiltrated-a-notorious-hacking-gang-with-an-undercover-analyst-report-14047160.html%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/phBOYutTvvzPFeBW-w3fXPrN9b21iRAC-TwsBvOyzcE=452">
+                                    <span>
+                                        <strong>How Google infiltrated a notorious hacking gang with an undercover analyst (2 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Google placed researcher Austin Larsen inside TeamPCP during its hacking campaign. He accessed a server holding stolen usernames, passwords, and access tokens. Google warned affected victims and disrupted credential abuse, and Larsen linked an alleged member to a Gmail account and Google Drive backups. Google shared evidence with the FBI, and the Australian police arrested the suspect a month later.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fedition.cnn.com%2F2026%2F09%2F19%2Fbusiness%2Fgemini-ai-hack-internet%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/XVAJZUEo25uRAgj8WTWLoLu-y16zC1dtzTN9RQoY_2c=452">
+                                    <span>
+                                        <strong>Gemini hacked three companies in first known breakout by Google's AI (1 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    During a May security evaluation, Google's Gemini accessed three external websites after finding public information and trying credentials. One access came through password guessing. Two used credentials exposed in a public repository. Google said Gemini stopped in each case. Irregular notified the affected organizations and said it fixed its testing-process issues weeks later.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FewjnCW/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/Xdpf5m5HVZZ-AEws4rZgkom2Jlp7PMnXPSTe-94FR1M=452">
+                                    <span>
+                                        <strong>North Korean WaterPlum hackers infected 30,000 devices worldwide (4 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    WaterPlum (aka Contagious Interview) compromised 30,000+ devices across 100+ countries between December 2025 and July 2026, draining $10.7M from over 7,000 cryptocurrency wallets. A joint US, Japanese, Australian, and German advisory attributed the campaign to North Korea's 313 General Bureau and five malware families (BeaverTail, InvisibleFerret, OtterCookie, OtterCandy, and StoatWaffle) delivered through fake technical interviews on recruiting platforms. North Korean IT workers later reused identity documents stolen from victims to fraudulently obtain jobs at Western companies.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div><span>⚡</span></div></div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<div>
+
+																								<h1><strong>Quick Links</strong></h1>
+																							</div>
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.brighttalk.com%2Fwebcast%2F18282%2F670427%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=670427/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/h0IskEHtMjog1qQS_1LB-iyfqcKGe8hMzNlIqhTmS2U=452">
+                                    <span>
+                                        <strong>🔨 Build Custom SOC Agents With MCP Servers (Sponsor)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Learn how to deploy multi-agent systems for your SOC using the Google SecOps MCP server, Agent Development Kit, and Agent2Agent protocol. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.brighttalk.com%2Fwebcast%2F18282%2F670427%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=670427/2/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/oR3baZ4fEEexBbOXxGrAnUdeg7dwFaFMSxiRIomx0k0=452" rel="noopener noreferrer nofollow" target="_blank"><span>Watch the video.</span></a>
+																											</span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F17%2Flondon-property-manager-breach-may-have-exposed-bank-details-and-lockbox-codes%2F5297232%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/kGRiM9oHvn7y4n9mWP6RoVZyYPSYLnKfDSbqo8V-2R8=452">
+                                    <span>
+                                        <strong>London property manager breach may have exposed bank details and lockbox codes (3 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    City Relay said attackers accessed its Metabase Cloud instance twice and extracted customer data.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FI3CsUc/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/JO8U2AhFqSBP-Oher89iufFpMoZ59i2X3fCViuXaldE=452">
+                                    <span>
+                                        <strong>Malicious npm packages evade install-script defenses at runtime (3 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    The 'indexed-btree' npm package, which impersonates 'sorted-btree' and pulls 2 million weekly downloads, hid its loader in the BTree.prototype.set() method to bypass npm v12's install-script approvals.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																						<table width="100%">
+																							<tbody>
+																								<tr>
+																									<td>
+																										<div>
+																											<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fvideocardz.com%2Fnewz%2Fintel-reportedly-ends-bug-bounty-rewards-for-security-researchers%3Futm_source=tldrinfosec/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/lzpraWGht78EE5SG74h-MAnzSMaJ7gNAPEII1dVQcVk=452">
+                                    <span>
+                                        <strong>Intel suspends bug bounty program with rewards up to $100,000 (1 minute read)</strong>
+                                    </span>
+																											</a>
+																											<br>
+																											<br>
+																											<span>
+                                    Intel quietly suspended its Intigriti bug bounty program, which paid up to $100,000 per finding, replacing it with a no-reward vulnerability disclosure program and offering no public explanation for the change.
+                                </span>
+																											</span>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+
+																		
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<p>
+																							Love TLDR? Tell your friends and get rewards!
+																						</p>
+																					</td>
+																				</tr>
+																				<tr>
+																					<td>
+																						<div>
+																							Share your referral link below with friends to get free TLDR swag!
+																						</div>
+																					</td>
+																				</tr>
+																				<tr>
+																					<td>
+																						<div>
+																							<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/WL7lbNaj7NR_Au1rEiSP8IraB44dD6B9oba4ScsjXBM=452">https://refer.tldr.tech/db071950/8</a>
+																						</div>
+																					</td>
+																				</tr>
+																				<tr></tr>
+																				<tr>
+																					<td>
+																						<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/4gD_QUOjJxoshzbe7-C8iT9i-LtRERXQPsmWgfn9ybY=452"><span>Track your referrals here.</span></a>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		
+
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+
+																						<p>
+																							Want to advertise in TLDR? 📰
+																						</p>
+																						<div>
+																							If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/9CDXXm7wi83wzDtFuM09hJgu9NoGcZdQFct2xW6fqz8=452"><strong><span>advertise with us</span></strong></a>.
+																						</div>
+																						<br>
+
+																						<!-- New "Want to work at TLDR?" section -->
+
+																						<p>
+																							Want to work at TLDR? 💼
+																						</p>
+																						<div>
+																							<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/8uvCz3tkMmqO_WSFENp7V7BQf7HwpcwnkTHg5czqY3A=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+																							<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/0SiAp3Y_c7B_SAKw5zOyS4WiapqdfCVGxNok227k4aU=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/7i755SeMXmyPgcPs94GObL6JSmuKTOQhMVc6gpe8wJY=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+																						</div>
+																						<br>
+
+																						<div>
+																							If you have any comments or feedback, just respond to this email!
+																							<br>
+																							<br> Thanks for reading,
+																							<br>
+																							<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/7sV37vyL-1Hn1JGMCls_8zylsS9v9sq1dFEyByyI2bQ=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/CHYZ54sa-tj8wRHYU5kqR44fDggq78_hjwtKcvsvwlQ=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/SgHCvR41rFvpuGsQWLwbKgMXAV2WAwsrnLxyodgkXWo=452"><span>Sammy Tbeile</span></a>
+																							<br>
+																							<br>
+																						</div>
+																						<br>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table width="100%">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div>
+																							<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/gnpMl4sj7cdOgiiIvq-ir5ObeGcY3hhUoI86J_xgnoQ=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=a486dff0-b669-11f1-b4e7-77ba7df85eec%26pt=campaign%26pv=5%26spa=1790082133%26t=1790082862%26s=fc95f1d5e9de8d23009c8efb267945c5248040eab2c6a2c4335ecaeab26fd009/1/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/GUJo1TkpoGF86Zgvvv8RS2qRMpvj5cAWtst01v8hMqI=452">unsubscribe</a>.
+																							<br>
+
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+	
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0c940ccca-1ff487e6-9c4d-4b3c-83b2-b42a6a34de8d-000000/e7u7euxkSrNbcveiWfS6cCqNfXn-At3Cwh7VrzvCHEg=452">
+</body></html>
