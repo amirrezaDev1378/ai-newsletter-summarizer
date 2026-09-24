@@ -1,0 +1,499 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+
+
+
+<div>A zero-day allows any local macOS app or terminal command to redirect Muse transcription to an attacker-controlled server. The server receives&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/Mge-0gF4ZKJ5WFsVYfUEvk3e_tkLzWLilYmAA193ltk=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/CjCz4deKXG1vtGSc6814UanDYnfBS_4f3enm2tmm1fQ=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=7c36d6e8-b72e-11f1-b6da-e925b12eda27%26pt=campaign%26t=1790169461%26s=0754b16b8997ce5cb5ff57d506ad4afc54e88cd89ee82ead11137017a9d3fdf5/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/yB8HmoEjn5qZ3dFzCD9c-yAWZ36F4DCaGHJHK0FDbxk=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fflashpoint.io%2Fblog%2Fflashpoint-named-a-customer-favorite-in-the-forrester-wave%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=Resource_RP_Forrester_Wave_2026%26utm_content=header_flashpoint_just_named%26utm_term=2026-09-23_tldr_infosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/p1jYd6aMfjukHIAGChC_ojxY-xwxMLfEZScCpRSfw_A=452"><img src="https://images.tldr.tech/flashpoint.png" alt="Flashpoint"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-09-23</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fflashpoint.io%2Fblog%2Fflashpoint-named-a-customer-favorite-in-the-forrester-wave%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=Resource_RP_Forrester_Wave_2026%26utm_content=header_flashpoint_just_named%26utm_term=2026-09-23_tldr_infosec/2/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/9LtbwcUKz1iWKUB-86xstNEPuwXhQLLIHQpAy5qp-uA=452">
+                                    <span>
+                                        <strong>Flashpoint just named a Customer Favorite in the 2026 Forrester Wave™ for Threat Intelligence. (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Based on outstanding customer feedback in the all new Forrester Wave™: External Threat Intelligence Service Providers, Q3 2026. Flashpoint also received the highest scores possible for the Fraud Intelligence, Executive Protection, and Pricing Flexibility and Transparency criteria.&nbsp;<p></p><p>Access the report to see how top vendors scored across 23 criteria and learn why Flashpoint is ideal for customers seeking primary source access intelligence.</p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fflashpoint.io%2Fblog%2Fflashpoint-named-a-customer-favorite-in-the-forrester-wave%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=Resource_RP_Forrester_Wave_2026%26utm_content=cta_access_full_report%26utm_term=2026-09-23_tldr_infosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/ckMJt_nvorY8vVXAkKhiYJAT6hkbD7RckPjNnFWxMzU=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Access the full report</strong></span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcyberpress.org%2Ftanstack-npm-supply-chain-attack-exposes-170-private-crowdsec-github-repositories%2F%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/Z4D0zd8noMYHmZN_tVbmEPM_oi_1kWlm2LQ9HWKAmFA=452">
+                                    <span>
+                                        <strong>TanStack NPM Supply Chain Attack Exposes 170 Private CrowdSec GitHub Repositories (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers used a former CrowdSec employee's GitHub OAuth token following the May TanStack compromise. On May 22, they cloned about 170 private repositories within nine minutes. The leaked archive contained private code and contact data for 83 users. Investigators found no code changes, CI/CD access, or AWS access. The attackers tested one scoped SNS credential, but IAM permissions blocked it.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Farstechnica.com%2Fsecurity%2F2026%2F09%2Fmuse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day%2F%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/YAHMzFoW6DBb4rxX6GleIiSiJFubKUucfZfB7QzkOzE=452">
+                                    <span>
+                                        <strong>Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A zero-day allows any local macOS app or terminal command to redirect Muse transcription to an attacker-controlled server. The server receives the account token, enabling control over Muse and its connected email, WhatsApp, calendar, social accounts, microphone, camera, and files. Researcher Patrick Wardle demonstrated prompts that write files or take photos. Amazon also blocked Muse shopping requests as unauthorized.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fqm2wHm/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/HmRjkewBubU_DJokNlzMM3VldAMulBMvwrm5ubA7loI=452">
+                                    <span>
+                                        <strong>ShinyHunters Hacks Clop Leak Site, Threatens to Extort Ransomware Gang (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The ShinyHunters ransomware gang hacked the Clop ransomware gang's data leak site on Tor, defaced it, and claimed to have stolen server data and private keys for its onion service. The ShinyHunters claim to have exploited an unauthenticated file upload vulnerability in Grav CMS to breach the site. This appears to be the latest escalation in an ongoing feud between the two ransomware gangs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Funsecure.sh%2Fblog%2Fagentic-soc-scenario%2F%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/DMfRvC846PpOOYtd9ntvfBLTexd-2F2W8Im_N7XFG6g=452">
+                                    <span>
+                                        <strong>A Scenario to Evaluate Your Agentic SOC (20 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A SOC investigation loop requires assembling a full attack chain from various different signals that may look benign or unrelated, which traditional, deterministic playbooks may miss. The authors built a set of scenarios to evaluate agentic SOC's investigative ability and built their own harness (called Tengu). Their scenario involves a GitHub workflow vulnerability that leads to full Kubernetes cluster compromise, which then is escalated to full AWS account compromise. Of the models tested on a naive prompt, only Opus 5 managed to identify the alert as a true positive without the Tengu harness
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.gendigital.com%2Fblog%2Finsights%2Fresearch%2Finfostealers-your-ai-agent%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/ATByCQlZbpAscTLQAVlt3gtHlfSLL_7WxmL4PPKZCTY=452">
+                                    <span>
+                                        <strong>Infostealers Have Found a New Target: Your AI Agent (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Researchers from Gen have observed multiple new infostealers that harvest credentials, context, and local data from AI agents. Users and security teams should inventory what gets cached locally, keep secrets out of prompts and history, limit what connectors can do, and continue securing endpoints. Agent providers should also share the burden by providing more secure default behaviors.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.talosintelligence.com%2Fthe-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant%2F%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/QJjKdyD8PTnQqU_iM5r4gLEENpE0GNI58sVgfzGEqV0=452">
+                                    <span>
+                                        <strong>The Closed Quorum: Inside the first reported autonomous AI C2 implant (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CLOSEDQUORUM, a Go-based Windows implant, uses DeepSeek, Qwen, Mistral, and Gemini as its C2. Every 5 to 15 minutes, the models vote through a constrained JSON schema on whether to steal LSASS, browser, and crypto wallet credentials, inject shellcode, or persist via Run keys, scheduled tasks, and WMI. Talos hasn't seen it in the wild, and the public build is an inert template, but it points to a credentials-as-a-service model where each operator gets a custom build and never needs to be online. Its dependence on commercial APIs brings refusals, rate limits, and a deterministic DeepSeek tiebreak, so defenders should correlate multi-provider LLM traffic from unexpected executables with LSASS access, suspended-process injection, WMI persistence, and Discord webhook exfil instead of blocking domains.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td> <div><span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2Faudiences%2Fcybersecurity-awareness-month%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=secondary09232026%26sp=PeufVai8jD4wJpgVxODYqWYS/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/CjnYFMXcJl33NNTqVRQwnIjv-gaRUGN2Wr6ufJdMKG4=452"><span><strong>Add TLDR InfoSec to your Cybersecurity Awareness Month plan (Sponsor)</strong></span></a><br><br><span>Your prospects will see cybersecurity ad after cybersecurity ad on social this October. In TLDR InfoSec, your ad reaches 410K cybersecurity professionals and is one of just three ads per issue. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2Faudiences%2Fcybersecurity-awareness-month%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=secondary09232026%26sp=PeufVai8jD4wJpgVxODYqWYS/2/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/mdHJUZagzV85eCojL41OJ1lpVjQ2NHQeI0nKiWMvDd8=452" rel="noopener noreferrer nofollow" target="_blank"><span>Learn more about our special Cybersecurity Awareness Month ad packages.</span></a></span></span></div> </td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhelmguard.ai%2F%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/vOF7IfDzc4rRK4JiGEucexh78sCn7JLuGk-rgoSq9dw=452">
+                                    <span>
+                                        <strong>HelmGuard (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    HelmGuard provides governance, risk, compliance, and security software. It gathers evidence from source systems, documents, and unstructured data, then automates risk assessments, assurance tasks, and control-gap reviews.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fdirkjanm%2FaskWAM%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/QBvPMiWh4bXdhOgo9E9tyyLVkQE_xA0meUzZ3F5yGOU=452">
+                                    <span>
+                                        <strong>askWAM (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    askWAM is a tool to request Microsoft Entra access tokens silently through Windows Web Account Manager (WAM).
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2F0x574R%2FDarkcloak%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/jmR5HgqziwYG-q2r1qn7mKoWzNjbza63RqqeyRunZEo=452">
+                                    <span>
+                                        <strong>DARKCLOAK (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    DARKCLOAK chains the manipulation of all userspace-visible identity sources into an 11-phase sequential pipeline that progressively transforms a process until it becomes indistinguishable from the impersonated one to userspace monitoring tools.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F21%2Fanthropic-linked-cves-pile-up-attackers-mostly-shrug%2F5298018%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/EZT5kDcth4ONwi92qpPp1SFe3kBp7jNDlSyx15OkRQU=452">
+                                    <span>
+                                        <strong>Anthropic-linked CVEs pile up, attackers mostly shrug (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    VulnCheck's Patrick Garrity tracked 225 CVEs tied to Anthropic's Project Glasswing, which gives partners access to the Claude Mythos Preview model for bug-hunting. Only one, a critical SQL injection in Ghost (CVE-2026-26980), has been exploited in the wild. Garrity says that historically 1-2% of vulnerabilities are weaponized, so this rate isn't unusual. AI models are uncovering more bugs, driving recent record patch counts from Microsoft, Apple, and Palo Alto Networks, but fixing bugs remains weak: 1Password found that Opus 4.8 and ChatGPT-5.5 fully resolved vulnerabilities in only 26% of 6,080 patches tested, and Veracode measured a 56% average security pass rate across 100+ models.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabcnews.com%2FTechnology%2FwireStory%2Fgoogle-hit-463-million-fine-eu-location-data-136616044%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/FlUelCeaM0lJ7SDv6cZh3nkTtlzUeWpse8rHQGsegaw=452">
+                                    <span>
+                                        <strong>Google hit with $463 million fine for EU location data rule breach (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Ireland's Data Protection Commission fined Google 403 million euros for GDPR breaches involving location data. The probe covered Web &amp; App Activity, Location History, and Android's Location Accuracy feature from 2018 through February 2020. Regulators found the processing unlawful, unfair, or opaque, even though Google said it changed its policies and released new location-management tools in 2019.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FXmS6zh/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/QPHWZDHdFamcAViCFYWd6eAMuglyd_ucZNmothRt0bM=452">
+                                    <span>
+                                        <strong>ShinyHunters Claims FBI Hack, Data Theft in PeopleSoft Zero-Day Breach (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The ShinyHunters claim to have breached the FBI's job site and networks using a zero-day in Oracle PeopleSoft. The ransomware gang claims to have stolen 2-3TB of data, including PII and PHI of current and former FBI employees and job seekers, as well as other internal records. The hackers said they carried out the attack in retaliation for an FBI FLASH report on ShinyHunters.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FuMXRN4/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/LA_aQRh1fRSRVdYDhsN4NM3wvUfP6PieA9gmW_KNE_8=452">
+                                    <span>
+                                        <strong>Brevo Supply Chain Attack Injects Malware Into 100,000 Websites (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers exploited Brevo SAML SSO handling, accessed 138 accounts, and later used a stolen Cloudflare API key.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fcritical-check-point-management-server.html%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/tgTZAhiBiW2BlBGrkq-_QSUcdxFz4RGVhcauuOgdkqY=452">
+                                    <span>
+                                        <strong>Critical Check Point Management Flaw Lets Unauthenticated Attackers Run Code as Root (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Check Point patched CVE-2026-91843, a CVSS 9.8 login stack overflow.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ffreenode.net%2Farticle%2Fglibc-ld-so-toctou-lets-local-users-hijack-origin-on-setuid-binaries%3Futm_source=tldrinfosec/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/I89sAzE-L461MZybE-wyVNzRe4jRA36I_YePa4lgfTs=452">
+                                    <span>
+                                        <strong>glibc ld.so TOCTOU lets local users hijack $ORIGIN on setuid binaries (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A race in glibc's ld.so (CVE-2026-86805, versions 2.14 through 2.44) lets local users hardlink a setuid binary whose $ORIGIN RPATH uses ".." traversal and swap in a symlink to load attacker code with elevated privileges.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/rogXvj5I86ch3p1fed65VKjECgto6pd6_4Wnf5YDUV8=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/pSqerFHwbapKlN5kFPOg__kdzEfRxmL7SAcDLsF1SLY=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/QEXzw7x4F5p4mCkZvXuicuGRpeBqWCsfCE8x6hyFtaw=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/9a96lidRpkVVaXn4lvynZFC4hy9bBX1B-XEddCx7etc=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/ViDpeFvcgoTH4tGGbuWv3irDK1UDGb-FfPPIlEvlSfI=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/c2cHd2xqBPKQQOadTc0vlwA8lOI8nORgI7AtXBccz9M=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/S06rF_xwoLYpND0S_71dNTWwQWWdKnoZtLwi_wPVsZE=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/_ntkwFHftH036XqR7TJCbMsYrK-oSHsipcePiu8sZyY=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/DebMkpj_F25IVftez5ZZ0Xj_IkBKfhYAfd7u_Q9hpzc=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/J1ETVp4LxwCfljhZ18brF1Y_ZeB_oqBzEXKcTzQa-vM=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=7c36d6e8-b72e-11f1-b6da-e925b12eda27%26pt=campaign%26pv=5%26spa=1790168487%26t=1790169461%26s=d85ce759a097c352d144a16834f187d1a40e9dacffd2fc4bee20dda3193e82b4/1/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/X2Sc06jEj5WBaQDksWLa5uzuvgP2jYpMvQc8DLrHtCk=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0ce6a34f8-c3b66d21-8784-4af8-a073-a36d2ae560ab-000000/g0UrD_w1739fAHX3ljH9PabKfUAoPLrF3juSsSn9ruo=452">
+</body></html>
