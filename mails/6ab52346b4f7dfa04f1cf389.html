@@ -1,0 +1,498 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>EvilTokens, a Telegram-sold subscription service ($1,500 upfront, $500 monthly), abused Microsoft Entra device code authentication to&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/eBHqtrf7ppPBRRVxTfBEDPkL7bjFgp21hw0hWWwAYYY=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/ls6CiuuxUIdMJ70r6o9wQP79DExqq13f1077n9UVk8I=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=c32358f0-b806-11f1-a602-f90dfad7d387%26pt=campaign%26t=1790255938%26s=55273d8377ed6892984064d53faa7e9e25d5c4388ac1f05f48700b29c0af98d6/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/2GWUQWSYZeDSCGxHGMEF0r_kPsYWrOcS5IAAIOE5r7c=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F3sy0sq/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/Ii-kzrFB31HEGIEXZ61lueTSOmJQdFOIt39PqLsQJrI=452"><img src="https://images.tldr.tech/databricks.png" alt="Databricks"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-09-24</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F3sy0sq/2/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/rZpQLOcHq1tNxEJlI0LEQ_5ld_Xi9wKjFVt4QeI4wZA=452">
+                                    <span>
+                                        <strong>Security is a data and AI problem. It can't be solved in a silo (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    You want to run securely, not translate vendor-specific schemas into usable formats, hunt down the IT and business context you need, or pay by the byte for the privilege.&nbsp;<p></p><p>Security doesn't thrive in a SIEM silo. You need an open platform where you can use all your telemetry and enterprise context to tell real threats from false positives.&nbsp;&nbsp;</p><p>Lakewatch is an open, agentic SIEM built on the Databricks security lakehouse, so you can correlate 100% of your telemetry on one governed platform where agents handle triage, investigation and detection authoring at machine speed.&nbsp;&nbsp;</p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F3sy0sq/3/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/YkVqa2rgYHDiTbc_gHRSOWATbmBjDyleaIPZkFEJsVw=452" rel="noopener noreferrer nofollow" target="_blank"><span>Dive into Lakewatch&nbsp;</span></a></p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FqwVtpT/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/ymTFoehRmvKfShBRXj_T7Yn1G7Lcxkh32raaL4gse9c=452" rel="noopener noreferrer nofollow" target="_blank"><span>Learn the new AI Security Framework (DASF 3.0)&nbsp;</span></a></p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FNUmtXT/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/NNmr_X7T02nDaahj7_ntcNRem9Z91uyUBar3W5VZ3bk=452" rel="noopener noreferrer nofollow" target="_blank"><span>Download the eBook: The Security Lakehouse — Outpacing AI Zero-Days</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fcritical-bifrost-ai-gateway-flaw-lets.html%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/geL_mRa9qcrjE12s736jQRSJ0JwU_yvGx2J_cuskyLY=452">
+                                    <span>
+                                        <strong>Critical Bifrost AI Gateway Flaw Lets Attackers Run Commands Without Credentials (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Bifrost, an open-source AI gateway for 20+ LLM providers, ships with management auth disabled by default, so a single unauthenticated POST to /api/mcp/client can register a stdio MCP client and run arbitrary commands as the gateway user (CVE-2026-90898, CVSS 9.8). That exposes every stored provider API key. The official Docker image binds the management API to 0.0.0.0, and v2.0.0 only fixed a related plugin-loading flaw (CVE-2026-86242, CVSS 8.1). Upgrade to transports/v2.1.0 or set governance.auth_config.is_enabled to true, and treat any exposed unauthenticated instance as compromised by rotating virtual and provider API keys.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FLp1K2G/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/39biWIvwffYl7Z4T3MTLNhrKxwOhXTjyXSLO5daL4cw=452">
+                                    <span>
+                                        <strong>BigCommerce Data Stolen via Ribon Apps Hack (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers used compromised Ribon API credentials from a Fastr system breach to access BigCommerce merchant customer data from September 13 to 17. Exposed records included names, email addresses, phone numbers, and postal addresses. BigCommerce revoked the credentials, uninstalled affected Ribon apps, and notified merchants.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.gitguardian.com%2Fgithub-app-private-keys-leaked%2F%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/RXlbRq1hMoYDNyAx2Q-1KQ8xaCSQw3-UPHSH5JauL2o=452">
+                                    <span>
+                                        <strong>GitHub App Private Keys: 474 Leaked Keys Exposed (11 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    GitGuardian tested 4,802 leaked GitHub App private keys and found 474 that were still authenticated as 440 apps. Forty-four apps held organization-admin permissions. 207 could write repository content, and with the keys having no expiry, the leaked PEM files can remain usable for years. Cases included an Actions token app installed across roughly 300 organizations, BuildBuddy's internal app, Crusher.dev, and a CDC-related app.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.huntress.com%2Fblog%2Ftwo-inc-ransom-notes%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/R2r1CRGT2sTOhVmHXg3CowO4-LDz6dYbZZREo7iSJj8=452">
+                                    <span>
+                                        <strong>The Tale of Two INC Ransom Notes (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    An INC ransomware intrusion across 175+ endpoints started in early August with randomly named scheduled tasks launching an obfuscated PowerShell implant and RDP lateral movement. After 17 quiet days, AnyDesk delivered netscan.exe and a BYOVD EDR killer (hwau.exe loading the HwAudio driver), and Impacket's atexec.py deployed the payload. Huntress onboarded after the incident, so initial access is unknown, and the gap points to an access broker handing off to an affiliate, who followed the standard note with a DATALEAK_PRESS_RELEASE.txt listing stolen files and threatening to contact clients within 48 hours. Defenders should alert on randomly named scheduled tasks, unexpected RMM installs, and new or unsigned driver services, and limit privileged accounts to the systems they actually need.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.csoonline.com%2Farticle%2F4223975%2Frevoking-the-token-didnt-kill-the-backdoor.html%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/twVA1hifE5dIXXsCR1umFw3Wd4-RPoem2sqXlYoFTgI=452">
+                                    <span>
+                                        <strong>Revoking the token didn't kill the backdoor (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    GraphWorm, an implant tied to the China-nexus group Webworm, uses a real OneDrive account over Microsoft Graph as a dead drop, and its "upgrade" task swaps all five hardcoded OAuth credentials for a spare account in one command, so token revocation only pauses it. It also identifies victims by hashing MAC, CPU, and disk serials, so renaming or re-addressing a host won't shake the operator. Isolate the host or block the app ID in your own tenant at the same moment you revoke, then hunt sign-in logs for that app ID, unfamiliar tenants, and non-browser user agents hitting OneDrive.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FxMXmyI/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/yQG7pONSsFrhaIqtQ09gpfR07bqmbs5EzC4Lul-agss=452">
+                                    <span>
+                                        <strong>Handle Redirect (17 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    EDR products typically register callbacks on handle creation to monitor when processes call OpenProcess so they can strip access rights before a handle to a sensitive process like lsass is delivered. This article demonstrates a technique in which an attacker calls OpenProcess on a benign process (like notepad.exe) and then redirects the received handle to the sensitive process to evade EDR detection. To detect this attack vector, a security product running at the kernel level can periodically scan all process handle tables and compare ObjectPointerBits decoded EPROCESS against the process that owns the table.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fpages.awscloud.com%2Fawsmp-gim-i0v9-webinar-sec-grc-security-lab-grc-security-lab.html%3Ftrk=351a7c3a-1186-4574-a8eb-5f5b9837c220%26sc_channel=el%26sp=ZJfkIJq6qY20olSXnimOM5b0/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/F9oiQHrZF08HS0NRNa-p5-gomVyJOfoKzUNixOe8k40=452">
+                                    <span>
+                                        <strong>Secure cloud AI with stronger GRC (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Watch this on-demand security demo from AWS and SANS Institute to see how governance, risk, and compliance strategies can help address risk across identity, data, APIs, and agentic workflows. Learn approaches for access control, data protection, and visibility. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fpages.awscloud.com%2Fawsmp-gim-i0v9-webinar-sec-grc-security-lab-grc-security-lab.html%3Ftrk=351a7c3a-1186-4574-a8eb-5f5b9837c220%26sc_channel=el%26sp=ZJfkIJq6qY20olSXnimOM5b0/2/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/zAnMC8UEtPx2kU4ESdp0cQE71aO3DY9lgaUv-gTkzBI=452" rel="noopener noreferrer nofollow" target="_blank"><span>Watch now and explore AWS Partner solutions in AWS Marketplace.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.outerlimit.com%2F%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/Dwq-dqo8c6P3ncAKmsXXjqywA7ZsZC-ixubWeup3qiQ=452">
+                                    <span>
+                                        <strong>Outerlimit (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Outerlimit provides a decentralized authorization layer for autonomous software agents. It finds agents, monitors behavior, and enforces policies at execution time. The system restricts token use by scope, location, and conditions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FOrbitCurve%2Ffirmware-reverse-engineering%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/WN9QE6aeYhRzyZXY8spfpMWTI-vLf3p9yPojcCYOaIY=452">
+                                    <span>
+                                        <strong>Firmware Reverse Engineering Skills (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A collection of five agent skills for firmware extraction, static analysis, Ghidra reverse engineering, emulation, and security reporting.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fimmanuwell%2Fpktz%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/lIzihtWBJB1xIwgNicibKgw1pSTnZB-8xK7_MhF0S7I=452">
+                                    <span>
+                                        <strong>pktz (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    pktz is an eBPF-powered network traffic monitor with per-process and per-connection reporting.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Farstechnica.com%2Fsecurity%2F2026%2F09%2Fmicrosoft-disrupts-ai-assisted-platform-that-compromised-12000%2F%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/KSoayC9qwd6bJHx0CzO5gZD5xN-1x--vW1SOg6sJdwk=452">
+                                    <span>
+                                        <strong>Microsoft disrupts AI-assisted platform that compromised 12,000 accounts (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    EvilTokens, a Telegram-sold subscription service ($1,500 upfront, $500 monthly), abused Microsoft Entra device code authentication to compromise 12,000 accounts across 10,000 organizations before a Microsoft-led operation seized 50 websites and 150 domains, and the UK's Met Police arrested two men. Its AI chatbot analyzed 5,000 compromised emails at a time to identify who could approve payments, who they reported to, and which impersonation ruses would send funds to attacker accounts. Microsoft described it as a shift where criminals can make sense of a compromised inbox in minutes rather than days.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.synapticsystems.de%2Fnorth-koreas-hangro-revisited%2F%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/z5yFWgr3FewItV0mCD1WKI8I3N-zW03vKBCnVOz3TDs=452">
+                                    <span>
+                                        <strong>North Korea's Hangro Revisited (20 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Hangro, North Korea's SoftEther-derived VPN and mail client for officials abroad, added a July 2026 management certificate whose SAN lists hosts in Pyongyang and Khabarovsk plus an internal CGNAT address, while its older 2024 chain fails every signature check, including the root against itself. Its Chinese callback traces to six Shenyang assignments under a single 2008 Silibank registry contact, though silibank[.]com lapsed and was re-registered in 2023. The researcher describes the DPRK "return leg" as layered rather than a single pipe, with dead-drop pickup during Chinese office hours, 10 GB ETRN-enabled mail relays for bulk transfer, and Hangro for interactive sessions, though no actual traffic was observed.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fanthropic-and-openai-models-still.html%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/STRat4b8ULuqs5J1L5D-HTaPr7uYBZ_MkwYPbe0OFrQ=452">
+                                    <span>
+                                        <strong>Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Anthropic's Opus 5.5 escaped or tampered with its sandbox in 1.5% of unguarded tests. With package-registry credentials, it took harmful actions in roughly half of simulated exercises. OpenAI's GPT-6 Luna bypassed “access denied” controls in 42% of runs - Sol did so in 64%. OpenAI plans third-party reviews covering safeguards, capabilities, and misalignment incidents.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F22%2Fuk-cops-arrest-2-eviltokens-suspects-microsoft-seizes-50-phishing-kit-websites%2F5298317%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/Sijju32SBz17gInFffah5NIVXzcrMzm9wfiSTwFP7lQ=452">
+                                    <span>
+                                        <strong>UK cops arrest 2 EvilTokens suspects, Microsoft seizes 50 phishing kit websites (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Microsoft and UK police disrupted EvilTokens, a Microsoft device-code phishing service.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftechcrunch.com%2F2026%2F09%2F22%2Fstolen-passwords-are-exposing-americas-water-providers-to-hackers%2F%3Futm_source=tldrinfosec/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/n-BbcdPaDJaqlsfpYX5FZJbsUeX7540W1tCvRKOoGwk=452">
+                                    <span>
+                                        <strong>Stolen passwords are exposing America's water providers to hackers (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    SpyCloud found stolen credentials at 1,787 of 10,000 US water providers reviewed.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/qoVwLxT1zOQfHwHIrshgeRCvDv4sVyWWmHvT5bwa_nM=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/TgEUnnh_FZzkSW5ze6904R5B-BwhVjmIhyIN0hue-1g=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/Dk-1m62ORz9iCNbq_gjsMhX6POHo67jBHMltUmni0n0=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/8QaJaXOqkn8mAphQ16p-G4kDNucdulkMQFVurT9br5U=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/1sLovtcFUdBCGd6DjzqM3dIC-PVACPNm6_k9eHGaaa4=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/nDK5Ifr6iCE3GfYrtJxZB5w557NYM86Npd46YPd7zNo=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/YC4R5lPjrBYx9sfVn1QIOpXrl-WpaHvx_CHL6_aJsNk=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/VRM2jNBpJBUJhW6g7974ZeBjLW4clj2RCf-tZG6Ky78=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/pSTiFcbyIkpXA55VpL-oNnyjls2K5NlyI2CvFnc2258=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/O5CjWR_3VI6nNSl4zIouneWt6PCNogyD8Sod6ngzi3o=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=c32358f0-b806-11f1-a602-f90dfad7d387%26pt=campaign%26pv=5%26spa=1790254903%26t=1790255938%26s=1d04f9d33ed96fb3e1718e0343b32a6efc9dde678753f17f42036a7242ff3348/1/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/Z5HDIgMwlEX5ut4AJtLFt4aDdcQxjfEYLz0-kHp1c4k=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0d391bad9-24e393bb-dc2c-42b8-9904-1f5ab2072387-000000/YsGb8amsBzNXQHuHnRXoreIRFFi20wzVSyU4gc0bSus=452">
+</body></html>
