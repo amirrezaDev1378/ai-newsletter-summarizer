@@ -1,0 +1,521 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>GitLab incoming email addresses embed non-expiring tokens that act as the owner across accessible projects. A leaked address can create merge&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/QIZAbBfBRr-ALcrvBFP5muaXTua1j0t8MrorPsEYO6c=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/qbZ2bbZNbso5fA_hgywEl-sTruY6XGfjIBCf5taOLo4=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=a3d574ee-b8cc-11f1-aa15-ff83c0c8e406%26pt=campaign%26t=1790342297%26s=d6c26384ea4755c0cede71c52e96563cc21a66d9a53e583f9857baab802d1e20/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/jYleLK-L7BOczQPCJWRZvqlhIEy3jZjDgqL9a9Jq0gI=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fluma.com%2Fguwf7bbi%3Futm_source=sfwebinar%26utm_medium=newsletter%26utm_campaign=2026-09-25_tldr_infosec_primary_autonomous_security_ltd%26utm_content=header_how_we_accelerated%26utm_term=2026-09-25_tldr_infosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/IIbByIESsNXVITHPAYolhl_uiVhQax8qK0c07WWw5-s=452"><img src="https://images.tldr.tech/autonomoussecurity.png" alt="Luma"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-09-25</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fluma.com%2Fguwf7bbi%3Futm_source=sfwebinar%26utm_medium=newsletter%26utm_campaign=2026-09-25_tldr_infosec_primary_autonomous_security_ltd%26utm_content=header_how_we_accelerated%26utm_term=2026-09-25_tldr_infosec/2/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/a2F5y4dtXha_7HtFw42NZYqxHEexZBdsLtcOfYSU3nk=452">
+                                    <span>
+                                        <strong>How We Accelerated Product Development 10x, With a Secure Software Factory (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Everyone can ship fast. The challenge is shipping reliably, securely, and autonomously, with minimal human involvement or none at all.<p></p><p>Join Dr. Ariel Shiftan, Co-Founder &amp; CTO of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fluma.com%2Fguwf7bbi%3Futm_source=sfwebinar%26utm_medium=newsletter%26utm_campaign=2026-09-25_tldr_infosec_primary_autonomous_security_ltd%26utm_content=body_intro_autonomous_security%26utm_term=2026-09-25_tldr_infosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/V_vBZp213m53WirdQfJV6iDfSEdnbfdyI5kyOvTqHjE=452" rel="noopener noreferrer nofollow" target="_blank"><span>Autonomous Security</span></a>, for an inside look at the architecture behind their autonomous software factory:</p>
+
+<ul>
+<li>How AI agents move from tasks to end-to-end delivery</li>
+<li>The risks of long-running AI workflows, and how to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fluma.com%2Fguwf7bbi%3Futm_source=sfwebinar%26utm_medium=newsletter%26utm_campaign=2026-09-25_tldr_infosec_primary_autonomous_security_ltd%26utm_content=body_outro_keep_them_secure_under%26utm_term=2026-09-25_tldr_infosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/xuSs_-yzHsuSMTeI9ZmhzCan6CvIAcG1CYzoIw0UD84=452" rel="noopener noreferrer nofollow" target="_blank"><span>keep them secure and under control</span></a></li>
+<li>The KPIs and trade-offs that matter when AI, not humans, drives development</li>
+</ul>
+
+<p>See how they built it, what they learned, and how it changed the way they develop software.</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fluma.com%2Fguwf7bbi%3Futm_source=sfwebinar%26utm_medium=newsletter%26utm_campaign=2026-09-25_tldr_infosec_primary_autonomous_security_ltd%26utm_content=cta_reserve_spot%26utm_term=2026-09-25_tldr_infosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/a3eSgZpmXrvdGcXPEOaf89Iy_9v70ulY6EewfwxXA3Y=452" rel="noopener noreferrer nofollow" target="_blank"><span>Reserve your spot</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.aikido.dev%2Fblog%2Fgraphalgo-terraform-go-modules%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/5B_I3doJE5XD_cCzb9ifh4XCdioShrxXkv3713KN02w=452">
+                                    <span>
+                                        <strong>Graphalgo campaign spreads to Terraform providers and Go Modules (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Graphalgo malware appeared in two Terraform providers and two Go modules. Trigger conditions hide execution until targeted inputs appear, and the payload reports host data through Slack, receives encrypted commands through Slack and an Arbitrum Sepolia contract, then runs Go or Node code. Aikido recommends removing affected packages, isolating exposed hosts, rotating credentials, reviewing deployments, and reimaging machines.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FRmdDFw/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/PuMFv8aucnlqeFe_hHow7M6cPV5yYxZ7B2cdgrJCpZg=452">
+                                    <span>
+                                        <strong>GitLab Email Addresses Can Be Weaponized for Supply Chain Attacks (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    GitLab incoming email addresses embed non-expiring tokens that act as the owner across accessible projects. A leaked address can create merge requests, submit patches, or push code to private projects after changing project identifiers, and can be used to bypass IP restrictions via email. Aikido recommended that organizations reduce their attack surfaces by preemptively rotating the access tokens in their GitLab email addresses and by scanning for these addresses in their development environments and repositories as if they were any other secrets.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fplaceholder-third-partycom-referenced.html%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/pNCvdLv9HcFHvplVBCV7Qou2zkvVeyrWrc5tOYzspr0=452">
+                                    <span>
+                                        <strong>Placeholder third-party[.]com Referenced Across 1,700+ Repositories Now Serves Malicious Content (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Someone registered third-party[.]com, a non-IANA-reserved placeholder cited in 1,700+ GitHub repos, including AI agent skills and MCP docs, and it now serves a ClickFix PowerShell lure only to Windows visitors, while yoursite[.]com and your-domain[.]com push scams to macOS users that static scans miss.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.crowdstrike.com%2Fen-us%2Fblog%2Fphantomraven-llm-generated-information-stealer-for-bug-bounty-hunting%2F%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/zwwMijpUBO153v-QGqzLtzImqqVvfq_TJdBwVuSdDQE=452">
+                                    <span>
+                                        <strong>PhantomRaven: An LLM-Generated Information Stealer Developed for Bug Bounty Hunting (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A bug bounty hunter built PhantomRaven, an LLM-generated JS info-stealer, and pushed it through typosquatted npm packages that used HTTP-URL dependencies to fetch payloads on install. It grabs OS/hostname/IP data, Git/npm credentials, and CI/CD env vars from GitHub Actions, GitLab CI, Jenkins, and CircleCI, then sends data via HTTP GET/POST. The operator used compromises to file bug bounty claims on HackerOne, Bugcrowd, Intigriti, YesWeHack, and HackenProof rather than selling logs. Npm 12+ now blocks preinstall scripts by default. Use --ignore-scripts and a private registry to block this vector.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.intigriti.com%2Fresearchers%2Fblog%2Fhacking-tools%2Fhacking-ai-customer-service-agents%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/QVVlXnqUiYHSRk3pzvINUW6ZzqvA_cOR-bAvS78hOCw=452">
+                                    <span>
+                                        <strong>Hacking AI Customer Service Agents (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    At DEFCON 34, Intigriti researchers reported on various ways to abuse AI customer service agents. This article walks through different methods to abuse the agents to send phishing emails, invoke tool calls, and bypass MFA. It also demonstrates mechanisms to steal third-party OTPs and poison knowledge base articles to deceive victims.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.threatdown.com%2Fblog%2Fcarbonato%2F%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/gxR1mnhj55b7Xxzg-EueNsQ2S9_kJ-gBlzUejC9DHYA=452">
+                                    <span>
+                                        <strong>CARBONATO: a botnet built around an AI agent (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CARBONATO worms through unauthenticated Docker daemons on port 2375 via privileged, host-mounted containers, then installs the stock open-source Hermes Agent and overwrites its SOUL.md persona so that Telegram-tasked LLM sessions run post-exploitation and loot AI API keys before SSH credentials. ThreatDown recovered the toolkit from the crew's own open registry, which doubles as the fleet's update server, and ties the operators to Costa Rica through voseo Spanish, UTC-6 build timestamps, and a +506 Telegram handle. Keep the Docker API off the network, hunt for a SOUL.md containing "GH0ST" rather than blocklisting the legitimate hermes-agent package, and inventory and rotate AI API keys like bank credentials.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2Fcase-studies%2Fthreatspike-adds-up-to-75000-in-net-new-business-pipeline-per-campaign-with-tldr%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=secondary09252026%26sp=k-4XNgvljTzK2VR4hdH22CFn/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/lUvMUFCULfWc5eS0vkoFplC7XsprDWSjz-ZYNC5xD2k=452">
+                                    <span>
+                                        <strong>Help your marketing team find its next channel (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    ThreatSpike tried TLDR after Google and LinkedIn ads fell short. Its campaigns now generate $25K–$75K in new business pipeline each. If your company markets a cybersecurity product, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2Fcase-studies%2Fthreatspike-adds-up-to-75000-in-net-new-business-pipeline-per-campaign-with-tldr%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=secondary09252026%26sp=k-4XNgvljTzK2VR4hdH22CFn/2/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/OwiZwRtcPjqvhgndAwwWIOI7XhMdNHW2cI1-J51D2Lo=452" rel="noopener noreferrer nofollow" target="_blank"><span>share this case study with your marketing team</span></a>.
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fisland.io%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/wC2h1Ye1RSe7jRCyLA950e4Kkl7V0LmCVgYRYdVtX1g=452">
+                                    <span>
+                                        <strong>Island (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Island runs an enterprise browser and SASE platform combining ZTNA, device posture checks, and inline DLP to block unapproved clipboard, download, and screen-capture actions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fngwg%2Fceasta%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/zNuq0opd3OFpAGv0GLvzzf8YPCgo-q1J0q7o5WnER3Y=452">
+                                    <span>
+                                        <strong>ceasta (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    ceasta is a single C++ tool that combines an IDA-style disassembler, a pseudocode decompiler, a function graph, and an x64dbg-style debugger for PE, ELF, and raw shellcode, with a full GUI on Windows and a CLI with a ptrace debugger on Linux. Its built-in MCP server (ceasta-cli mcp target.exe) lets Claude Code or Cursor decompile, rename, and diff builds. With --allow-debug, it can also set breakpoints and call functions in the running process. The decompiler is best-effort, with no types or structs yet.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fprefix.dev%2Fblog%2Fpixi-audit-beta%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/7tt58vQYAcN6zPM-irTNo4td56qLoxWeBKgxXa2DjSg=452">
+                                    <span>
+                                        <strong>Introducing the Pixi Audit Beta (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Pixi Audit, now in beta, scans Pixi lock files for vulnerable conda-forge and PyPI packages, and --fix bumps direct dependencies to the lowest compatible fixed version before re-running pixi update. Matching relies on Basilisk, prefix.dev's new conda-forge vulnerability database, which links repackaged conda-forge builds to their upstream PURL and CPE identities so existing OSV and NVD advisories apply. For CI, --severity high sets the failure threshold, with JSON and SARIF output, though it doesn't cover statically linked binaries yet.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F24%2Fopenai-agents-infiltrated-australian-government-website%2F5298702%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/CrqGoEGBfftFokjlDujsZUHRdlUVZ5Hv_hEOQq2E6_I=452">
+                                    <span>
+                                        <strong>OpenAI agents ‘infiltrated Australian government website' (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    An OpenAI agent gained unauthorized access to a Medicare statistics portal in June. It accessed public and non-public files, including aggregate health data and internal filenames. Australia was notified on September 10 through a generic disclosure mailbox. Officials later said agents also targeted two state-government sites.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.helpnetsecurity.com%2F2026%2F09%2F22%2Felsevier-domains-hijack-lapsus%2F%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/EPDP3aQJdFv_JY923qE7SDb9TjL3g4EqLpmHGc3BLeY=452">
+                                    <span>
+                                        <strong>Brief hijack makes Elsevier domains redirect to LAPSUS$ “Chapter II” page (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Elsevier.com, Evolve.elsevier.com, and Submit.elsevier.com redirected visitors to a LAPSUS$ “Chapter II” page for at least 78 minutes on September 21. Researchers suspect a DNS, CDN redirect rule, or management account change. Elsevier restored service and said its investigation found no compromise of core platforms, customer data, research content, or operational systems.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloud.google.com%2Fblog%2Ftopics%2Fthreat-intelligence%2Fhardening-code-pipelines-and-ci-cd-infrastructure%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/OD6-e3xRpJVKtzpG8-G07iEd0F-eK4gzL8ZSHwV1jwI=452">
+                                    <span>
+                                        <strong>Proactive Defense: Hardening Code Pipelines and CI/CD Infrastructure (17 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Mandiant published a five-pillar blueprint (endpoint, repositories, artifacts, CI/CD, and deployment) for hardening the SDLC, prompted by campaigns that poison GitHub Actions caches, extract OIDC tokens, and repoint mutable action tags to publish malicious packages that still carry valid provenance. Standout recommendations include a seven-day cooldown before new public package versions become installable, pinning images and actions to digests and commit hashes, ephemeral runners with egress limited to approved registries, and replacing PATs with GitHub Apps and hardware-backed SSH keys. It also addresses AI coding agents, advising teams to keep .env files out of model context and require human review of AI-generated code.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FKT7PWU/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/Gk00zoBP4cuc_2eWC_VuvvQccPTEWh-BhDfIMPQWbg8=452">
+                                    <span>
+                                        <strong>Astrana Health Data Breach Impacts Private, Confidential Information (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers spoofed Astrana Health's main phone number and impersonated staff to access company servers.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcanonical.com%2Fblog%2Faccelerating-delivery-of-cve-fixes-with-a-new-kernel-release-strategy%3Futm_source=tldrinfosec/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/vArIY8IXlZx9IOmaSq7DBZPqmvlo82H4nlKj68aazOo=452">
+                                    <span>
+                                        <strong>Accelerating delivery of CVE fixes with a new Kernel release strategy (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Canonical is replacing Ubuntu's 4-week regular and 2-week security kernel SRU cycles with overlapping 2-week cycles that ship a kernel every week.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FfsPfYh/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/LXvzR7uykcSOT8v8nR0XodnLzviC80XJwwWMqIpvOA4=452">
+                                    <span>
+                                        <strong>CISA: Ransomware gangs now exploiting critical TeamCity flaw (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CISA has flagged CVE-2026-63077, an unauthenticated RCE in JetBrains TeamCity On-Premises reachable through the agent polling protocol, as exploited in ransomware attacks.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/jDm0lX-u7HF7Q2-l--JBjNQbkm9sJKb8WNO9NTprQAE=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/O912W7UUaBomMr4goM9aTLBacq0-txGAFubznT6EbTY=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/2gnN6jVwe03yETd3xUcNZum6YhkOW3VyBR2n6CYa3TA=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/AYCUp9xEjwYEFtDS5jCGdK78cCeeUqfCzucYCsmAshg=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/dT3OTUy9eK7o_PaJEFPi3JwXbhr2z3qMFQzldy36pt0=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/T0jdjxKMZH4-GAUlVsvHI2OA9HlI5rOWCML3BUY6StM=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/yH7WghwfH9oJg6WwsGYWmG7ae4rDUto4OySIxU3A6oo=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/ExVAtsLm0q4QEErGC-a2CUkXR76j_j1ZqcJfOgXTg1s=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/aP6WYsjzQTzkVSHu_aY0Ql-XRVOwZoMPhZs1Ddhewvc=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/IIoq4mERw5yc8YQ11slFOaMXj-dwfwd8qKM4XH4Da58=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=a3d574ee-b8cc-11f1-aa15-ff83c0c8e406%26pt=campaign%26pv=5%26spa=1790341297%26t=1790342297%26s=e36bb141b328439101e33753d5fa5ac60e672214824136b7a45c7daf51fcd87e/1/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/NBX63BZuMWoUQEnKc0ZAcA8KFAxfWRJ_7ytdRMyzKSI=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0d8b777d1-b7b611d0-d449-490e-85f5-33552392411a-000000/hzj8QWYL0ZxC_mHDLN3p26ivStNERSVFmEhdT0UkJhA=452">
+</body></html>
