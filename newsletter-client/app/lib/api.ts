@@ -42,11 +42,21 @@ export async function fetchText(url: string) {
   return data;
 }
 
+export type SelectedSummary = {
+  date: string;
+  item: SummaryItem;
+};
+
+export type ArticleNeighbors = {
+  previous?: SelectedSummary;
+  next?: SelectedSummary;
+};
+
 export function findSummary(
   list: SummaryList | undefined,
   date: string | null,
   id: string | null,
-) {
+): SelectedSummary | undefined {
   if (!list?.length) return undefined;
 
   if (date && id) {
@@ -67,4 +77,25 @@ export function findSummary(
   const firstItem = firstGroup?.items[0];
   if (!firstGroup || !firstItem) return undefined;
   return { date: firstGroup.date, item: firstItem };
+}
+
+export function adjacentSummaries(
+  list: SummaryList | undefined,
+  date: string,
+  id: string,
+): ArticleNeighbors {
+  if (!list) return {};
+
+  const articles = list.flatMap((group) =>
+    group.items.map((item) => ({ date: group.date, item })),
+  );
+  const index = articles.findIndex(
+    (article) => article.date === date && article.item.id === id,
+  );
+  if (index === -1) return {};
+
+  return {
+    previous: articles[index - 1],
+    next: articles[index + 1],
+  };
 }

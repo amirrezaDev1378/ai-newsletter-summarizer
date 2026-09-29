@@ -1,9 +1,11 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { NewspaperIcon, PanelLeftIcon, RefreshCwIcon } from "lucide-react";
 import { useSearchParams } from "react-router";
 
+import { ArticlePager, type ArticleDirection } from "~/components/article-pager";
 import { MarkdownView } from "~/components/markdown-view";
 import { SummaryList } from "~/components/summary-list";
+import { ArticleVisitedBadge } from "~/components/visited-badge";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
@@ -15,22 +17,47 @@ import {
   SheetTrigger,
 } from "~/components/ui/sheet";
 import { Skeleton } from "~/components/ui/skeleton";
+import { useArticleVisitTracker } from "~/hooks/use-article-visit-tracker";
 import { useMarkdown } from "~/hooks/use-markdown";
 import { useSummaryList } from "~/hooks/use-summary-list";
-import { findSummary } from "~/lib/api";
+import { useVisitedArticles } from "~/hooks/use-visited-articles";
+import { adjacentSummaries, findSummary, type SelectedSummary } from "~/lib/api";
 import { formatGroupDate, titleFromMarkdown } from "~/lib/format";
+import { articleVisitKey } from "~/lib/visited-articles";
+
+const REFRESH_INDICATOR_MIN_MS = 300;
 
 export function NewsletterReader() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [pendingDirection, setPendingDirection] = useState<ArticleDirection | null>(null);
+  const [holdForKey, setHoldForKey] = useState<string | null>(null);
+  const holdRef = useRef<string | null>(null);
+  const mainRef = useRef<HTMLElement>(null);
+  const articleEndRef = useRef<HTMLDivElement>(null);
   const listQuery = useSummaryList();
+  const { isVisited, markVisited, markUnread } = useVisitedArticles();
   const selected = findSummary(
     listQuery.data,
     searchParams.get("date"),
     searchParams.get("id"),
   );
   const markdownQuery = useMarkdown(selected?.item.markdownLink ?? null);
+  const articleKey = selected
+    ? articleVisitKey(selected.date, selected.item.id)
+    : null;
+  const isCurrentVisited = selected
+    ? isVisited(selected.date, selected.item.id)
+    : false;
+  const isArticleLoading = Boolean(
+    selected &&
+      !markdownQuery.error &&
+      (markdownQuery.isLoading || !markdownQuery.data),
+  );
+  const neighbors = selected
+    ? adjacentSummaries(listQuery.data, selected.date, selected.item.id)
+    : {};
 
   useEffect(() => {
     if (!selected) return;
@@ -47,14 +74,60 @@ export function NewsletterReader() {
     );
   }, [searchParams, selected, setSearchParams]);
 
+  if (holdForKey !== null && holdForKey !== articleKey) {
+    holdRef.current = null;
+    setHoldForKey(null);
+  }
+
+  useLayoutEffect(() => {
+    mainRef.current?.scrollTo({ top: 0 });
+  }, [articleKey]);
+
+  useArticleVisitTracker({
+    articleKey,
+    enabled: Boolean(markdownQuery.data) && !markdownQuery.error,
+    isVisited: isCurrentVisited,
+    suppressed: holdRef.current === articleKey || holdForKey === articleKey,
+    markVisited,
+    scrollRootRef: mainRef,
+    endRef: articleEndRef,
+  });
+
   function selectSummary(date: string, id: string) {
+    setPendingDirection(null);
     setSearchParams({ date, id });
     setMobileOpen(false);
+  }
+
+  function openNeighbor(article: SelectedSummary, direction: ArticleDirection) {
+    setPendingDirection(direction);
+    setSearchParams({ date: article.date, id: article.item.id });
+    setMobileOpen(false);
+  }
+
+  function markCurrentUnread() {
+    if (!articleKey) return;
+    holdRef.current = articleKey;
+    setHoldForKey(articleKey);
+    markUnread(articleKey);
+  }
+
+  async function refresh() {
+    setIsRefreshing(true);
+    const startedAt = performance.now();
+    try {
+      await Promise.allSettled([listQuery.mutate(), markdownQuery.mutate()]);
+    } finally {
+      const remaining = REFRESH_INDICATOR_MIN_MS - (performance.now() - startedAt);
+      if (remaining > 0) await wait(remaining);
+      setIsRefreshing(false);
+    }
   }
 
   const selectedTitle = markdownQuery.data
     ? titleFromMarkdown(markdownQuery.data, "Summary")
     : undefined;
+  const activeDirection = isArticleLoading ? pendingDirection : null;
 
   return (
     <div className="flex h-dvh flex-col bg-background">
@@ -66,22 +139,23 @@ export function NewsletterReader() {
             <PanelLeftIcon />
             <span className="sr-only">Open summaries</span>
           </SheetTrigger>
-          <SheetContent side="left" className="w-[min(20rem,90vw)] p-0">
-            <SheetHeader className="border-b">
+          <SheetContent side="left" className="w-[min(20rem,90vw)] gap-0 p-0">
+            <SheetHeader className="shrink-0 border-b">
               <SheetTitle>Summaries</SheetTitle>
             </SheetHeader>
-            <div className="overflow-y-auto p-4">
-            <SidebarBody
-              isLoading={listQuery.isLoading}
-              error={listQuery.error}
-              onRetry={() => void listQuery.mutate()}
-              groups={listQuery.data}
-              selectedDate={selected?.date}
-              selectedId={selected?.item.id}
-              selectedTitle={selectedTitle}
-              onSelect={selectSummary}
-            />
-            </div>
+            <SidebarSlot>
+              <SidebarBody
+                isLoading={listQuery.isLoading}
+                error={listQuery.error}
+                onRetry={() => void listQuery.mutate()}
+                groups={listQuery.data}
+                selectedDate={selected?.date}
+                selectedId={selected?.item.id}
+                selectedTitle={selectedTitle}
+                isVisited={isVisited}
+                onSelect={selectSummary}
+              />
+            </SidebarSlot>
           </SheetContent>
         </Sheet>
 
@@ -111,24 +185,12 @@ export function NewsletterReader() {
         <Button
           variant="ghost"
           size="icon"
-          onClick={async () => {
-            setIsRefreshing(true);
-            try {
-              await Promise.all([
-                listQuery.mutate(),
-                markdownQuery.mutate(),
-              ]);
-            } finally {
-              setIsRefreshing(false);
-            }
-          }}
-          disabled={isRefreshing || listQuery.isValidating || markdownQuery.isValidating}
+          onClick={() => void refresh()}
+          disabled={isRefreshing}
         >
           <RefreshCwIcon
             className={
-              isRefreshing || listQuery.isValidating || markdownQuery.isValidating
-                ? "animate-spin"
-                : undefined
+              isRefreshing ? "animate-spin motion-reduce:animate-pulse" : undefined
             }
           />
           <span className="sr-only">Refresh</span>
@@ -136,9 +198,9 @@ export function NewsletterReader() {
       </header>
 
       <div className="flex min-h-0 flex-1">
-        <aside className="hidden w-72 shrink-0 overflow-y-auto border-r md:block">
-          <div className="p-4">
-            <p className="mb-4 px-1 text-sm font-medium">Archive</p>
+        <aside className="hidden w-72 shrink-0 flex-col border-r md:flex">
+          <p className="shrink-0 px-4 pt-4 pb-3 text-sm font-medium">Archive</p>
+          <SidebarSlot>
             <SidebarBody
               isLoading={listQuery.isLoading}
               error={listQuery.error}
@@ -147,14 +209,16 @@ export function NewsletterReader() {
               selectedDate={selected?.date}
               selectedId={selected?.item.id}
               selectedTitle={selectedTitle}
+              isVisited={isVisited}
               onSelect={selectSummary}
             />
-          </div>
+          </SidebarSlot>
         </aside>
 
-        <main className="min-w-0 flex-1 overflow-y-auto">
+        <main ref={mainRef} className="min-w-0 flex-1 overflow-y-auto">
           {listQuery.error ? (
             <EmptyState
+              fill
               title="Could not load the summary list"
               description="Check the list URL and try again."
               action={
@@ -162,56 +226,125 @@ export function NewsletterReader() {
               }
             />
           ) : listQuery.isLoading ? (
-            <ReaderSkeleton />
-          ) : !selected ? (
+            <ReaderFrame>
+              <ReaderSkeleton />
+            </ReaderFrame>
+          ) : !selected || !articleKey ? (
             <EmptyState
+              fill
               title="No summaries yet"
               description="When markdown files are published, they will show up here."
             />
-          ) : markdownQuery.error ? (
-            <EmptyState
-              title="Could not load this summary"
-              description="The markdown file may have moved or is temporarily unavailable."
-              action={
-                <Button onClick={() => void markdownQuery.mutate()}>
-                  Retry
-                </Button>
-              }
-            />
-          ) : markdownQuery.isLoading || !markdownQuery.data ? (
-            <ReaderSkeleton />
           ) : (
-            <div className="mx-auto w-full max-w-3xl px-4 py-8 md:px-8 md:py-10">
-              <p className="mb-3 text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                {formatGroupDate(selected.date)}
-              </p>
-              <MarkdownView content={markdownQuery.data} />
-              <Separator className="mt-10" />
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-                <p>Source file {selected.item.id}.md</p>
-                <div className="flex items-center gap-4">
-                  <a
-                    href="https://github.com/amirrezaDev1378"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://github.com/amirrezaDev1378/ai-newsletter-summarizer"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Project Repo
-                  </a>
-                </div>
+            <ReaderFrame>
+              {markdownQuery.error ? (
+                <EmptyState
+                  title="Could not load this summary"
+                  description="The markdown file may have moved or is temporarily unavailable."
+                  action={
+                    <Button onClick={() => void markdownQuery.mutate()}>
+                      Retry
+                    </Button>
+                  }
+                />
+              ) : null}
+              {isArticleLoading ? <ReaderSkeleton /> : null}
+              {markdownQuery.data ? (
+                <ArticleBody
+                  date={selected.date}
+                  articleKey={articleKey}
+                  isVisited={isCurrentVisited}
+                  content={markdownQuery.data}
+                  endRef={articleEndRef}
+                  onMarkUnread={markCurrentUnread}
+                />
+              ) : null}
+              <div className="mt-10">
+                <ArticlePager
+                  previous={neighbors.previous}
+                  next={neighbors.next}
+                  pendingDirection={activeDirection}
+                  isLoading={isArticleLoading}
+                  onOpen={openNeighbor}
+                />
               </div>
-            </div>
+              {markdownQuery.data ? (
+                <ArticleMeta sourceId={selected.item.id} />
+              ) : null}
+            </ReaderFrame>
           )}
         </main>
       </div>
+    </div>
+  );
+}
+
+function ArticleBody({
+  date,
+  articleKey,
+  isVisited,
+  content,
+  endRef,
+  onMarkUnread,
+}: {
+  date: string;
+  articleKey: string;
+  isVisited: boolean;
+  content: string;
+  endRef: RefObject<HTMLDivElement | null>;
+  onMarkUnread: () => void;
+}): ReactNode {
+  return (
+    <>
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          {formatGroupDate(date)}
+        </p>
+        <ArticleVisitedBadge
+          articleKey={articleKey}
+          isVisited={isVisited}
+          onMarkUnread={onMarkUnread}
+        />
+      </div>
+      <MarkdownView content={content} />
+      <div ref={endRef} className="h-px" aria-hidden />
+    </>
+  );
+}
+
+function ArticleMeta({ sourceId }: { sourceId: string }): ReactNode {
+  return (
+    <>
+      <Separator className="mt-10" />
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+        <p>Source file {sourceId}.md</p>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/amirrezaDev1378"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://github.com/amirrezaDev1378/ai-newsletter-summarizer"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            Project Repo
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function SidebarSlot({ children }: { children: ReactNode }): ReactNode {
+  return (
+    <div className="relative min-h-0 flex-1">
+      <div className="absolute inset-0">{children}</div>
     </div>
   );
 }
@@ -224,6 +357,7 @@ function SidebarBody({
   selectedDate,
   selectedId,
   selectedTitle,
+  isVisited,
   onSelect,
 }: {
   isLoading: boolean;
@@ -233,11 +367,12 @@ function SidebarBody({
   selectedDate?: string;
   selectedId?: string;
   selectedTitle?: string;
+  isVisited: (date: string, id: string) => boolean;
   onSelect: (date: string, id: string) => void;
-}) {
+}): ReactNode {
   if (isLoading) {
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 px-4">
         <Skeleton className="h-4 w-24" />
         <Skeleton className="h-14 w-full" />
         <Skeleton className="h-4 w-20" />
@@ -248,7 +383,7 @@ function SidebarBody({
 
   if (error) {
     return (
-      <div className="space-y-3 text-sm">
+      <div className="space-y-3 px-4 text-sm">
         <p className="text-muted-foreground">Failed to load summaries.</p>
         <Button variant="outline" size="sm" onClick={onRetry}>
           Retry
@@ -257,9 +392,13 @@ function SidebarBody({
     );
   }
 
-  if (!groups?.length) {
+  if (!groups) {
+    throw new Error("Summary list is missing");
+  }
+
+  if (groups.length === 0) {
     return (
-      <p className="px-1 text-sm text-muted-foreground">No summaries found.</p>
+      <p className="px-4 text-sm text-muted-foreground">No summaries found.</p>
     );
   }
 
@@ -269,14 +408,23 @@ function SidebarBody({
       selectedDate={selectedDate}
       selectedId={selectedId}
       selectedTitle={selectedTitle}
+      isVisited={isVisited}
       onSelect={onSelect}
     />
   );
 }
 
-function ReaderSkeleton() {
+function ReaderFrame({ children }: { children: ReactNode }): ReactNode {
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-4 px-4 py-8 md:px-8 md:py-10">
+    <div className="mx-auto w-full max-w-3xl px-4 py-8 md:px-8 md:py-10">
+      {children}
+    </div>
+  );
+}
+
+function ReaderSkeleton(): ReactNode {
+  return (
+    <div className="space-y-4">
       <Skeleton className="h-4 w-32" />
       <Skeleton className="h-10 w-3/4" />
       <Skeleton className="h-4 w-full" />
@@ -291,18 +439,26 @@ function EmptyState({
   title,
   description,
   action,
+  fill = false,
 }: {
   title: string;
   description: string;
   action?: ReactNode;
-}) {
+  fill?: boolean;
+}): ReactNode {
   return (
-    <div className="flex h-full items-center justify-center p-8">
-      <div className="max-w-sm space-y-3 text-center">
+    <div className={fill ? "flex h-full items-center justify-center p-8" : "py-8"}>
+      <div className="mx-auto max-w-sm space-y-3 text-center">
         <h2 className="font-heading text-lg font-medium">{title}</h2>
         <p className="text-sm text-muted-foreground">{description}</p>
         {action}
       </div>
     </div>
   );
+}
+
+function wait(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, ms);
+  });
 }
