@@ -1,0 +1,491 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Alibaba has open-sourced OpenCodeReview, an Apache-2.0 code review tool that combines deterministic file and rule matching with AI analysis to&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/IsPzZVlHxFSxKyagbUX2RVvT8S_uF-3V77BKD4V2zMI=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/NkCb9MgPFblI3Gw5BVBEJ5vXjjPtToHWimKIghZSiSk=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=c725eb8e-baf9-11f1-829d-e36c2f43af32%26pt=campaign%26t=1790594730%26s=fb1a3846f7c2ab1e10c6abf229118f3e64bdfa9dc7b3eeed7e178103fd1db88b/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/XGz_oVceJ7ASdfArivB68MgzyO1S12OG9UoJjxDDZ6g=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fsecuring-scaling-interoperability-agent-protocols%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-devops-28sep2026%26utm_content=tldr-devops-28sep2026_header_handshakes_matter_key%26utm_term=-_2026-09-28/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/_k91eXa58c9mF4r-Nx1VpqAUCxYsYe6agGfII28D5f0=452"><img src="https://images.tldr.tech/googlecloud2.png" alt="Google Cloud"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-09-28</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fsecuring-scaling-interoperability-agent-protocols%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-devops-28sep2026%26utm_content=tldr-devops-28sep2026_header_handshakes_matter_key%26utm_term=-_2026-09-28/2/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/AqDcLreOg1lwwNLAkodwvSvtp_-GGXcS-4_fj5gq1FQ=452">
+                                    <span>
+                                        <strong>🤝 Handshakes matter: Key tools to scale interoperability (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Standardized protocols enable AI agents to communicate, delegate tasks, and access external tools. In this<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fsecuring-scaling-interoperability-agent-protocols%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-devops-28sep2026%26utm_content=tldr-devops-28sep2026_Body_technical_session%26utm_term=-_2026-09-28/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/9bxfmFj1PRB8y8GVjT9xbcmuNbAS-MCc6P77HQbh_dY=452" rel="noopener noreferrer nofollow" target="_blank"><span> technical session</span></a>, the Google Cloud engineering team dives deep into:
+
+<p></p>
+
+<ul>
+<li>The open Agent-to-Agent (A2A) protocol</li>
+<li>The Model Context Protocol (MCP)</li>
+<li>Protocols for payment authorization and UI</li>
+<li>How protocols fit together in the Google AI stack</li>
+</ul>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fsecuring-scaling-interoperability-agent-protocols%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-devops-28sep2026%26utm_content=tldr-devops-28sep2026_cta_watch_session_demand%26utm_term=-_2026-09-28/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/6J48B61c3KqD1PaFUMhNR6oVu14hoGKoH4pf1OzPtvQ=452" rel="noopener noreferrer nofollow" target="_blank"><span>➡️ Watch the session on-demand </span></a>to build interoperable, multi-agent systems without compromising enterprise governance.</p>
+
+<p>➡️ Still navigating your journey to enterprise AI? <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloud.google.com%2Fblog%2Fproducts%2Fai-machine-learning%2F20-questions-for-the-agentic-enterprise%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-devops-28sep2026%26utm_content=tldr-devops-28sep2026_cta_20_questions_agentic%26utm_term=-_2026-09-28/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/KHZFn2GN-RYaRybnjztwd_5j-ftApBs2TjPqXPq9xIw=452" rel="noopener noreferrer nofollow" target="_blank"><span>Read 20 questions for the Agentic Enterprise.</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fnews%2F2026%2F09%2Falibaba-opencodereview%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/6XnCfzIDK-I7qMAPBh-68A-Qh-rA5Ry3hrGzZjdbI3A=452">
+                                    <span>
+                                        <strong>Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Alibaba has open-sourced OpenCodeReview, an Apache-2.0 code review tool that combines deterministic file and rule matching with AI analysis to flag issues like null pointers and SQL injection. It matches Claude Code's precision using roughly one-ninth the tokens in tests, though outside reviewers found recall as low as 20 percent.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fabout-aws%2Fwhats-new%2F2026%2F09%2Famazon-cloudwatch-omni-ai%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/orBvpQoiyNo3a-y2ekXPLoLVSl1TSrhen1xKEVuOqCM=452">
+                                    <span>
+                                        <strong>Amazon CloudWatch Omni: AI-first observability for agents and applications (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS has launched CloudWatch Omni, an AI-powered observability experience that combines OpenTelemetry with CloudWatch's scale to unify telemetry across accounts, regions, and other clouds into one team-organized workspace. It offers natural language querying, automatic dependency mapping, and a dedicated agent observability workflow spanning frameworks like LangGraph, CrewAI, and the Vercel AI SDK.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fnetflixtechblog.com%2Ftrading-a-cloud-identity-for-your-own-workload-attestation-on-managed-compute-516d5a29b252%3Fsource=rss----2615bd06b42e---4%26utm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/YoMkUTf_X3TFyRqsUygQpdzpz2vd_uPAiHmBdlbcprY=452">
+                                    <span>
+                                        <strong>Trading a Cloud Identity for Your Own: Workload Attestation on Managed Compute (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Netflix engineers developed a method to bridge AWS IAM roles with internal identities for Apache Spark workloads on Amazon EMR. The system maps each Data Project identity to a dedicated IAM role, allowing a control plane to sign metadata that an identity service verifies against a cloud proof of possession. This approach ensures that workloads running on managed compute obtain valid certificates from the internal PKI, called Metatron, without relying on the workload's own account of itself.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.blog%2Fengineering%2Farchitecture-optimization%2Fimproving-site-performance-by-shipping-more-css%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/5OCPoWjDXSMZXGtZX0eUxQ26emLTN0vjGPClkyF-lME=452">
+                                    <span>
+                                        <strong>Improving site performance by shipping more CSS (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    GitHub migrated github.com from CSS-in-JS to CSS Modules to remove client- and server-side styling overhead at scale. The migration cut Primer server-side rendering time by 55%, reduced component initialization time by 25%, and later improved SSR by up to 22% on some pages while thousands of sx usages were gradually replaced through feature flags, visual regression tests, codemods, and staged rollouts.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.schneems.com%2F2026%2F09%2F24%2Fa-type-stronger-than-the-sum-of-its-components%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/AECpeZMsxKRl752ON0AMORXKyclh2uQlzkfSJyK1IxU=452">
+                                    <span>
+                                        <strong>A Type Stronger than the Sum of its Components (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Rust APIs can encode stronger invariants by turning individual enum variants into dedicated types instead of accepting broader string or path values. Wrapping std::path::Component variants in types such as NormalComponent and ParentDirComponent lets the compiler enforce properties like safe path joins and prevents callers from passing values containing .., absolute paths, or other invalid components.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_medium=sponsorship%26utm_source=tldr%2B%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-secondary-placement_20260928_x/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/5uvpP8-hi6OQ9Wy5aUzbYIsDYmq93A2g6-GgH61NH00=452">
+                                    <span>
+                                        <strong>GitLab Transcend is coming October 6 (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Join Gene Kim of IT Revolution and engineering leaders from Hilton and Thrive Market, with GitLab, to learn how to prove every step of the agentic SDLC. Watch agentic workflows run on real codebases, not just demo repos. Registration includes a free seat at the $1,600 Enterprise AI Summit livestream. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_medium=sponsorship%26utm_source=tldr%2B%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-secondary-placement_20260928_x/2/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/N5mPDy2h6Mu0b6ZSiNzhkHJibqOS0W3Ce-fFtUIm_9E=452" rel="noopener noreferrer nofollow" target="_blank"><span>Save your spot →</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fvercel-labs%2Fscriptc%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/9zE4Iyk2IKSvsi8CdBe9WOiMLhzte9KTd4c_z9GU4I4=452">
+                                    <span>
+                                        <strong>scriptc (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    scriptc compiles TypeScript and JavaScript to native executables, WebAssembly modules, and other outputs including C and LLVM IR. It uses the TypeScript compiler for parsing and type checking, and static builds include a small native runtime without a JavaScript engine.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fmvschwarz%2Fopenrig%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/Z6hM31sQGIzCCxgPF7ycckhFZtz6oEiT0GZ7WcnqTUY=452">
+                                    <span>
+                                        <strong>Openrig (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    OpenRig is a multi-agent harness that manages Claude Code and Codex as a unified team within tmux sessions. It defines agent teams in YAML and includes starter configurations like a four-seat conveyor, a product-team with seven seats, and a secrets-manager example that runs a HashiCorp Vault instance. The tool requires Node.js and integrates a local daemon, CLI, terminal UI, and MCP server. Users should read the documentation about system changes before installing, as OpenRig writes hooks, trust settings, and provider integrations during setup.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloud.google.com%2Fblog%2Fproducts%2Fdata-analytics%2Fmaximize-apache-spark-availability-with-flexible-vms%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/Uu6dZ_tGe_nu3WUfKiT5rdOp46hNxvUTGawlnBwFytI=452">
+                                    <span>
+                                        <strong>Maximizing Apache Spark availability: Mitigating compute stockouts with flexible VMs and other best practices (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Google's Managed Service for Apache Spark now supports flexible VMs, letting clusters rank multiple acceptable machine families and storage types so provisioning automatically falls back during regional capacity stockouts rather than failing. Google recommends pairing ranked configurations with AutoZone routing, autoscaling, and regional fallbacks for resilience.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fcontainers-cross-tenant-vulnerability%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/a00uAz8TBIkJnAtCDLK8jgh_8dicD9oNVyVNRW_Yblg=452">
+                                    <span>
+                                        <strong>How Cloudflare addressed a cross-tenant data exposure vulnerability in Containers (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Security researcher Oren Yomtov reported a vulnerability in Cloudflare Containers that allowed residual data recovery from storage blocks used by other customers on the same host. The issue stemmed from a configuration setting that skipped zeroing newly allocated blocks, potentially exposing directory structures, database pages, and application data. Cloudflare has remediated the vulnerability across its fleet and found no evidence of malicious exploitation.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.megaport.com%2Flp%2Ftldr-devops-storage%2F%3Futm_source=tldr%26utm_medium=sponsored%26utm_campaign=ME2608-1787292290-tldr_devops_storage%26utm_content=%26utm_term=/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/4jphBBGZxyORzde82UTQ0XHpHG0MTXrEd43BxVglpGs=452">
+                                    <span>
+                                        <strong>Move Your Data Without Surprise Storage Fees (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Megaport Standard Object Storage gives DevOps teams S3-compatible storage with no egress, API, or retrieval fees, making costs predictable across backup, recovery, archiving, and large-scale data movement workflows.<p></p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.megaport.com%2Flp%2Ftldr-devops-storage%2F%3Futm_source=tldr%26utm_medium=sponsored%26utm_campaign=ME2608-1787292290-tldr_devops_storage%26utm_content=%26utm_term=/2/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/lGNWn6pWkQQR-N55vAyLAPpuXgB2Gy4kyz_H7_DwXDw=452" rel="noopener noreferrer nofollow" target="_blank"><span>Skip the egress fees →</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fnews%2F2026%2F09%2Fbun-AI-rewrite-zig-rust-4-months%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/bt3yt83I95zeKIW6PY_rYCsxPdTEWz3xV8yR34ZPcBM=452">
+                                    <span>
+                                        <strong>Bun Rewrites 535K Lines of Zig into Rust in Four Months, Eliminates Numerous Memory Leaks (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Bun's creator rewrote the JavaScript runtime's 535,000-line Zig codebase into Rust in four months using AI-orchestrated implementer, reviewer, and fixer agents at a cost of $165,000 in tokens.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Faws%2Fintroducing-enhanced-custom-event-buses-in-amazon-eventbridge-for-enterprise-scale-event-driven-applications%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/qcwT84Bl5fxgRS8sZKKuiCkAvLXfYeDxeg3RYfrCdb0=452">
+                                    <span>
+                                        <strong>Introducing enhanced custom event buses in Amazon EventBridge for enterprise-scale event-driven applications (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS has announced an enhanced custom event bus for Amazon EventBridge that organizations can share across all accounts.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Faws-insights%2Fwrong-not-broken%2F%3Futm_source=tldrdevops/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/IkYLPoCkvISb5bmEvqOHk7JbtebM-ZvsAvGiRD_cWG8=452">
+                                    <span>
+                                        <strong>Wrong, not broken (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Traditional observability can show that an AI agent is fast, available, and error-free while missing whether its output is actually correct.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/Zrx0bZFWnAiHYTHaDu6zzXxxVI4opcn4KqO2FEEg-hU=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/3anL5pmIdhZbqG0LZW7tXj7IwSCmjlg7jnTCJ_smvCs=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/H4sDvF1A8r3djniUl7B55A9gjksuhEUUNju3nE4WGf8=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/NaFDtdCraEr6LgsPlJPOQZzIDHa5SYyusmaNj8u7At0=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/CpMFU5aq4JCxpKwaBjv6qcCPEGSFJ7D4cIBO9u32dCU=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/xgBVEAnM3RnTTJM-Hubx5iqZYfvR2yXDN8C-_ArfZWE=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/gj2EGYhlGRZAtjMRXArIioq08ovAXaiOwLvRtTt8Ar0=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/HKipArRkFwPWLQsuikMvCOakltyHgsaoBFJtXeUoiYU=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/BaQovzlj2hcwIqeeiRlw0Py6Vdp3QK3gPZtkPhSOGjI=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=c725eb8e-baf9-11f1-829d-e36c2f43af32%26pt=campaign%26pv=5%26spa=1790593294%26t=1790594730%26s=43f29e264c0194d0ee7e5c3b0dfc846bf29cbc9f24938949568fa5d22b8c8d64/1/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/LfvCI1m9znRNAs5Z4EdGLOwCACNTkTVSVaFP0WooNuU=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0e7c34ad0-ff8b1453-2dc1-4e00-8ae8-b74f3e2fb5f5-000000/bXCj6ekhxo4G9-SBBetewSLqCbzGRj_hx4tYLmsFkS8=452">
+</body></html>
