@@ -1,0 +1,504 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>CISA added CVE-2026-88771 and CVE-2026-88772 to its KEV catalog after confirming global exploitation. Both have CVSS scores of 9.5. The flaws&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/MndblrQHFHa2R42h2SNJwgMVpC9GJoWNR3hwY0rNTGA=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/5OcPXHOzcV87UYTzxhAROGe-jDFJKeDuTYlapJd9rwU=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=393bd820-bbe8-11f1-8762-4f63efdd3568%26pt=campaign%26t=1790687613%26s=3ddf69cccdbd2b67f305ffddbe4636718f7804a871a54aac69a01c2090180b8d/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/c3VGT013nshTKLKP54EyGI9IQqR8P2Nb9DhUqnQvnf4=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fexpose-the-ai-traffic-your-security-stack-never-logged%2F%3Futm_source=tldr_information_security%26utm_medium=newsletter%26utm_campaign=containing_an_authorized_actor%26utm_content=header_43_percent_ai%26utm_term=2026-09-29/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/4zm2Ea8BxkCftmyASLUhaEKysGNm7tLdiSR4nEoMcLI=452"><img src="https://images.tldr.tech/airia.png" alt="Airia"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-09-29</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fexpose-the-ai-traffic-your-security-stack-never-logged%2F%3Futm_source=tldr_information_security%26utm_medium=newsletter%26utm_campaign=containing_an_authorized_actor%26utm_content=header_43_percent_ai%26utm_term=2026-09-29/2/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/WkAqHPOrYOzxwM7lxXm34mgLU2wH9Sq_FZywkO62-CU=452">
+                                    <span>
+                                        <strong>43 percent of AI-related security incidents involve shadow AI… (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    …and most teams aren't ready for it. After all, if a developer sent customer data to an unapproved model provider this morning, would anything in your stack have recorded it?<p></p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fexpose-the-ai-traffic-your-security-stack-never-logged%2F%3Futm_source=tldr_information_security%26utm_medium=newsletter%26utm_campaign=containing_an_authorized_actor%26utm_content=Body_airia_ebook%26utm_term=2026-09-29/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/s6LD4U01u8z-C9SseaXWZ28mEfruF6Uoz3aXxLQxv0I=452" rel="noopener noreferrer nofollow" target="_blank"><span>This Airia eBook</span></a> lays out how to close the governance gap with:</p>
+
+<ul>
+<li><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fexpose-the-ai-traffic-your-security-stack-never-logged%2F%3Futm_source=tldr_information_security%26utm_medium=newsletter%26utm_campaign=containing_an_authorized_actor%26utm_content=Body_9_signals%26utm_term=2026-09-29/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/ouw34n79zLD5SwCD4lSkqAGVPOFt0sAhFuq_4JNnbbw=452" rel="noopener noreferrer nofollow" target="_blank"><span>9 signals</span></a> that cover the sources of AI risk: your workforce, your infra, and your code&nbsp;</li>
+<li>6 requirements to look for in a discovery solution</li>
+<li>1 data-driven look at the state of play in AI security</li>
+</ul>
+
+<p>The EU AI Act's reporting clock starts at detection. Are you ready?</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fexpose-the-ai-traffic-your-security-stack-never-logged%2F%3Futm_source=tldr_information_security%26utm_medium=newsletter%26utm_campaign=containing_an_authorized_actor%26utm_content=cta_guide%26utm_term=2026-09-29/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/pCIHPAMkpG187Jgi4UET0R969TPxjsoOJec9exAO68I=452" rel="noopener noreferrer nofollow" target="_blank"><span>Get the guide</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fcisa-says-attackers-are-exploiting-two.html%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/qiN6_L-Q0TAXlqklYNAyTTrcXWor5WXbqUijlaBwsW8=452">
+                                    <span>
+                                        <strong>CISA Says Attackers Are Exploiting Two Critical Citrix NetScaler Flaws Globally (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CISA added CVE-2026-88771 and CVE-2026-88772 to its KEV catalog after confirming global exploitation. Both have CVSS scores of 9.5. The flaws enable unauthenticated command execution, remote code execution, or denial of service. CVE-2026-88772 requires DTLS, which VPN virtual servers enable by default. Administrators should patch, inspect for compromise, isolate affected appliances, revoke access, rotate secrets, and investigate connected systems.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.koreatimes.co.kr%2Fbusiness%2Fbanking-finance%2F20260928%2Fbok-faces-scrutiny-over-cybersecurity-after-staff-data-breach%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/La7WyvQHExbmwJrlKEWsY8TnYMms-eOzwPb9oTYj2jc=452">
+                                    <span>
+                                        <strong>BOK Faces Scrutiny Over Cybersecurity After Staff Data Breach (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Bank of Korea (BOK) is facing scrutiny over its cybersecurity program following a data breach earlier this year. The breach occurred in May and June after attackers accessed a GitHub system used by a contractor for an online training program. The exposed data included employees' names, email addresses, phone numbers, positions, duties, and passwords for 186 employees.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fl1oA3C/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/_KqdVhk_sSneMlzEfQJq4e1RHSFdkBCcho14Zi8203I=452">
+                                    <span>
+                                        <strong>Elementor WordPress Flaw Lets Attackers Create Admin Accounts (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Security firm Patchstack warns users of the Elementor Website Builder plugin for WordPress about a new CSRF vulnerability that could allow unauthenticated attackers to create admin accounts. The vulnerability is a one-click attack that requires an authenticated admin to click a link that sends a malicious REST API request to create the account.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fdepthfirst.com%2Fresearch%2Fcontainers-are-no-longer-safe%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/JKlak5e8RYH9jzotnMsFbjLkq6fiXRCdeaouX2cQ5yM=452">
+                                    <span>
+                                        <strong>Containers Are No Longer a Security Boundary (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The traditional view of containers as a strong security and isolation mechanism is being eroded by the plethora of kernel vulnerabilities being uncovered. This article explains how a recent vulnerability in the AF_UNIX subsystem can be leveraged by attackers for container escapes. The authors recommend moving untrusted workloads to MicroVMs like Firecracker or Kata Containers for untrusted workloads.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fopensourcemalware.com%2Fblog%2Fpolinrider-is-a-b-testing-its-way-past-your-detections%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/K95jtH8xecrDCDcyGkYNqmvr_pj7dM2C5Ml6_YJE5Pc=452">
+                                    <span>
+                                        <strong>PolinRider is A/B Testing its Way Past Your Detections (11 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    DPRK's PolinRider malware spread through GitHub organizations by force-pushing rewritten commits from infected developers' machines, planting VS Code folderOpen tasks that run an obfuscated JavaScript payload disguised as fa-solid-400/500/900.woff2 and, since September 28, fa-solid-300.llf. OpenSourceMalware traced 853 force-pushes across three Binary-Mindz repos and found variants with different paths, obfuscators, and C2-reported build markers running in parallel, which it reads as deliberate A/B testing, while copied author dates and reused commit messages quietly reverted three cleanup attempts. Defenders should flag fake fonts by file content rather than name, scan every branch through bare clones, audit force-push activity logs, and enforce force-push blocking and signed commits on all branches.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Funit42.paloaltonetworks.com%2Fdetecting-exposed-aws-iam-credentials%2F%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/3UYnhPCoMIIx1xgr9NfX_VWERS5o6cfIEE5kzC1XnwQ=452">
+                                    <span>
+                                        <strong>From Exposure to Lockdown: How AWS Neutralizes Compromised IAM Credentials through Managed Policies (15 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS automatically attaches the AWSCompromisedKeyQuarantineV3 managed policy to an exposed IAM user within 10 seconds of a public GitHub push, with the CloudTrail AttachUserPolicy event misleadingly attributed to the victim's IAM user rather than to AWS automation. Each policy version tracked real-world attack evolution, with permissions added to block Lambda-based cryptomining, S3 data deletion for extortion, and Bedrock API abuse after Permiso's research exposed unauthorized InvokeModel calls. Security teams should alert on unexpected AttachUserPolicy events in CloudTrail, treat the quarantine event as confirmation of active key exposure rather than as resolution, and rotate all affected credentials before removing the policy.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fsecurity%3Ftrk=f0fbaa5f-56bd-4cb5-809c-43a043260943%26sc_channel=el/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/ny9isu6PGOx2RsYRfgJvOQkkstk8PLw5AihAviTpcnc=452">
+                                    <span>
+                                        <strong>Match the security pattern to the problem (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Containers, remote teams, and data lakes each need different security approaches. Explore tutorials that walk you through zero-trust networking, identity-based access controls, and Amazon S3 antivirus scanning — matched to the right layer in your AWS environment. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fsecurity%3Ftrk=f0fbaa5f-56bd-4cb5-809c-43a043260943%26sc_channel=el/2/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/oZUYnzru7OrjxYJxvTAh9V4yY2EZiVsYR0h1svyNF8U=452" rel="noreferrer noopener" target="_blank"><span><strong>Learn security patterns &gt;</strong></span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fkontext.security%2F%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/4eKD0n4PklZVGjfAZsL0t6b6z-6CJfVKf_etITW0ZRQ=452">
+                                    <span>
+                                        <strong>Kontext Security (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Kontext Security runs a runtime enforcement platform that sits between AI agents and the systems they access. It checks each agent's identity, task, target resource, and requested action in real time. Teams can start in observe mode, then switch to enforcement to block unauthorized actions, as the platform logs every agent action and the decisions made, with context.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fnvidianews.nvidia.com%2Fnews%2Fopen-agent-safety-platform%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/3u2ZV3r5Wfu9Vqz2RfPhaQifzODldL5H2Qn4h-aK0gw=452">
+                                    <span>
+                                        <strong>NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    NVIDIA launched the Open Agent Safety Platform with OpenShell runtime controls and Sentry monitoring on BlueField-4 DPUs. OpenShell traces actions, applies policies, and supports NVIDIA, Arm, and Intel systems. Sentry verifies identity, inspects requests, protects data access, and can quarantine agents within milliseconds. Anthropic, Salesforce, SAP, Scale AI, and more than 100 organizations are integrating these controls.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Ftantosec%2Ftturl%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/PPGkDXGTvlbgb1ek6Ncdo0XAjmOJBSuIvtMoQ6gD2Is=452">
+                                    <span>
+                                        <strong>tturl (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    tturl is an HTTP/2 CLI for finding tiny timing differences by releasing batches of requests and recording response arrival order, then either showing what happened or helping to distinguish a repeatable arrival-order signal from noise.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Falonsovidales.github.io%2Fprotonmail-sender-spoofing%2F%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/2sFjKcFbc6QvhcRhxMKHCECranwIxCOZgkmAUiimuvE=452">
+                                    <span>
+                                        <strong>Sender spoofing in Proton Mail via display-name homograph (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Proton Mail's web interface can show a forged sender that looks identical to a real one. The attacker sets a display name containing an address-shaped string like sundar@gmaiI[.]com where the capital I matches lowercase l in the default UI font. Messages from domains without DMARC arrive in the inbox with no authentication banner, even when SPF fails. A Reply-To header can route responses to an attacker's address without showing it unless the user expands headers, and the spoofed sender also appears unchanged in macOS desktop notifications, outside the app interface. The issue was reported in February 2025, confirmed and bounty-awarded in April 2025, and can still be reproduced as of September 2026.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F24%2Fgoogle-to-critical-infra-orgs-our-ai-scanners-wont-be-evil-promise%2F5298685%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/V6aXv3B9SL6zr8zNaIDczQcJdJs6rHutSIyJvl0Aufc=452">
+                                    <span>
+                                        <strong>Google to critical infra orgs: Our AI scanners won't be evil, promise (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Google and Wiz launched Scan for Good using Gemini 3.8 Flash Cyber and Red Agent with authorized scans targeting public websites, APIs, and applications, while human researchers validate findings and handle disclosure. Red Agent found a GitHub Actions injection flaw in Snowflake's connector, allowing command execution. Other cases exposed 8.8 million files, hospital systems, elderly residents' data, and railway administrator sessions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjazho76.github.io%2Fhouse_of_apple_2%2F%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/emRzBWJHPTqgn0P2UgPe-TarR1RD6laO0dmn2tyEKS8=452">
+                                    <span>
+                                        <strong>House of Apple 2 on modern glibc (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    This walkthrough breaks down House of Apple 2, a glibc FSOP technique that bypasses the vtable validation added in newer glibc. It points a FILE structure's vtable to legitimate wide-character stream code, which then dispatches to a second vtable that glibc does not range-check. Step by step in GDB, the author turns that unchecked indirect call into an arbitrary call, pivots the stack, and runs a ROP chain to a shell. The technique still works cleanly on glibc 2.43 (Ubuntu 26.04 and Fedora 44). Exact offsets and gadgets vary between builds, but the underlying control-flow trick remains the same.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F1quxnH/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/VWKEUVLlNOxAA0jHVb9eMUSf2DDmGqLJnXh0KFRlTdY=452">
+                                    <span>
+                                        <strong>DC Health Agency Exposes 400,000 Beneficiary Records (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The District of Columbia's health agency exposed data linked to 399,086 Medicaid and DC Healthcare Alliance beneficiaries.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftherecord.media%2Fhacker-telecom-army-sentenced%3Futm_source=tldrinfosec/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/Mm4RfkW_-VK_6Fczwd2G45t5Bvmz_I-gTMRmbohopd4=452">
+                                    <span>
+                                        <strong>Former US soldier gets nearly six-year sentence for hacking, extorting telecoms (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Former Army soldier Cameron Wagenius received 70 months in prison and nearly $295,000 in restitution.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/qyefQddx1D-QHjTqvyRqD8PmxabkzpiMwKaYVlwuqcA=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/YTZ0BLNmFba88ppvGi0UvcpmAxoCjXUderXvJIsre-U=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/Qbz7FYfjj8rqS080cM0r8xSdXwNL4dxHUxOtC41pFgY=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/-vE3w1b5KAF8dk-gg6xPfbRlzbuVq8Ybn1sxkoIM0ng=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/dsQFana86v9KZFEXi8n8yJdCVfPs3ii2sWkaej5wxuc=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/1xKVH7_oYXePirp9fpUpkD5pZTJ6d6WIASHw6CIzJy4=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/AVxa0Pzc0e7tZoof1_fOBtEmTDmIsHTHE3BLQhv4YqE=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/rFk3-veXURVqVWXhUNXuOreRvv5DPibdggk_gq8Ubz4=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/NBsdixSaM-6bA_aOZMIBCg6uK50NpqEkQejCnFP7YVg=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/Q_a9W-8PNu-nqqle_r0LUKGDaG-5Yyn9IGeArhwfqso=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=393bd820-bbe8-11f1-8762-4f63efdd3568%26pt=campaign%26pv=5%26spa=1790686863%26t=1790687613%26s=5d06743e8274df166eb0dfc2bbe3ccae0018650702415b5fb64bb92065bd9344/1/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/i0Ty0g8nA_YzfuAE37HNHpAGOuJqqX3vOF8HJjuhSog=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0ed4c932d-abd62a70-3349-4a92-acc7-344bb9cfcfab-000000/PymexsydOsKJV3eqtnkxwrhKqttB9vBGtSAAuvuzXkU=452">
+</body></html>
