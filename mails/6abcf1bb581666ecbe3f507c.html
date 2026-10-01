@@ -1,0 +1,481 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Cloudflare has introduced cf, a new command-line interface that allows agents to access over 3,000 operations across the entire Cloudflare API.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/aQIPZqwZZ8ySAruFXfH74wnilUrOlGQsnEVLpEQH-MM=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/64Bdu1YoRBBlNEyepJ1iZ76z3bHnnGnZQGvp8pFxUas=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=94c7ad6a-bcae-11f1-961d-852bb2cfbfc1%26pt=campaign%26t=1790767544%26s=d6693122118d9f8c5d34d9d77fe4a312824bc1820a291247a304390ccc9492dd/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/iOp8aEh3Q_1NdHYxwV5i0P8PoY6lYg1gloKlDzHWVnw=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Fdeep-dive-troubleshooting-end-to-end-observability%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_pri_tecs/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/4KW7YKGJJLeUmfYxVQ2onIUnuDd3w38qbOQFzfX8WaA=452"><img src="https://images.tldr.tech/awsmarketplace.png" alt="AWS"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-09-30</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Fdeep-dive-troubleshooting-end-to-end-observability%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_pri_tecs/2/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/3xYmQfnv-iRW6akyQJFhiz6NxOMDq3BeffJojLmqsSw=452">
+                                    <span>
+                                        <strong>In-depth tutorials to start right now (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Incidents fragment across dashboards — metrics in one tool, logs in another, traces in a third. Three tutorials in AWS Marketplace, one for each runtime:<p></p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Fdeep-dive-troubleshooting-end-to-end-observability%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_pri_tecs/3/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/AJAAHQEh89qFx_x4LmFqtaFNZqseIcdLatnD8XF8P3c=452" rel="noreferrer noopener" target="_blank"><span><strong>Tutorial</strong></span></a>: trace an Amazon ECS alert to its root cause</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Foptimizing-kubernetes-monitoring%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_pri_teks/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/bFeF4xsMAZQUy7aOIJo1mI2npE6X9D_6Nq6N3eKRPKU=452" rel="noreferrer noopener" target="_blank"><span><strong>Tutorial</strong></span></a><strong>:</strong> consolidate Amazon EKS monitoring without losing coverage</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Fobservability-for-aws-serverless-applications%2F%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_pri_tsrv/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/A4Ub_fVrF9SUjUQBwHM0zIiNCe_54h5uPZv79OZ8ZZU=452" rel="noreferrer noopener" target="_blank"><span><strong>Tutorial</strong></span></a><strong>:</strong> instrument AWS Lambda in depth with traces, metrics, and logs
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fcloudflare-cf-cli-launch%2F%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/0fPnrk0PewZ2HAXGf4S6iVcMkE180Khh0MS0SSc9w8g=452">
+                                    <span>
+                                        <strong>Introducing cf: the agentic CLI for the entire Cloudflare API (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare has introduced cf, a new command-line interface that allows agents to access over 3,000 operations across the entire Cloudflare API. Wrangler previously supported around 280 commands, and agent usage of that tool reached 48% last week. cf uses a unified API generation pipeline to standardize commands and defaults to JSON output for agents. Cloudflare will provide maintenance support for Wrangler for 18 months after the beta ends.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.pulumi.com%2Fblog%2Fself-driving-infrastructure-pulumi-jev%2F%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/R8MQ0NVfR96NEsLtgn5PQR_5k7oDxn_6o2TAMjuOqxc=452">
+                                    <span>
+                                        <strong>Self-driving infrastructure with Pulumi and Jev (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    TypeSafe AI opened early access to Jev, a model that uses decision-making primitives to help apps manage infrastructure. Pulumi built GeoDeploy, an open-source tool that uses Jev to automatically compare prices and provision Kubernetes clusters across AWS, Azure, and Google Cloud.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fnews%2F2026%2F09%2Fmodal-scaling-sandboxes%2F%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/PVv9dFEBGgQ4lw7kP8RckNe6MWSPAEyMNj8gXH_QfGc=452">
+                                    <span>
+                                        <strong>Beyond Kubernetes at Modal: How to Scale 1 Million Concurrent Sandboxes in Seconds (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Modal engineers rebuilt their sandbox platform to support millions of concurrent sandboxes by replacing Kubernetes-style centralized coordination with distributed worker state and parallel scheduling. The redesign created one million sandboxes in under 60 seconds with sub-half-second startup times, prompting talk that infrastructure is splitting into separate coordination and execution planes.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.uber.com%2Fus%2Fen%2Fblog%2Fprotecting-against-retry-storms%2F%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/ZzV5PeFfLlz68Nh-kGTTn0-eIPAIeNcViYO8c_omKDg=452">
+                                    <span>
+                                        <strong>How Uber Protects Against Retry Storms (12 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Uber added error ownership to its shared service-mesh infrastructure, so upstream services can distinguish failures they caused from errors merely propagated from deeper dependencies. During a major outage, the mechanism prevented an estimated 9.5 million unnecessary retry requests and reduced the maximum retry-storm radius across user-facing APIs from as high as 25 hops to 3.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.bolna.ai%2Fblog%2Fbigquery-to-clickhouse-15m-call-minutes%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/itafs9nBpTiSOMfF-N9fPEHK65QStujlCTP1WXZKItQ=452">
+                                    <span>
+                                        <strong>BigQuery to ClickHouse at 15M Call Minutes a Day: What Broke, What We Fixed, and How We Cut Costs 6x (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Bolna migrated analytics from BigQuery to ClickHouse, moved expensive CDC deduplication into materialized views, and fixed missing TOASTed JSONB values with REPLICA IDENTITY FULL. Reducing intermediate application writes cut replication traffic, with Bolna reporting roughly 6× lower analytics costs and data availability improving from 5–15 minutes to 1–2 minutes after calls ended.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.liquibase.com%2Fdemo%3Futm_source=tldr-newsletter%26utm_medium=newsletter%26utm_campaign=tldr-newsletter%26utm_content=6.0-launch/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/07xhqktf37nc_clzbEq2h9cPM9QEuvPsqPFKbh4Qt_o=452">
+                                    <span>
+                                        <strong>See, Govern, and Control Database Change in One Place (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Liquibase Secure 6.0 gives DevOps and platform teams centralized visibility, policy management, and role-based control across database change. Standardize how changes reach production without sending developers back to tickets, manual reviews, and one-off scripts. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.liquibase.com%2Fdemo%3Futm_source=tldr-newsletter%26utm_medium=newsletter%26utm_campaign=tldr-newsletter%26utm_content=6.0-launch/2/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/Vnh5flCXHN5p8QsDEaXrXZ1PeqOcxosYosITMzd8kPU=452" rel="noopener noreferrer nofollow" target="_blank"><span>See how Liquibase Secure 6.0 brings database change governance to enterprise scale →</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FVectifyAI%2FPageIndex%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/PKvPVdrjdlpnU_efz3NeF7WV1-Evd3qOky5MApi_AtQ=452">
+                                    <span>
+                                        <strong>Pageindex (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    PageIndex replaces vector indexes with a hierarchical tree index that allows LLMs to reason through documents like a human expert. The tool achieved 98.7% accuracy on FinanceBench, outperforming vector-based RAG.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FNVIDIA%2FOpenShell%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/_I1ROGxyDA77FSiH5KCKEWdrEEvUPZVmNCnGXK3P2SI=452">
+                                    <span>
+                                        <strong>OpenShell (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    OpenShell is an Apache-2.0 runtime for running autonomous agents inside isolated sandboxes with kernel-enforced filesystem, syscall, and network policies. Credentials are injected only for approved endpoints, while proposed policy changes are formally checked before they are applied. The platform also supports Kubernetes deployment, GPUs, and Python, TypeScript, Go, and Rust SDKs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudnativenow.com%2Fcontributed-content%2Fwhat-dependency-mocking-software-needs-to-handle-in-a-cloud-native-architecture%2F%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/rqBC7DAPwxx4HtA6cOp1domeE6cA0k4C2eGit2u380A=452">
+                                    <span>
+                                        <strong>What Dependency Mocking Software Needs to Handle in a Cloud Native Architecture (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Traditional dependency mocking tools break down in cloud native architectures where services deploy independently and drift goes undetected. Effective tools need deployment event awareness, behavior captured from real traffic rather than specs, automatic handling of non-deterministic fields, and cross-service diff visibility, with eBPF-based traffic capture cited as one approach.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fclickhouse.com%2Fblog%2Fcan-your-postgres-survive-a-bad-query%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/WHvQVqQy7VhkWoZ46W9NRievsC2TdtHnNcF4fCxTN48=452">
+                                    <span>
+                                        <strong>Can your Postgres survive a bad query? (16 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Postgres memory limits such as work_mem apply per execution node and per worker rather than per query, allowing seemingly ordinary queries to consume many times the configured amount of memory. Recursive queries can be even more dangerous because some executor hash tables cannot spill to disk, creating workloads that can exhaust memory despite conservative configuration.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F3BTBik/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/vQfjTBYeOBL1AFptNzFU-H29GNz-Vnc_oVe-oPf9rHg=452">
+                                    <span>
+                                        <strong>Is your code protected from day one? (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Security as an afterthought means patches at midnight. Microsoft Azure helps make protection part of your dev lifecycle with Microsoft Defender for Cloud. Ship fast. Ship safely. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F3BTBik/2/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/tYYVo3MzzpI_VZ21FiOD1axoFN6xwU5QXMS-WUqDHpk=452" rel="noreferrer noopener" target="_blank"><span>Get started with Azure →</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.hashicorp.com%2Fblog%2Fterraform-provider-for-google-cloud-80-now-generally-available%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/ZPfYOa5HBSgbnxXXke1K56JHNPi4ZYjIWcQ_mm2gaAc=452">
+                                    <span>
+                                        <strong>Terraform provider for Google Cloud 8.0 now generally available (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    HashiCorp released version 8.0 of the Terraform provider for Google Cloud, a major update that changes the default load balancing scheme, removes resources tied to retired services like Notebooks and IAP OAuth Admin, and converts several list attributes to sets for more predictable plans.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.harness.io%2Fblog%2Fharness-brings-dynamic-ai-discovery-and-runtime-security-to-amazon-bedrock-agentcore-gateway%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/azhPEAHmEtfZS6Gt8pRC6B29c0q-z7UcMXZY05buEuc=452">
+                                    <span>
+                                        <strong>Dynamic AI Discovery &amp; Runtime Security for AgentCore (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Harness integrated its AI posture management and firewall with Amazon Bedrock AgentCore Gateway, automatically inventorying agents, tools, and resources operating in AWS environments.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.databricks.com%2Fblog%2Flakebase-search-state-art-full-text-and-vector-search-postgres%3Futm_source=tldrdevops/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/4Z15IJ89BZ5M1lbH6dyCi3QbSnNIIKvOW1oe9URBTdk=452">
+                                    <span>
+                                        <strong>Lakebase Search: State-of-the-art full text and vector search for Postgres (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Lakebase Postgres now offers generally available search capabilities on AWS and Azure through two new extensions, lakebase_vector and lakebase_text.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/1G2nj60h7XGgf_iK-v0cpcQVMSIk4O-cK28KYj0Wsf0=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/URv_VVemCCyJvzDaQonX2Ei_EGcTuS4RGRyrsSq-R34=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/WjWNbC02eojTMFdELpAOSektvKGGdyyIcL228x1JJE8=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/GsSeisE5Qz5yLjIaCbJxUpF1fWzqoHLOB85aFtcywyI=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/Q67xswv2uAdnAibjBez76UzXdOXJxvbZRjlD4PHNAe0=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/NB3fcH9ty1swpJ-QSy_gtZbl0tq8LNckiZTti67mFk0=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/iiUKMgKVXZ9HZZd3upabs4yy6oMtaHwm841uQSFE9cE=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/v5hpV3nEDkA-QYXAkLnfP4DwlS4-cazvd0UBRiCldms=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/ZhQyKCohUiuZYYIJW4FY7GBddwkVHc5VdNUzbSCHPYs=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=94c7ad6a-bcae-11f1-961d-852bb2cfbfc1%26pt=campaign%26pv=5%26spa=1790766088%26t=1790767544%26s=b6fbd5361a0b8ed06b6fc5ab23c0b5fc148f4136a9a93ba23b274ceb915f8584/1/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/v31Qx_GJdtPOk9h9qDtQvD3mSmkYmwww3boqGxjSu3U=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0f2103862-6a2bd51d-a514-40e5-9f28-95fa6bee7bf4-000000/KtE45NwOT1Ijul1E3j9d7RbBC4DRsFwe8xAiexZw-m8=452">
+</body></html>
