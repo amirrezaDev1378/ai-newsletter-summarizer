@@ -1,0 +1,490 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>The Defense Manpower Data Center exposed unencrypted personal data through a vulnerable file-sharing server. Unauthorized users accessed&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/pfiMQIeDZdnw7G6OrGZdxtrPfJIaxV65OdoWlFllNnU=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/ZObwT9OGeJwtEnF8bMD6TSEOCA83cxPZiqDJWa4aBFQ=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=6676a1e6-bcc2-11f1-bb65-ef421e6624bc%26pt=campaign%26t=1790774435%26s=dd8338c0e336915316bab74eba10a84a61038302d22f7f9941ea3d8f83d60fb6/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/2esbDKZWicpLDOWOUIG-SyoXY_nzVo1sqIyXLXqRp1Y=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fsecurity%2Fsecure-hybrid-network-next-generation-firewall%3Ftrk=7fac0e79-eba2-452c-b776-d84ddf070528%26sc_channel=el/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/CBZ0H_Z5ielhbWwV-VnJ-r_3UagLaY-rJxgc-44eVd8=452"><img src="https://images.tldr.tech/awsmarketplace.png" alt="FortiGate"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-09-30</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fsecurity%2Fsecure-hybrid-network-next-generation-firewall%3Ftrk=7fac0e79-eba2-452c-b776-d84ddf070528%26sc_channel=el/2/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/B84d4TfFuE4gqU2i-noocj195HDYR_Vmb6nAPqs3FL8=452">
+                                    <span>
+                                        <strong>One firewall dashboard for your entire hybrid network (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Hybrid environments mean more flexibility — and more consoles, more policies to sync, and more gaps to miss. This technical article shows how Gateway Load Balancer and <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fpp%2Fprodview-wory773oau6wq%3Ftrk=28c7c7e7-232b-470a-9058-f07394fbc789%26sc_channel=el/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/3_Mo7JSyJrzue3V0lv6PcoZ_1MfkEDAIBN6Skt8RT3Q=452" rel="noreferrer noopener" target="_blank"><span><strong>FortiGate Next-Generation Firewall</strong></span></a><strong> </strong>consolidate it all into a single dashboard.
+
+<p></p>
+
+<p><strong>See how the deployment works:</strong></p>
+
+<ul>
+<li><strong>Gateway Load Balancer integration:</strong> Route traffic to a FortiGate security VPC for unified inspection</li>
+<li><strong>Unified security profiles:</strong> Configure routing tables and shared policies across cloud and on-premises</li>
+<li><strong>Real-time detection and response:</strong> Monitor threats and take action from a single FortiGate dashboard</li>
+</ul>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fsecurity%2Fsecure-hybrid-network-next-generation-firewall%3Ftrk=7fac0e79-eba2-452c-b776-d84ddf070528%26sc_channel=el/3/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/xCnJ7WNot7RA6NFVHgzLNThvi156T53isn5tYoGcmgo=452" rel="noreferrer noopener" target="_blank"><span><strong>Get the technical article →</strong></span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F39St0p/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/pkLnGuGZn8GivFAJ6y0e8_Tp5nuTzHw1eOJTDFr5gs0=452">
+                                    <span>
+                                        <strong>Pentagon Personnel Agency Data Breach Impacts 3 Million People (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Defense Manpower Data Center exposed unencrypted personal data through a vulnerable file-sharing server. Unauthorized users accessed files between October 2025 and July 16, 2026. Records included Social Security numbers, names, birth dates, contact details, demographic data, and military specialties. The breach affects 2.76 million living people and 294,000 deceased individuals.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F09%2Fofficial-mcp-python-sdk-flaw-can-let.html%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/Nn5Pwbm3U2x76ZcH_l677YatAIKZBmeGHdDizgQuvPk=452">
+                                    <span>
+                                        <strong>Official MCP Python SDK Flaw Can Let Malicious Servers Steal OAuth Credentials (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A high-severity flaw in the official MCP Python SDK let malicious MCP servers redirect OAuth token requests to attacker-controlled endpoints. Affected 1.x (1.9.1–1.29.1) and 2.x (2.0.0–2.1.1) clients sent the client secret, authorization code, and PKCE proof key to the attacker, enabling full account takeover with the app's granted permissions. Fixes are in 1.30.0 and 2.2.0. ClientCredentialsOAuthProvider and PrivateKeyJWTOAuthProvider also require passing issuer= to pin the expected login service.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FZNzvI7/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/oDzxk65m3K98lcP-0ux2bE78Nz2vYgnyqf9z2ADAo98=452">
+                                    <span>
+                                        <strong>Automated AI Agent Used to Bread Cybersecurity Nonprofit DIVD (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Dutch Institute for Vulnerability Defense (DIVD) reported that they suffered an AI-driven breach. The organization said that the breach was “loud and very, very messy” with the agent working autonomously and over explaining itself in comments, allowing the DIVD to easily reverse-engineer its attack. The threat actor exploited a vulnerability in a vulnerability in an undisclosed software that the organization stated was not Citrix NetScaler.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.huntress.com%2Fblog%2Fchatgpt-custom-gpts-clickfix-rat%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/AsW3RYO6nio1hOBE8qGiMZ3Hw76Gf8mAoy5XmNj-5PM=452">
+                                    <span>
+                                        <strong>Attackers Abuse ChatGPT Custom GPTs to Deliver RAT via ClickFix (15 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Sponsored Google results led victims to "Plus 5.6," a Custom GPT on chatgpt.com that answered every prompt with a fake outage notice pointing to a Google Sites ClickFix lure, and Huntress tied at least 40 incidents to the campaign. The eight-stage chain sideloaded malicious DLLs through Canon-signed (later Stardock-signed) binaries, hid its loader inside a WAV file and a NuGet package. It then unpacked a full-featured RAT from a custom encrypted file system that located its C2 over DNS-over-HTTPS. The signed hosts change with each wave, so defenders should detect behaviors instead: PowerShell spawning msiexec on GUID-named MSIs in %TEMP%, signed apps running from fake %LOCALAPPDATA%\Programs folders, and self-restoring Run key and scheduled task pairs, which require killing the process before removing persistence.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.microsoft.com%2Fen-us%2Fsecurity%2Fblog%2F2026%2F09%2F28%2Fneedymantis-unpacking-a-post-compromise-malware-family-used-in-targeted-operations%2F%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/6-ZmcmcYcO8nw5K6lZbS6sP-A5zPikgTd330DMDKAdQ=452">
+                                    <span>
+                                        <strong>NeedyMantis: Unpacking a post-compromise malware family used in targeted operations (14 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    NeedyMantis is a modular post-compromise malware family deployed since at least October 2025 by China-based actors, including Storm-3069 from the DAEMON Tools supply chain compromise, against telecoms, universities, intergovernmental organizations, and government contractors. It was sideloaded as fake DLLs alongside legitimate software like Poedit, curl, Vim, and TightVNC, then unpacked from custom XOR-encrypted archives through shellcode loaders into a stripped-down PE format, and communicated over WebSockets with RC4-encrypted traffic and loadable modules. Defenders should hunt for spoofed DLLs such as WinSparkle.dll or libcurl.dll in unusual ProgramData paths, the hard-coded "firefox/21.0" user agent, and connections to corp.tripswithengine[.]com.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fajf66N/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/TZ4eQSTjINVonFEFiHwnpFsZ5GVJdSz5sRcwOaETN5c=452">
+                                    <span>
+                                        <strong>AI Agents Are Privileged Users; Who Is Auditing Their Access? (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Enterprises monitor human logins closely but often grant autonomous AI agents broad production access via long-lived service accounts and API tokens. These agents can initiate, approve, and execute high-value actions end-to-end, collapsing segregation of duties. The piece lays out six controls: isolate agent identities, scope permissions to the minimum needed, assign a business owner, log prompts and tool calls, run periodic access reviews, and build an out-of-band kill switch.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftailscale.com%2Fuse-cases%2Fpam%3Futm_source=tldrsec%26utm_medium=paid-ad-placement/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/viQN0PV9YUMAjcSVjR3mMyM8u-L7Qr_qKbVHKoQHV5I=452">
+                                    <span>
+                                        <strong>Tailscale PAM: credential-free access to your most sensitive infrastructure (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Standing credentials are a liability. Every shared password or SSH key is one more thing an attacker can steal.<p></p><p>Tailscale PAM grants access by identity instead, letting engineers reach databases and clusters without touching a secret. Sessions are logged. No jump hosts, no vaults.</p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftailscale.com%2Fuse-cases%2Fpam%2F%3Futm_source=tldrsec%26utm_medium=paid-ad-placement/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/Fz9Q3LfDAj0gVv9g6hpuxMd23ZSQimOv6c3YqNNvWG8=452" rel="noopener noreferrer nofollow" target="_blank"><span>[Join the Tailscale PAM beta waitlist]</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.rig.security%2F%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/PdBv8vCZKTQyTQproMeuHgr3jFKQM8kTCtnEi8OP8uw=452">
+                                    <span>
+                                        <strong>Rig Security (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Rig Security provides an identity protection platform for agentic AI. It maps identity dependencies across providers, cloud, on-prem, network edges, and endpoints. A lightweight sensor distinguishes AI agent sessions from human sessions and enforces policy at runtime, and the system blocks risky agent actions without disabling the human account.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.mahmoudzohdy.com%2Fdrivers%2F%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/UujmS5VmzQAPT0lt9m14BZ7y3vthwK_lUk-r-9s4Qm4=452">
+                                    <span>
+                                        <strong>Malicious Drivers (Web App)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A searchable list of tracked, signed, and abused kernel drivers.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fnationwide-group-oss%2Fcryptoptic%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/BcadZTqhR6QBk7Yk6HDT9uPZpAw-NoVROz8mjtlFHss=452">
+                                    <span>
+                                        <strong>cryptoptic (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    cryptoptic is a tool that uses CodeQL, orchestrated via GitHub Actions, to scan a repository or entire GitHub organization and produce an inventory of every cryptographic function in use, the library it comes from, and when it gets called.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsecurityaffairs.com%2F199979%2Fcyber-crime%2F24-year-old-arrested-in-dutch-investigation-into-shinyhunters.html%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/ZjM9yu59Ve2XL3f0ipL5VtTXte3_onl7Ggm_060TabE=452">
+                                    <span>
+                                        <strong>24-Year-Old Arrested in Dutch Investigation Into ShinyHunters (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Dutch police arrested a 24-year-old Amsterdam man, identified by multiple sources as Pepijn van der Stap (aka “Umbreon”), in connection with the ShinyHunters hacking group. He previously served time for extorting over a dozen companies, earning €1.5–2.7 million, and was released in December while still facing civil suits.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftechcrunch.com%2F2026%2F09%2F28%2Ffbi-reportedly-declares-cyber-security-incident-after-hackers-steal-agents-personal-data%2F%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/HuPRrIxQxTEnJBFzOdDuGJEN75QQ4M9bhYUtPWEMAvs=452">
+                                    <span>
+                                        <strong>FBI reportedly declares ‘cyber security incident' after hackers steal agents' personal data (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The FBI told staff that a hack of its FBIJobs.gov portal exposed agents' and applicants' names, addresses, job titles, Social Security numbers, and some medical records, including blood and urine samples and psychiatric reports. ShinyHunters says it exploited an Oracle PeopleSoft vulnerability and is not demanding money, but wants the bureau to correct an earlier report about its activities. The portal remains offline, and the bureau has not publicly confirmed whether the breach meets the legal threshold for a “major incident” requiring notification to Congress.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.bbc.com%2Fnews%2Farticles%2Fcm5y5nynl75ko%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/_Fi6Rr_RBg8y7Hmfk52NdD_ELWj3nxsK_hEKFsgvxsc=452">
+                                    <span>
+                                        <strong>OpenAI scraps rollout of new AI model over safety concerns (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    OpenAI will not release GPT-6.1 Astra after tests found problems with scope, authorisation, and reporting completed work.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fsecurity%2F2026%2F09%2F28%2Fjadepuffer-crims-hijacked-azure-identities-and-used-them-to-blow-up-cloud-resources%2F5299591%3Futm_source=tldrinfosec/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/Z_oZwmb1VBBMUYKshgCGTmwC1nMSrNyI7aaMiDeDsQ4=452">
+                                    <span>
+                                        <strong>JadePuffer crims hijacked Azure identities and used them to blow up cloud resources (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Microsoft linked Storm-3168, the actor behind JadePuffer (the first documented agentic ransomware), to an 18-hour June attack in which two hijacked Azure service principals were used for reconnaissance and then destruction, likely after an employee exposed client secrets in a public GitHub issue.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/4Kn0nB9kk-_rnqzEbRv-cA7NojlPPFe6TfqL5lei_ig=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/oegnGdn3UfoER_nwf4re7Yp28W0Azxt4zP2rNdw9Wfc=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/_0rXUTIIUy_zlhx_Kc2QYkH_WjQb-9ajEMPzA4hY3Dw=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/QaG1DFaFPnO-CXTFyV3ei-OAcqG6pUSM6dTi7YfsGCk=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/ocV8LDgZgRV9W56kQkgrAuenvv2onwYH94FxCTrMulM=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/UYGOK-PriX-xYrCMzqT_M3RQw6HHkV-2_ryjKn2hd3k=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/FAXIR54E62EQhLiqJyp_Q7Co48bXRkcqEpTlXpM_THQ=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/0inikgGgyXbgBqYrdN1Omskbf2ZixXg9gGsRFTS1XvE=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/KyXpTekVK2gWEtlgwPMu8-7WY1TvyiVSenXWZfSg0UE=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/-ricOIwwtSoDkWT6OPzHB9pq_lhrQ8VGlJ-Tw8bbi90=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=6676a1e6-bcc2-11f1-bb65-ef421e6624bc%26pt=campaign%26pv=5%26spa=1790773278%26t=1790774435%26s=ad678fda156639547d525b9c7e3bc32eca643ddec7d567a4abe536ec26d50b0f/1/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/KeCwDP47DBBfhTgz_Wq96b1sdtDbH3xYVqzAvVVHAqI=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0f279604e-c9b62a98-bf02-4a40-9b14-2ac58e8c3296-000000/4Hhj3TLi6Dm88tInvr58gvfFwt0G8dEye0aww_IvC4I=452">
+</body></html>
