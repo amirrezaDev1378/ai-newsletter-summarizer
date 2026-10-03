@@ -1,0 +1,477 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>AWS has introduced metadata pre-filtering for Amazon S3 Vectors to improve recall on filtered queries. The feature evaluates metadata&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/M3yrm9XX1GjeK2hOIrjoacaCk6zHpB4gp-JQN9FXK4U=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/qjlSYNIpPZ2OPDER8HOR1YB5MW4rSsYGWv-OnQcVKWw=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=7f1f85a0-be25-11f1-9d77-b38a0c8116a4%26pt=campaign%26t=1790940252%26s=5ceb74e834aba06da59e737c22adbf98687a3ba98e934aedec4e0a395fc033a7/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/HqgoUbJaRRcdJJke1H0GaTZ2CK7ydsJMkDyqsUr6Lhg=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsignup.hosted.unionai.cloud%2Fsign-in%3Futm_source=Influencer%26utm_medium=partnership%26utm_campaign=TLDR%2BDevOps%26utm_content=header_build_manage_centralized%26utm_term=2026-10-/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/YHfAcJjoXBagVPtKecBTWpZpJNaQeltT4xC1OSmk_6I=452"><img src="https://images.tldr.tech/unionai2.png" alt="Union.ai"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-10-02</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsignup.hosted.unionai.cloud%2Fsign-in%3Futm_source=Influencer%26utm_medium=partnership%26utm_campaign=TLDR%2BDevOps%26utm_content=header_build_manage_centralized%26utm_term=2026-10-02/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/Hq2vPInh4VkSjNDBh_iBSHWB-TcefkqgjYT0o9c4vVc=452">
+                                    <span>
+                                        <strong>Build and manage a centralized AI platform in your own cloud (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Run your production AI factories and keep control of your own data, compute, and infrastructure. Union.ai provides platform teams with a durable runtime for sovereign AI, turning data into models, agents, and apps using pure Python.<p></p><p>Run workloads on the Kubernetes infrastructure your teams already use, with managed operations and visibility into every run. If a step fails, execution resumes where it stopped.</p><p>Get started through AWS Marketplace. Connect a cluster in your own AWS account and try Union.ai free for 30 days.</p><p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsignup.hosted.unionai.cloud%2Fsign-in%3Futm_source=Influencer%26utm_medium=partnership%26utm_campaign=TLDR%2BDevOps%26utm_content=cta_own_ai%26utm_term=2026-10-02/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/YCdPO-qgPfRa5cAhWRPJsz2kKCczT6vvoH6-PlFxUsA=452" rel="noopener noreferrer nofollow" target="_blank"><span>Own your AI</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fpq-ca-with-mtcs%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/AAovNJciFlq8z6c6AMpuNFh_qy6REc0G3mYjfq4N7bU=452">
+                                    <span>
+                                        <strong>Building a post-quantum certificate authority with Merkle Tree Certificates (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare is launching a certificate authority that will support Merkle Tree Certificates (MTCs), targeting early 2027 for inclusion in Chrome's Quantum-resistant Root Store. The company will provide standard MTC issuance at no cost. MTCs batch certificates into an append-only Merkle tree to address the scaling issues of post-quantum cryptography, which can increase log storage requirements by 40 times. Cloudflare successfully tested the technology with Chrome, serving billions of MTCs and finding that median performance was 9% faster than classical signature chains.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Faws%2Famazon-s3-vectors-now-supports-metadata-pre-filtering-for-higher-recall-on-filtered-searches%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/XC5LrxNoZVGLMTQzOn5c3LzzHAJhzK8p919Hcz6wGjU=452">
+                                    <span>
+                                        <strong>Amazon S3 Vectors now supports metadata pre-filtering for higher recall on filtered searches (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AWS has introduced metadata pre-filtering for Amazon S3 Vectors to improve recall on filtered queries. The feature evaluates metadata filters before running a similarity search and supports up to 100 filter constraints per query. On highly selective filters, pre-filtering returns up to five times more matching vectors than previous methods. It is available immediately at no additional cost and works on existing indexes without requiring data re-ingestion.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Ffaster-agent-sandboxes%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/mkqGWVsGUELWstAyFj_zFT4zwsIv1AvMK0GJa4GCjOo=452">
+                                    <span>
+                                        <strong>Cloudflare Containers, rebuilt to scale agent sandboxes (15 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare has rearchitected its Containers service to handle agent workloads, allowing code to select the image and instance type at runtime. The update introduces a new scheduling policy that starts containers six times faster, with median startup times falling from over four seconds to 648 milliseconds in independent benchmarks. A filesystem snapshots feature is also available in public beta to let workspaces save and restore their state.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fplatformengineering.org%2Fblog%2Fhow-to-justify-investment-in-a-platform%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/JrVz1nqNxm42h8cgaHyOY9GJSmy9TM-hJoEi71zv3D8=452">
+                                    <span>
+                                        <strong>How to justify investment in a platform (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Gartner forecasts that 40% of companies will downgrade autonomous AI agents by 2027 due to governance gaps found after production incidents. Google's DORA 2025 research found that 90% of organizations already use an internal platform, and 76% have dedicated teams for them. Broadcom research shows 97% of IT leaders believe some public cloud spending is wasted, with cost now exceeding security as the primary concern.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fadaptive-ai-waf-testing%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/xI39wkBokcnSUkvbgbTynnpP8Tb4AejfTQC2M9NPWZo=452">
+                                    <span>
+                                        <strong>We tested our own WAF with frontier AI models. Here's what we found (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare built a dynamic testing tool that uses large language models to iterate attack payloads against its Web Application Firewall. The system ran 1,107 attempts across six attack categories and recorded 49 findings that required human review. Cloudflare used these results to release new detections for SSRF attacks and improve an existing cloud metadata rule.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frunmyjobs.redwood.com%2Flp%2Fdevops-automation%3Futm_source=tldr%26utm_medium=listing%26utm_campaign=devops_secondary/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/j0GZsp43ulY0qroKZ9GnUEzELsexJVhmBE2_DEHefXM=452">
+                                    <span>
+                                        <strong>Automate workloads without the infrastructure overhead (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Redwood is a Gartner SOAP Leader for three years running - and<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frunmyjobs.redwood.com%2Flp%2Fdevops-automation%3Futm_source=tldr%26utm_medium=listing%26utm_campaign=devops_secondary/2/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/txc2XLB5iTxobkAog0jQ3A8cTOBsOFBnQeCSgmnM5wQ=452" rel="noopener noreferrer nofollow" target="_blank"><span> RunMyJobs</span></a> is why. With a 99.95% uptime SLA, Redwood manages the infrastructure and you just use it. No agents, VMs or databases to deploy. Simply build automations and orchestrate apps. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frunmyjobs.redwood.com%2Flp%2Fdevops-automation%3Futm_source=tldr%26utm_medium=listing%26utm_campaign=devops_secondary/3/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/WFsaxmCWzW7lp9WbcPE-ZLLnvRz6SNtvOw6syDAYVJ4=452" rel="noopener noreferrer nofollow" target="_blank"><span>See why 50% of the Fortune 50 trust RunMyJobs</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Ft8y2%2Fdbx%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/UIKcSC3fqXPc7k8kFbiu8BJOM68w8DTMuKvD99SU_AM=452">
+                                    <span>
+                                        <strong>DBX (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    DBX is a 25 MB cross-platform database client that supports over 100 databases, including MySQL, PostgreSQL, SQLite, Redis, and MongoDB. It runs as a native desktop app on macOS, Windows, and Linux, or via Docker and web deployments, without requiring Java, Python, or bundled Chromium. The tool includes an AI assistant that generates SQL from natural language and an MCP server that lets coding agents query databases.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fheygen-com%2Fhyperframes%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/uT31vfU9NpKUePYawkdnfg2xIHi1yCCgc78gYQVMyhg=452">
+                                    <span>
+                                        <strong>Hyperframes (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    HyperFrames is an open-source framework that converts HTML, CSS, and seekable animations into deterministic MP4 videos. The toolkit ships 21 skills that teach AI coding agents the full production loop, from planning and writing valid HTML to rendering with FFmpeg. It renders video by seeking frames in headless Chrome to ensure the same input always produces the same output.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.datadoghq.com%2Fblog%2Fdatadog-code-execution%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/O9Eei3rqO5DDxyH4UPXwvI01DvnsQNTbaBIY2G5FLmY=452">
+                                    <span>
+                                        <strong>Cut AI agent cost and improve accuracy with Code Execution in the Datadog MCP Server (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Datadog's new Code Execution feature lets AI agents run sandboxed JavaScript against its MCP Server, querying, joining, and filtering data across multiple APIs before returning only relevant evidence to the model. Testing across four models showed accuracy gains up to 21.8 points alongside 73% fewer input tokens and 40% fewer tool calls.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fplatformengineering.org%2Fblog%2Fthe-4-levels-of-agentic-software-development%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/lg_PiJ-e9GyM-Kq6rGT8Y_mKu9g5hnNNeOn9UofsgBc=452">
+                                    <span>
+                                        <strong>The 4 levels of agentic software development (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Enterprise AI productivity gains depend on platform maturity rather than model choice, with four levels running from humans approving every change to fully autonomous agents. Most organizations sit between levels one and two, and shifting validation from a single human gate to a continuous loop marks the hardest, highest payoff transition.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_medium=sponsorship%26utm_source=tldr%2B%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-quick-links-placement_20261002_x/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/riMxjAr7Otks7RYmKdg5Bnx0h00mZ32dtZEIMJ2EtcQ=452">
+                                    <span>
+                                        <strong>4 days til GitLab Transcend (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    New platform capabilities demoed on real codebases, plus Gene Kim and engineering leaders on what broke in review and CI in production. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_medium=sponsorship%26utm_source=tldr%2B%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-quick-links-placement_20261002_x/2/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/8Ffhk_iFUIHn0MlS9PmpiC7dOTYd51RXNKlWoVKQxCc=452" rel="noopener noreferrer nofollow" target="_blank"><span>See it live for free on October 6</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgrafana.com%2Fblog%2Ftempo-3-1-release-all-the-latest-features%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/987ZbzDkA2ftishReE05mypuwo1zPeycRiw5yW8fisA=452">
+                                    <span>
+                                        <strong>Tempo 3.1 release: new features for Kafka, TraceQL metrics updates, trace redaction, and more (17 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Tempo 3.1 adds community-contributed improvements for Kafka ingestion, including TLS support and options to reduce data transfer costs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudnativenow.com%2Fcontributed-content%2Fwhy-kubernetes-rbac-misconfigurations-are-the-easiest-privilege-escalation-youll-ever-find%2F%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/cnw0VpnCdHo7DTu-YPYheqdMRSIxJUF4oIvwKrL4e5g=452">
+                                    <span>
+                                        <strong>Why Kubernetes RBAC Misconfigurations Are the Easiest Privilege Escalation You'll Ever Find (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Recurring Kubernetes RBAC mistakes, cluster-admin bound to service accounts, wildcard permissions, over-broad secrets access, and stale bindings that never expire, drive most cluster compromises rather than novel vulnerabilities.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Famoffat.github.io%2Fblog%2Fcognitive-load.html%3Futm_source=tldrdevops/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/RoDj95CrKRGSGY-cb056rInsYlvmAYy6MuGeMnUiRJ4=452">
+                                    <span>
+                                        <strong>Reducing the cognitive load of AI changes (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Unfamiliar abstraction names in AI-generated code add mental translation work during review.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/2m1LGixps4r_EJExkCuMt62HCikuIQm4FAwk6QNkcOg=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/0h6RrfB7y_3w9FzWuFy7qmsDhdg-TIhPq8Kh9kELJ3I=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/7g-HrnGd0kP26OWeED3Ah9BNlrhB9PTWZqIvOEquLRw=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/JbEWNv3espDYLsKsqZmFh-w0s8RHIumurJUJ7XbGpbE=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/DJRQvHjmQ8D04bfSXxfG9yvFEWgn_x8LQ_ynwR590oY=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/WDiMwg7blp_ZBcdfkOPYmk5der_wNbOB0gXnOgbdhzE=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/Fpep7iEEEr1PcOSoxHss8EAOGu-NZnilaw-GbftNpnI=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/G8sFjnuTXI87HA1pIvYHCrvHYYAYOeZTG405K9nhM3Y=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/VbBCw7O0Es6NCG455nEx844hCn3emXuu2SBVajDAcFI=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=7f1f85a0-be25-11f1-9d77-b38a0c8116a4%26pt=campaign%26pv=5%26spa=1790938871%26t=1790940252%26s=b3ae32c45f1683c6ad0eebfabeb54c8802e0c713efd73fc07725bb02592f679f/1/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/6LJGRV5xchKid-GySb2FO5y7MLrzFm_vf3SqBM4D6XY=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0fc5b89e1-719321d6-e612-4c8c-8890-546671e52468-000000/U5pfA4Im6-R292MDRFlK66dJIh2GycQeCao7c6v7t5U=452">
+</body></html>
