@@ -1,0 +1,546 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR Dev</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Pi 1.0 hardens the minimal agent harness with Codemode, virtual models, deferred tool loading, cache warming, transcript-aware system changes,&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdev%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/6IYsIzH9js391byizjFlCkVxdigELyOqhf_uZi9batg=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/cbMbs1gi7ItfCJtJAQDLdr7O84qfcXc6vJzJRIiZOA8=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=5b8f4fe4-ab5b-11f1-9535-11350ff61227%26p=f7d1a838-be26-11f1-8893-bde744e2a96e%26pt=campaign%26t=1790940566%26s=25df04739a88e1cf651441407419ce8aab2e255c13f8766ba74ef5c12b1aa367/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/bjvNxEPuKDj9yY-u20SpqvQdLCDBS7VBW276L-E5QpE=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fgemini-enterprise-agent-platform-governance-scale-unified%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-tldr-dev-2oct2026%26utm_content=tldr-dev-2oct2026_header_idea_deployed_how%26utm_term=-_2026-10-02/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/f1nzCPBceS2_DF3rjZH3VB_8ZTNPLZ8MRnplralDJ7o=452"><img src="https://images.tldr.tech/googlecloud2.png" alt="Google Cloud"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>&nbsp;TLDR Dev <span>2026-10-02</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fgemini-enterprise-agent-platform-governance-scale-unified%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-tldr-dev-2oct2026%26utm_content=tldr-dev-2oct2026_header_idea_deployed_how%26utm_term=-_2026-10-02/2/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/ehhny_VUTgJjoTdjUjJnONmirXVGH5cMxktLx42EcV0=452">
+                                    <span>
+                                        <strong>From Idea to Deployed: How to build and govern enterprise-scale AI agents (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Building a prototype agent is easy—making it reliable, secure, and scalable in production is the hard part. In <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fgemini-enterprise-agent-platform-governance-scale-unified%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-tldr-dev-2oct2026%26utm_content=tldr-dev-2oct2026_Body_technical_session%26utm_term=-_2026-10-02/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/Kv8N6VGuPU0NmgAs8dJVmK7bKkWlEUk0Pghb2L01QpQ=452" rel="noopener noreferrer nofollow" target="_blank"><span>this technical session,</span></a> the Google Cloud developer team covers how to:
+
+<p></p>
+
+<ul>
+<li>✅ Prototype in Agent Studio and build with the open-source Agent Development Kit (ADK)</li>
+<li>✅ Scale effortlessly on the serverless Agent Runtime</li>
+<li>✅ Enable long-term personalization with stateful sessions</li>
+<li>✅ Govern security and access with Agent Gateway and Identity</li>
+</ul>
+
+<p>➡️ <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloudonair.withgoogle.com%2Fevents%2Fgemini-enterprise-agent-platform-governance-scale-unified%3Futm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-tldr-dev-2oct2026%26utm_content=tldr-dev-2oct2026_cta_watch_session_demand%26utm_term=-_2026-10-02/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/vPRY_Zw4GmddR7Nn0Dqmo71TpSFOqmT-MLoKGG-3suc=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Watch the session on-demand</strong></span></a><strong> </strong>to get a clear, actionable blueprint for taking your agent concepts from initial brainstorm straight to enterprise-scale production.</p>
+
+<p>➡️ Looking for more ways to get building? Check out these <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcloud.google.com%2Fblog%2Fproducts%2Fai-machine-learning%2F13-demos-on-gemini-enterprise-agent-platform%3Fe=48754805%26utm_source=tldr%26utm_medium=email%26utm_campaign=FY26-Q3-northam-NOR10000012-email-oi-na-named-tldr-newsletter-tldr-dev-2oct2026%26utm_content=tldr-dev-2oct2026_cta_13_hands_demos%26utm_term=-_2026-10-02/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/DeKq0VhkXU493fV9xDvmmWHD1V5FxA7EcBy9f3HT1so=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>13 hands-on demos to build on Gemini Enterprise.</strong><br></span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Articles &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.janestreet.com%2Flinux-engineering-depot-fuse-index%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/w2F1b7zMR6m9ViwcsWwLWEYZRKJ1fYOydlA3TVRoEL4=452">
+                                    <span>
+                                        <strong>A FUSE Server for an In-House Storage Backend (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Jane Street built an OCaml-native, read-only FUSE server that exposes its Depot object store through a POSIX filesystem interface. Parallel reads and zero-copy buffer handling raised large-file throughput from about 30 MiB/s to 1.3 GiB/s.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fexpo.dev%2Fblog%2Flive-activities-with-expo-end-to-end-client-and-backend%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/108eIJKR5Gg4SL76vOQP8XAr8P52yjq-sr_Xmplz99k=452">
+                                    <span>
+                                        <strong>Live Activities with Expo, End to End (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Expo shows how to build iOS Live Activities in TypeScript, compile their interfaces to SwiftUI, and update them from a backend through APNs. The walkthrough covers push-to-start and per-activity tokens, database mappings, JWT authentication, payload structure, and activity lifecycle handling.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.sterlingfreeman.net%2Fposts%2Ffolder-structure-two-jobs%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/pDy63LEX0PfgLDn4g_hyRN11FtswlKyW6xZkJN-qxeQ=452">
+                                    <span>
+                                        <strong>Your Folder Structure Has Two Jobs, but Only Does One (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Folder structures must support two different tasks: helping people find existing files and giving them a consistent rule for placing new ones. Role-based taxonomies improve navigation but create fuzzy boundaries, while layer-based structures make classification deterministic and prevent placement mistakes from compounding as a codebase grows.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Advice</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fvitonsky.net%2Fblog%2F2026%2F09%2F18%2Fdesign-system%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/YGRM28_r2kYA6yYssFllC1VZrlYVcmaOEID6vPS9H6Q=452">
+                                    <span>
+                                        <strong>Props Are Not a Design System (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Call-site styling through props, utility classes, or inline styles turns every component instance into a separate design decision. Semantic variants should define a component's complete appearance, while limited modifiers handle intentional variation without eroding consistency.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FgrguVq/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/yEmXtZOhhVLRCJz2FwayOKJsOxFF6FknpaW0lCFiwgQ=452">
+                                    <span>
+                                        <strong>Why I Changed My Mind About the Death of Software Engineering (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Coding agents are strong prototypers, but experienced engineers still decide which tradeoffs, risks, customer needs, and long-term maintenance costs matter. Engineers become more valuable by deeply understanding their systems and organizations, then directing agents with judgment rather than outsourcing decisions to them.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FXjNad5/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/gQFYDAHPT608iQTX3qxJnaFmjqhr7Be642qltUPWNz0=452">
+                                    <span>
+                                        <strong>Predicting the Winner of Personal Agents (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Personal agents face a cold-start problem because they need context to be useful before users have a reason to provide it. The winning products may combine behavioral context with deeper identity context, distinguishing lasting preferences from temporary interests so personalization compounds without constructing the wrong version of a person.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fagent.tinyfish.ai%2Fwallet%3Futm_source=newsletter%26utm_medium=email%26utm_campaign=200k-launch-developer-2026q4%26utm_content=secondary-oct02%26utm_term=tldr-dev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/ufGE37gcroIM8CVNSenFG57C12fgZ-aUn-mMxsNoM5I=452">
+                                    <span>
+                                        <strong>Give your agent everything they need to use the web (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AI stopped explaining how to do things and started doing them. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fagent.tinyfish.ai%2Fwallet%3Futm_source=newsletter%26utm_medium=email%26utm_campaign=200k-launch-developer-2026q4%26utm_content=secondary-oct02%26utm_term=tldr-dev/2/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/zP1GFgLWa30kjpqiTtg1RmHP9GsIA4cTZnnuNQCWtdE=452" rel="noopener noreferrer nofollow" target="_blank"><span>TinyFish gives your agent the live web</span></a> so it can accomplish more, including free Search and Fetch tools. 250,000 developers are already on board - and if you join now you get 30% Bonus on your wallet top-up. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fagent.tinyfish.ai%2Fwallet%3Futm_source=newsletter%26utm_medium=email%26utm_campaign=200k-launch-developer-2026q4%26utm_content=secondary-oct02%26utm_term=tldr-dev/3/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/LFl7y1oWp1ojZsnePEaA7T_goOs7o8PzGetpzs6G5yE=452" rel="noopener noreferrer nofollow" target="_blank"><span>Claim your offer</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fearendil.com%2Fposts%2Fpi-1-0%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/72CqYeCjtWbVlV2GikjNx4y6TxiZBwsRkdIg_R5ZWhQ=452">
+                                    <span>
+                                        <strong>Pi 1.0 (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Pi 1.0 hardens the minimal agent harness with Codemode, virtual models, deferred tool loading, cache warming, transcript-aware system changes, and a refreshed terminal interface. The release also introduces the experimental Pi Durable package for long-running agentic applications, with both projects available under the MIT license.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fclef-decision-models%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/eeqdB83uhB39ZfAvSZcOdtqjVfVhYs5PKRM91XGrZS8=452">
+                                    <span>
+                                        <strong>Introducing Clef Decision Models (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare released Clef and Clef-flash, open-source models that return bounded, typed decisions with probabilities for routing and classification workflows. The models run on Workers AI, support the Jev API, and pair with a reinforcement learning platform for fine-tuning on customer use cases.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fweave-os%2Frouter%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/RRvZLKgVbgCfPSNpJ2MQ6psbMQSpDNsurEs5tXoF50Y=452">
+                                    <span>
+                                        <strong>Weave Router (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Weave Router is an open-source model router for agentic systems that sends each prompt to a suitable model behind an OpenAI-compatible endpoint. It targets sub-50 ms routing overhead and lower inference costs, with a quick-start path for proxying existing applications.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.stacksweep.dev%2Fai-coding-tools-shift-mental-load%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/PWe5ZLlq_AfBPVvSWw08-i5-honqEKslPtMwde5loPc=452">
+                                    <span>
+                                        <strong>AI Coding Tools Shift Mental Load (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A four-day field study of 21 SAP developers found that tasks using generative AI scored about one point higher on a seven-point cognitive-load scale after controlling for task type and duration. The result suggests that AI shifts effort from typing toward prompting, reviewing, validating, and integrating generated work, even when developers feel more productive overall.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fnordicapis.com%2Fhow-ai-agents-are-changing-api-architecture%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/QmG36mIW9jE3JIHLTKCskzdWIzjKn2QV_wBjNMa8kI8=452">
+                                    <span>
+                                        <strong>How AI Agents Are Changing API Architecture (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Autonomous agents push API architecture toward least privilege, just-in-time authorization, predictable schemas, machine-readable documentation, and stronger controls against prompt injection and excessive agency. Observability also needs agent identity, delegated authority, workflow context, conversation IDs, and token usage beyond traditional latency and error metrics.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.acquia.com%2Fcampaign%2Fdrupal-seriously-reimagined%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=fy26q4-global-drupal-new%26utm_content=701Pb00004WSNRrIAP%26utm_term=publisher-list-newsletter-quicklinks-tbc-acq037/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/bAKSs3BmK4HPrQwOrSDqgrJLBpOxF0LqhZz2fqwFoDY=452">
+                                    <span>
+                                        <strong>A seriously future-proof CMS&nbsp;(Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Acquia-powered Drupal delivers API-first scale, security, and integration with 48+ AI providers - without vendor lock-in. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.acquia.com%2Fcampaign%2Fdrupal-seriously-reimagined%3Futm_source=tldr%26utm_medium=newsletter%26utm_campaign=fy26q4-global-drupal-new%26utm_content=701Pb00004WSNRrIAP%26utm_term=publisher-list-newsletter-quicklinks-tbc-acq037/2/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/Y1Av_09UujmYNvygzLy7bFSnFKFXoV5WpMikbB7sUQA=452" rel="noopener noreferrer nofollow" target="_blank"><span>Explore the free trial</span></a>.
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhelp.openai.com%2Fen%2Farticles%2F20001542-using-your-chatgpt-plan-in-other-apps-and-sites%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/pX-KRSalwYnI3B9qgdqmWiAnATvYgwK8BDdlBD_bt5M=452">
+                                    <span>
+                                        <strong>Using Your ChatGPT Plan in Other Apps and Sites (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Plus and Pro users can let participating apps use ChatGPT Work and Codex usage without sharing an API key, while managing per-app limits, credit fallback, permissions, and disconnection in ChatGPT settings.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsvelte.dev%2Fblog%2Fsveltekit-3-is-here%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/prLkWHFkO2iZtt6zJHG2bLcocm5HyaS3ccn0d2B3IZI=452">
+                                    <span>
+                                        <strong>SvelteKit 3 Is Here (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    SvelteKit 3 removes deprecated APIs, adopts native subpath imports and Vite 8 with Rolldown, improves service workers and environment variables, and includes a migration command for existing projects.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fturbopuffer.com%2Fblog%2Frip-vector-database%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/ToRE7j3jTdk_cSeTd6J1mJPiSgNc0AwpjXotUePc_7M=452">
+                                    <span>
+                                        <strong>RIP, Vector Database (12 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Turbopuffer v3 makes approximate nearest-neighbor search a secondary index so storage layouts can reduce amplification and use block sizes suited to full-text search, filtering, aggregation, and other query plans.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fmolily.de%2Fweb-dev-education%2F%3Futm_source=tldrdev/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/R1Wl6bhUo40Zlb-eUI7W4D220nx9Bt7GGSy_TfsRnaA=452">
+                                    <span>
+                                        <strong>The Death of Web Development Education (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Independent web educators are losing income and audiences to AI systems trained on their work, threatening the human communities and durable knowledge that make the open web learnable.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2F862b7771%2F3/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/6ft2n_iNHT4W4tek4zxI1iakvSywUOR_nhJliVtxLf0=452">https://refer.tldr.tech/862b7771/3</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_cac73489d5e0%2F3/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/KvhUgQwFthxxqBYgOR3GqPzBraLdqPe-F8lWgwsuaaA=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of web developers and engineering decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/S5aGr0FLhR6rBeKE_UeUFI0G_BEwl2rlAlXahWqR5Xo=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/DLDZAMr8jpZMYLUb-VxIW9QiucJUqARQ1AVOIEW2r5Q=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/8QfliZDmOXvPl9XuY4WPozS15vQcA7cIROPyoPBCSx0=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/LXA1_peCRgBLnAIQKlU7H0kuij4LS0wn5yJqCbNwePM=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<span>Priyam Mohanty</span>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fxu-jenny%2F/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/U2Qr3Ryrc44CTcaEWvb0nlMzmpaCVz7kdYi5jCUIVXY=452"><span>Jenny Xu</span></a> &amp; <span>Ceora Ford</span>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdev%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/R163q_lF2sGXrD24dXgL2AGtW8omv0tvRNl_1j4yx4w=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Dev isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=e8d201ca-3e93-11ed-9a32-0241b9615763%26lc=5b8f4fe4-ab5b-11f1-9535-11350ff61227%26p=f7d1a838-be26-11f1-8893-bde744e2a96e%26pt=campaign%26pv=5%26spa=1790938918%26t=1790940566%26s=0727eabec829be2784ec1e40c9111f6c9d5d3a0c09943f2ae662f1315589b1fe/1/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/0Oz7bW4Zn9xIyQRREmuImEqwsYnazUd6yrzJaJdNDco=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a0fc605278-1e9475f1-ffe6-4a61-8d7f-cdea60415967-000000/zkvuk-C6YtxmHErlY7GkLyHMoQwQ9wM3XHcicxU4trY=452">
+</body></html>
