@@ -1,0 +1,477 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Cloudflare Traces is now available in open beta, extending automatic tracing beyond Workers to the rest of the request path. Users can view&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/ctWaDe9YB9PNnU4xJFDJL6YYlLr3JGHwHJhdgEXcu7s=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/yV-j2lMxhxMEGvuRVmyYg78lvbknaVUOoPUkn6Wzyv0=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=951e1238-c080-11f1-95b3-797e27d05bf6%26pt=campaign%26t=1791199548%26s=b66a7060df3eb1815d1ad00817c5087513016071f85a5708fb12d42d92f387c2/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/eaMiFckSmBmP83vz4UVTbJ7zvQZNxAZA-tL7rUfK31A=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_source=tldr%2B%26utm_medium=sponsorship%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-primary-placement_20261005_x_header_gitlab_transcend_tomorrow%26utm_term=2026-10-05/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/1769SbOC-8BrbXt2tboXnmPqxVKGHo4uStYRYKrtCqY=452"><img src="https://images.tldr.tech/gitlab.png" alt="GitLab"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-10-05</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_source=tldr%2B%26utm_medium=sponsorship%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-primary-placement_20261005_x_header_gitlab_transcend_tomorrow%26utm_term=2026-10-05/2/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/nWUp7JZDwCVqQFInfeGk1PGEEWDUEYPzdrnT6-qItRg=452">
+                                    <span>
+                                        <strong>GitLab Transcend is tomorrow! (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Ship at agent speed. Prove every step. Two hours, live from Bengaluru: new platform capabilities demoed live, agentic workflows running on real codebases rather than demo repos, and what it takes to carry that speed through to production.<p></p><p>→ Keynote, 90 minutes, live at 1:00 PM UTC, 3:00 PM CEST, 6:30 PM IST. Americas showing at 4:00 PM EDT.<br>→ "Agentic Software Engineering, Unfiltered," a 30-minute fireside with Gene Kim, founder of IT Revolution, live from the Enterprise AI Summit in Charlotte.<br>→ Registration also unlocks the IT Revolution Enterprise AI Summit livestream on October 7 and 8, a $1,600 value.</p><p>Free.&nbsp;<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fabout.gitlab.com%2Fevents%2Ftranscend%2Fvirtual%2F%3Futm_source=tldr%2B%26utm_medium=sponsorship%26utm_campaign=eg_global_cmp_webcast_ai_en_transcend_virtual%26utm_content=devops-primary-placement_20261005_x_cta_register_livestream%26utm_term=2026-10-05/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/Bwoy0nNOw35yJWRybxJfLr-JawmKFmHLVpuE_gR1Mzs=452" rel="noopener noreferrer nofollow" target="_blank"><span> Register for the livestream</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flwkd.info%2F2026%2F20260930%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/cHUcyfEgdmyt7RL20_cVKZWBuZFbmC1X7oV_pmNfxHY=452">
+                                    <span>
+                                        <strong>Last Week in Kubernetes Development: Week Ending September 27, 2026 (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Two medium-severity Kubernetes CVEs were disclosed and patched, SIG Cluster Lifecycle is getting a new chair, and v1.38 entered Enhancements Freeze with 89 of 100 enhancements remaining. Device Binding Conditions graduated to GA, and steering elections close on October 2.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcd.foundation%2Fblog%2F2026%2F09%2F30%2Fproject-updates-sept-2026%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/EbmBKgJEhfbT_cR_2EV0JS4qFjW8qPeryuhg2gFZueM=452">
+                                    <span>
+                                        <strong>CD Foundation Project Updates September 2026 (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The CD Foundation's September update covers CDEvents spec v0.5.1, Jenkins finishing five Google Summer of Code projects, and Spinnaker 2026.3.0, which removes AWS SDK1 and Halyard. Ortelius, Screwdriver, and JayeX also reported progress.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fcloudflare-tracing%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/mtd0guHiBcp1iosdL2AuKDMPrbunNNlcn9V37SzONqk=452">
+                                    <span>
+                                        <strong>Introducing Cloudflare Traces: follow requests through our entire platform (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare Traces is now available in open beta, extending automatic tracing beyond Workers to the rest of the request path. Users can view security rules, transformations, cache decisions, and origin handling in one trace without special configuration or plugins. The feature supports OpenTelemetry and enables users to control sampling rates or trace 100% of specific traffic using Trace Rules.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fblogs%2Fdevops%2Fclosed-loop-incident-response-connect-aws-devops-agent-to-opensearch%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/qiOsOjPy9moE6QBRFWcNQOaYrQULffNdbEFvVIMMfRg=452">
+                                    <span>
+                                        <strong>Closed-loop incident response: connect AWS DevOps Agent to OpenSearch (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A new AWS guide explains how to connect AWS DevOps Agent to Amazon OpenSearch Service using the Model Context Protocol (MCP). This setup allows an AI agent to automatically investigate alerts by querying logs and traces, rather than requiring manual intervention from an engineer. Organizations can host the MCP server on Amazon ECS, Amazon Bedrock AgentCore, or use the built-in endpoint on OpenSearch version 3.3+.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.uber.com%2Fad%2Fen%2Fblog%2Fuber-eats-search-pipeline%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/dully0YeIdRjtM8k4qhMIeAM_CgBqV7VK8AhrHTbKU0=452">
+                                    <span>
+                                        <strong>Halving the Time: How Uber Eats Rebuilt Its Search Pipeline (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Uber cut end-to-end Eats search latency in half by removing low-value retrieval paths, separating ranking features from presentation data, and eliminating false dependencies between pipeline stages. Additional gains came from pagination, concurrent rendering, request hedging, compact embeddings, and fixing service-mesh connection bottlenecks.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.signadot.com%2Fcase-studies%2Fbrex-uses-signadot-to-scale-developer-testing-across-100s-of-engineers%2F%3Futm_source=tldr-devops%26utm_medium=paid-sponsorship%26utm_campaign=q4_26_newsletters%26utm_content=devops_oct05_brex/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/GBqf1rOwk-F2bIlAGiX7QpMgc_h5TNHnjU_hnORIa7o=452">
+                                    <span>
+                                        <strong>Agents multiply PRs. Brex cut per-change preview costs up to 99%. (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Duplicating namespaces for every change doesn't scale when engineers and coding agents are both shipping. Brex moved to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.signadot.com%2F%3Futm_source=tldr-devops%26utm_medium=paid-sponsorship%26utm_campaign=q4_26_newsletters%26utm_content=devops_oct05_brex/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/IsMWPVLTK6l4ydM5UMIHXA6Iu-g9L3DCRsffV9c4TdQ=452" rel="noopener noreferrer nofollow" target="_blank"><span>Signadot</span></a>'s lightweight ephemeral environments on a shared cluster, cutting preview infrastructure costs by 99% and preview time 80%. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.signadot.com%2Fcase-studies%2Fbrex-uses-signadot-to-scale-developer-testing-across-100s-of-engineers%2F%3Futm_source=tldr-devops%26utm_medium=paid-sponsorship%26utm_campaign=q4_26_newsletters%26utm_content=devops_oct05_brex/2/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/nQrBub9BkaWvz5jL0llhBOIcMnFIpNUvzIHklf2FVj4=452" rel="noopener noreferrer nofollow" target="_blank"><span>See how they scaled testing across hundreds of engineers and agents.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fpbakaus%2Fimpeccable%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/Gu7euoHSmd5TEeC2K_Sb4_su5x6p86dzIP5jK2QtGG4=452">
+                                    <span>
+                                        <strong>Impeccable (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Impeccable is a design skill for AI coding agents that includes 24 commands and 61 deterministic detector rules for identifying common problems in AI-generated frontend design. The tool works with editors including Cursor, Claude Code, VS Code, and Grok Build.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fpingdotgg%2Ft3code%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/VHbq4fjZDVen5uklV_IOElaSK00-aCp7C4G5PN5faDw=452">
+                                    <span>
+                                        <strong>T3code (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    T3 Code is an "agent harness control surface" that manages AI agents from Claude, Codex, Cursor, and other platforms. Users can control these agents through mobile, web, and desktop apps.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Ffacebook%2Frebalancer%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/1hWwokNSGhsA8y0_Xw39TZI00Q5NbyDP1ayM6azZlqw=452">
+                                    <span>
+                                        <strong>Rebalancer (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Meta open-sourced Rebalancer, a library for assigning tasks, shards, servers, and traffic while balancing resource limits, placement constraints, and optimization objectives. It supports local-search and mixed-integer solvers, plus a Dockerized Explorer interface for debugging why assignments were made and which constraints are binding.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Fpresentations%2Fai-production-operations%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/VBpcs_D9ov5D3iZ4jLZMJgySzLw_Ro2tGWFBqW1oUcs=452">
+                                    <span>
+                                        <strong>Beyond Observability: Evolving Production Operations in the Age of AI (40 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Panelists from Genesys, Netflix, and Groundcover discuss using AI agents for incident response and observability, stressing human accountability, machine-readable high-cardinality telemetry, sandboxed rollouts, and organizational context. They advise starting small in greenfield environments and documenting jobs to be done for agents.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fintroducing-web-search-api%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/0VRzbObJ99QA8J00T-L8wgPuHiembTKTtCAPTV4yZW8=452">
+                                    <span>
+                                        <strong>Introducing Web Search API via AI Gateway (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare partnered with web search providers Ceramic.ai, Exa, and Linkup to add web search capabilities to its AI Gateway. The feature lets agents retrieve live data instead of guessing URLs. Web search partners must comply with Cloudflare's "Verified bots" requirements and respect robots.txt.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Fdeep-dive-troubleshooting-end-to-end-observability%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_quick_tecs/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/xtPBodeyvur7ansH-N3UlPXrsS_R2vCGlzpfLUtNX14=452">
+                                    <span>
+                                        <strong>Trace Your Amazon ECS Alerts directly to the Root Cause (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    When an alert fires on Amazon ECS, a tutorial in AWS Marketplace walks you through the trace to root cause, one path instead of five dashboards. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fapplication-performance-monitoring-observability%2Fdeep-dive-troubleshooting-end-to-end-observability%3Futm_source=tldr_devops%26utm_medium=newsletter%26utm_campaign=scale_observability_q3_2026%26utm_content=tldrdo_quick_tecs/2/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/SG__WU2TLYiVdCvPVBx49XrzcAVhwwYGgmBn9Zsv6qg=452" rel="noreferrer noopener" target="_blank"><span>Read the tutorial</span></a>.
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.techtarget.com%2Fit-infrastructure%2Fdefinition%2FWhat-is-IT-automation-A-complete-guide-for-IT-teams%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/7eoeWSDRF9o2mqLlybMPNA30PINI5GH1D-HGGusP930=452">
+                                    <span>
+                                        <strong>What is IT Automation? A Complete Guide (19 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    IT automation replaces manual data center and cloud work with repeatable scripted processes.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.infoq.com%2Farticles%2Fhigh-availability-not-resilience-cloud%2F%3Futm_source=tldrdevops/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/T__29CQmuWbod8MiH8JPJWewEKxj3JKDpnPqVfV7tq0=452">
+                                    <span>
+                                        <strong>High Availability Is Not Resilience: Why Cloud Systems Fail When It Matters Most (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A TLS 1.3 upgrade broke Route 53 health checks and silently rerouted a region's traffic, showing that high availability differs from resilience.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/5FKY0DKbOnRaswldIlz0LfnnhxePd6EPAu0Ni8zSVGo=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/IB0I2xupT4nd2oafVs5uHkqjIG129bMx5X_QHcx3oxw=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/9kUyxHyjAUYOXW0NNHAj7GyOhY6iwm0h6-AtZEc4sb0=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/egC5GtYFDR7328rXNrz2pkUWgmMftkwGndGt4V9Wilk=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/Iqe831euT93e_FnGKdIZWgHtUsoXu4YeYV8hQythN-M=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/AmlDYLUvdw0Ih6IcnJOEnpPSA1fHlLOyd_czvWf7RxE=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/62WaDiDSaEqpzn2oVcmAFkokRL7bGECAF7ptOL5TC7s=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/uKyibKZJzZ2SHHSSOSjhGqP49DApT-XLVccTX37HCKw=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/NuAonSoawyvKy7Oy7cNXcRPWoqinDyLjU49WL_gwhr4=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=951e1238-c080-11f1-95b3-797e27d05bf6%26pt=campaign%26pv=5%26spa=1791198096%26t=1791199548%26s=db7c7af5b9d5883bc1e0e2ce3da26a322debc12e16f998a0012f6fe3be5078e7/1/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/JSnvJegk5DWTvjbWOb0h8-aOUE6OtPS6tNfe00RwxBA=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a10bd0154b-fe5b6286-ffee-4d24-a7c8-9ddfe7826917-000000/6XXBHEs4rc_M6gnnJpCFWZRmiQJUDmYU3svm-xfTI8A=452">
+</body></html>
