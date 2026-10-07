@@ -1,0 +1,488 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR Dev</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>A reliable agent loop depends less on model size than on a trustworthy check that turns progress into a score or pass condition. In two visual tasks&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdev%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/b6EV8JbgvFoR7CNAh89bmMKqKzWeYp76nw-SvkPisSs=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/DE2Q-qUSYa-SweFWV-EILxcAgVXvGon1FjmB15ABuDA=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=5b8f4fe4-ab5b-11f1-9535-11350ff61227%26p=72e88634-c14e-11f1-b808-d306d44febca%26pt=campaign%26t=1791285956%26s=de51c3d3d3434bf6c756b012d856d11ac7033f126233ac2eee0aef19941671ae/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/NGi0JQ-Ftx-BuVOcT_0rQ1b1_CBJrPHtgoSZdwUjkss=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fdata-analytics%2Fbuilding-event-driven-serverless-architecture-mongodb%3Ftrk=c9395285-7dc2-4d2d-92df-7240ab8770de%26sc_channel=el/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/n3YA0MTBn7v-8abOSOaOjHVcq_1prIqG4jqZIeh5CW8=452"><img src="https://images.tldr.tech/awsmarketplace.png" alt="AWS"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>&nbsp;TLDR Dev <span>2026-10-06</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fdata-analytics%2Fbuilding-event-driven-serverless-architecture-mongodb%3Ftrk=c9395285-7dc2-4d2d-92df-7240ab8770de%26sc_channel=el/2/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/5KpIrTBgl4ZLuQuXj8QekXhbMDARD4XnwKr0wbULDs4=452">
+                                    <span>
+                                        <strong>Build serverless microservices on AWS (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Learn how to build serverless microservices that react to database events in real time. This AWS tutorial walks through building an event-driven system by connecting Amazon EventBridge, AWS Lambda, and <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fpp%2Fprodview-pp445qepfdy34%3Ftrk=cde26e6f-2e2d-4c54-84fe-6b9d1c63a222%26sc_channel=el/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/VazVwQvOFkcGKSC_ic5muytKAPGPygU2wPpY8LF96yI=452" rel="noreferrer noopener" target="_blank"><span>MongoDB Atlas on AWS Marketplace</span></a>.
+
+<p></p>
+
+<p>You'll learn how to detect database changes, trigger automated workflows, and deploy scalable services without managing infrastructure. Whether you're launching new features or modernizing legacy systems, get step-by-step guidance to move faster while cutting integration overhead.</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fmarketplace%2Fbuild-learn%2Fdata-analytics%2Fbuilding-event-driven-serverless-architecture-mongodb%3Ftrk=c9395285-7dc2-4d2d-92df-7240ab8770de%26sc_channel=el/3/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/RsNAHMArHKikLfDhRUzNun4D9m7AD0cGCi5ETy3vsQY=452" rel="noreferrer noopener" target="_blank"><span>Read the step-by-step tutorial.</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Articles &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.builder.io%2Fblog%2Fbuild-an-agent-loop-a-small-model-can-finish%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/A0qRxUc199J5zWUqElNRlu6OyrQdos-TzO99_63LC_A=452">
+                                    <span>
+                                        <strong>Build an agent loop a small model can finish (11 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A reliable agent loop depends less on model size than on a trustworthy check that turns progress into a score or pass condition. In two visual tasks, small models improved dramatically when they received repeatable feedback across varied examples and holdout cases, while weak checks encouraged overfitting or shortcuts.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fironbee.ai%2Fblog%2Fhow-we-built-the-fastest-cheapest-browser-agent-with-jev%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/itq5Bk96_OL5VsVWZALey1tURZktM8zg0RPpkRqV27Y=452">
+                                    <span>
+                                        <strong>How we built the fastest, cheapest browser agent with Jev (23 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    IronBee Express uses Jev as a fast classifier for bounded browser decisions, calling an LLM only for writing, recovery, or failure explanations. Explored runs cost about $0.0042 for 20 actions, recordings can replay with no step decisions, and narrow verification questions helped a 130-run replay test reach 130 correct outcomes.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Advice</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwattenberger.com%2Fthoughts%2Fai-is-still-in-its-terminal-era%2F%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/X7DYOW8XqW_SMDco_EbaDapzKY_udzJy2sO9rD92FeY=452">
+                                    <span>
+                                        <strong>Chat is AI's command line (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Chat is useful for rough direction, but it becomes awkward when people need to make precise edits or understand the state of ongoing work. The piece argues for AI interfaces built around direct manipulation, visible state, and reversible experimentation, much like spreadsheets and graphical desktops expanded computing beyond the command line.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flemire.me%2Fblog%2F2026%2F10%2F05%2Fephemeral-testing%2F%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/6X1Td23aVNzgTcJwwdkINPq0TgyINJurKaFlDkaRn1A=452">
+                                    <span>
+                                        <strong>Ephemeral testing (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Ephemeral testing evaluates a software component by asking an AI agent to build disposable applications or layers on top of it, then judging how well those downstream projects work. Repeating the exercise with different agents and tasks can expose hidden state, unstable invariants, surprising defaults, and weak documentation.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.docusign.com%2Fblog%2Fdevelopers%2Fquery-agreement-data-agreement-manager-api-mcp-server%3Futm_campaign=AWA_2610_FY27Q4%26utm_medium=newsletter%26utm_source=tldr-web-dev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/czheDo48A6vVXu4w5ojm4QbSBcvJly_pp-TfQAx9U1s=452">
+                                    <span>
+                                        <strong>Docusign API or MCP? How to choose the right standard for your agreement data (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Keyword-based queries don't work for large agreement repositories because contract language is often inconsistent. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.docusign.com%2Fblog%2Fdevelopers%2Fquery-agreement-data-agreement-manager-api-mcp-server%3Futm_campaign=AWA_2610_FY27Q4%26utm_medium=newsletter%26utm_source=tldr-web-dev/2/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/cHdV4CceBlIATXedetkpG6CY-9er97eR3NochM1efPE=452" rel="noopener noreferrer nofollow" target="_blank"><span>This guide</span></a> explains how the Docusign Agreement Manager API and MCP Server use AI to surface relevant insights, and how to choose the right approach for your task. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fdevelopers.docusign.com%2F%3Futm_campaign=AWA_2610_FY27Q4%26utm_medium=newsletter%26utm_source=tldr-web-dev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/SFqMkUykY-2j2ZIYSxe1RP-qtlJCkOBrBfNRi2CL4fs=452" rel="noopener noreferrer nofollow" target="_blank"><span>Start building with a free developer account</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftanstack.com%2Fblog%2Ftanstack-charts-1-0%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/puu5OQjcS2NL4Q8X6IF7EF2nBqbaZBZhAh99KyuVXbQ=452">
+                                    <span>
+                                        <strong>TanStack Charts 1.0 (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    TanStack Charts 1.0 offers a composable, type-safe charting system built from marks, scales, axes, and interactions instead of rigid chart types. It supports custom marks and renderers, optional SVG or Canvas output, modular animation and scale packages, and a stable API intended to evolve without forcing applications to rebuild their visualizations.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Freflection.ai%2Fblog%2Fintroducing-beam%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/YdHxn-kcq7hhTpZmkAtszy61hDGKLLD4hv3Mq1pokl0=452">
+                                    <span>
+                                        <strong>Introducing Beam: Reflection's 501B open-weight model (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Beam is a sparse Mixture-of-Experts model with 501 billion total parameters and 23 billion active parameters aimed at coding, reasoning, and agentic workloads. Reflection trained it on 23.8 trillion tokens and more than 100 million reinforcement learning rollouts, with Apache 2.0 weights and developer artifacts planned for release later this month.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadventures.nodeland.dev%2Farchive%2Fhow-bookingcom-cut-nodejs-costs-by-38-with-watt%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/_27X9A_k3daF1W40bPhioJ-taf2K6gbowxiW7RE3rDE=452">
+                                    <span>
+                                        <strong>How Booking.com cut Node.js costs by 38% with Watt (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Booking.com moved a major Node.js rendering service from pm2 clustering to Watt worker threads, cutting compute costs by 38% with 30% fewer pods, 20% less memory per pod, and up to 10% lower tail latency. The migration required no service code changes, and production tests showed 40% to 50% more throughput within the same latency target.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Farmstr.ng%2Fwriting%2Fworth-building%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/19tj4tStLMEQs55UPWCa11HiBvRdoulFwB1bKxEtqDw=452">
+                                    <span>
+                                        <strong>Worth building (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cheaper software development makes small tools worthwhile even when they solve one person's annoyance and never become a business. As more people can ship, the story behind a project and the choices that shaped it become increasingly important reasons for others to care.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fplayground.developers.thinkfree.com%2Fplayground%2Feditor-ai-sdk%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=sdklaunch2026/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/IoP4hw8HDKciO2YS4e-VPcWmEnCUF9Sc8KYN6-zOKVA=452">
+                                    <span>
+                                        <strong>An Embeddable Office Editor With 900+ API Methods for AI Apps &amp; Agents (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Add AI document creation and editing to your app. Give your agents object-level APIs for DOCX, XLSX and PPTX, and users an embedded editor. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fplayground.developers.thinkfree.com%2Fplayground%2Feditor-ai-sdk%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=sdklaunch2026/2/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/nIduwehHg3zrxpVJsEmFnQq8cdvOrwigZxXAfrl0w6Q=452" rel="noopener noreferrer nofollow" target="_blank"><span>Try the playground</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fdevelopers.cloudflare.com%2Fchangelog%2Fpost%2F2026-10-02-introducing-web-search-api%2F%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/xCHzCvlX8BkP1MyL-Ze1JvDn0qWUfqZopF0Mc5he4gM=452">
+                                    <span>
+                                        <strong>Introducing Web Search API (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cloudflare's beta Web Search API lets agents search through Ceramic.ai, Exa, or Linkup via AI Gateway with Zero Data Retention, gateway logging, and provider list pricing without added markup.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fpranitha.dev%2Fposts%2Frwlock-vs-lockfree%2F%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/ukgjfD_Lw-A0uxKNXqZljtQjjrxjpbyoXRkp1XDXgKA=452">
+                                    <span>
+                                        <strong>The performance cost of RwLock in a read-heavy workload (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A Rust benchmark found that replacing 16,384 per-item RwLock acquisitions with one Crossbeam epoch guard and atomic pointer loads raised read throughput from 15.93k to 229.07k operations per second, while a simple lock still worked well around an infrequently changed collection.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fallthingssmitty.com%2F2026%2F10%2F05%2Fcss-does-your-tooltip-positioning-now%2F%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/KVsIoHDkCBxaDZd5E1NbWTPENvrG4sikXyAqQZkPbI4=452">
+                                    <span>
+                                        <strong>CSS does your tooltip positioning now (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CSS anchor positioning, position fallbacks, popovers, and anchor-size() can now handle responsive tooltip and dropdown placement with little or no JavaScript, though component-scoped anchor names and accessible DOM order still matter.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.vals.ai%2Fblogs%2Froom-temperature-magnetic-semiconductors%3Futm_source=tldrdev/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/tOxxMoNsi_65f8uhZ8sizdFXZRn-V7VEPsh9Gbmuxjc=452">
+                                    <span>
+                                        <strong>Two Room-Temperature Antiferromagnetic Semiconductor Candidates (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AI agents identified two candidate room-temperature Luttinger-compensated semiconductors for spintronic memory, but one may be difficult to synthesize, and the other still needs direct measurement of its band gap and spin sorting.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2F862b7771%2F3/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/xmGl0UCRY0fuGTvSgN6xk6UBWKln5CVtPt3QIpnjpk8=452">https://refer.tldr.tech/862b7771/3</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_cac73489d5e0%2F3/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/-BlC1y2uoih5FKEI-9e6Z9iPrUz3EPb32Ap4R_VGh40=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of web developers and engineering decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/FHPy4t_FEo-pWg7SeHxawELv83mg0kRYeW3auLWk_ns=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/wrNiptly18GGvDD-xaiLra2UADxh-WVRyeWvplQotG4=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/KBUikaEs7BqzbQbaP7SybTGHjpp7f-JXW96SwJ-odzY=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/MA0TpKzbjUulFsqDIj5Bs7wkPx-bfNoVZ4NYylOfzQo=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<span>Priyam Mohanty</span>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fxu-jenny%2F/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/OFfSxilLwaQBm-q8hM-a6DhQtGqpya-Fyv5wd86yR2s=452"><span>Jenny Xu</span></a> &amp; <span>Ceora Ford</span>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdev%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/yGGWkxkDLG75n-w4L10YMA5GKUv0JSF9otyyZQ_zW0s=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Dev isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=e8d201ca-3e93-11ed-9a32-0241b9615763%26lc=5b8f4fe4-ab5b-11f1-9535-11350ff61227%26p=72e88634-c14e-11f1-b808-d306d44febca%26pt=campaign%26pv=5%26spa=1791284551%26t=1791285956%26s=d00e15cc2fe8975789fcbff25dbbebdce54f75ba26b55585a72ba304101a429b/1/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/wmcrX4neGrs8ae9QQyNmumO-HcHkD5aiJgnJMcxgt0Y=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a110f68e7b-ffac87da-cc76-4e86-8a05-8e0accee9dcd-000000/8FgliofybTojsjsZjSYOfp-NBt8Cf-qA3PnbZ6B6t-w=452">
+</body></html>
