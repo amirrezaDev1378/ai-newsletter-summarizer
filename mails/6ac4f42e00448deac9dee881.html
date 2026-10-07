@@ -1,0 +1,503 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>A critical vulnerability in Bouncy Castle for Java versions before 1.86 lets attackers spoof legitimate participants and decrypt messages within&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/-eK4vp-V7RVFnxuq7GzYpJcBWZquUQNU8AHU8bmkEvM=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/Jdd5HjSZszotQsOYUKv_F04VWgAL5l3uNWfLVxRQG70=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=884fa9da-c176-11f1-a15c-61a54db3131b%26pt=campaign%26t=1791292457%26s=04f1f427ceb8267a7b3c06104f58b26b4f15e94fc6346ee54bd037a82c291dbb/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/p2x1ROUdhxr3ZHKkhLDw_Y_iMqffoQTVlNEJbTBh03Y=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fthe-state-of-enterprise-ai-risk%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=1006thestateofenterpriseai%26utm_content=header_when_ai_agents%26utm_term=2026-10-06/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/KWIIbMMWybmkaAPxJwwCLGrflP6KwRQPql7j4kYG8_s=452"><img src="https://images.tldr.tech/airia.png" alt="Airia"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-10-06</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fthe-state-of-enterprise-ai-risk%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=1006thestateofenterpriseai%26utm_content=header_when_ai_agents%26utm_term=2026-10-06/2/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/rKSg36krYZFKn73CTYSpJ5QoPtIYzWHvK5VgeDHPCWY=452">
+                                    <span>
+                                        <strong>When AI agents make the wrong call, few can reconstruct what happened (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    That's because agents break tools built for humans. To govern them, you need to get clarity about the 5 sources of enterprise AI risk.<p></p><p>Airia's <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fthe-state-of-enterprise-ai-risk%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=1006thestateofenterpriseai%26utm_content=Body_state_enterprise_ai_risk%26utm_term=2026-10-06/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/raEuQlYIXB4rHjC_RDg4N4L0AvwspS9vjQgoJDEIf1g=452" rel="noopener noreferrer nofollow" target="_blank"><span>State of Enterprise AI Risk</span></a> report explains how:</p>
+
+<ol>
+<li>Ungoverned AI is the risk that compounds every other one</li>
+<li>Model risk does not end at deployment</li>
+<li>Vendor-embedded agents can access enterprise systems <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fthe-state-of-enterprise-ai-risk%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=1006thestateofenterpriseai%26utm_content=Body_without_appearing_inventory%26utm_term=2026-10-06/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/6qH-gfILbp5uYoIzCCrwLfqV6jqK3C2lPu2CLCaqrDg=452" rel="noopener noreferrer nofollow" target="_blank"><span>without appearing in your inventory</span></a></li>
+<li>Most organizations cannot say who approved an agent's decision, or who was responsible for the policy behind it</li>
+</ol>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fairia.com%2Fresources%2Fthe-state-of-enterprise-ai-risk%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=1006thestateofenterpriseai%26utm_content=cta_download_report%26utm_term=2026-10-06/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/yvWQFcnLDCsssnxCJTIx8f5fRKQwQSZKmPpAlvEGMQU=452" rel="noopener noreferrer nofollow" target="_blank"><span>Download your report</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fforkast.news%2Fbouncy-castle-cve-2026-71885-harvested-the-credential-binding-that-authenticates-agent-to-agent-channels%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/oA5TfzG38fYSrih2AToNbPp3c4x8Hvulz5nvHdYlRJA=452">
+                                    <span>
+                                        <strong>Bouncy Castle CVE-2026-71885 Harvested the Credential Binding That Authenticates Agent-to-Agent Channels (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A critical vulnerability in Bouncy Castle for Java versions before 1.86 lets attackers spoof legitimate participants and decrypt messages within Messaging Layer Security groups. Improper certificate validation in the protocol implementation lets threat actors bypass core security objectives by presenting arbitrary credentials. Developers must upgrade to version 1.86 to enforce cryptographic binding between end-entity certificates and LeafNode signature keys.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fbeyondmachines.net%2Fevent_details%2Froundcube-webmail-sql-injection-vulnerability-cve-2026-48842-under-active-exploitation-o-t-j-p-f%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/5G0vzzpAeYO3oV5Ev4n8rnzANLJGPUUbRiNlRqmE91w=452">
+                                    <span>
+                                        <strong>Roundcube Webmail SQL Injection Vulnerability CVE-2026-48842 Under Active Exploitation (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Unauthenticated attackers are actively exploiting a pre-authentication SQL injection vulnerability in Roundcube Webmail versions 1.6.0 through 1.6.15 and 1.7.0 to execute arbitrary database commands and access sensitive data. The flaw, tracked as CVE-2026-48842, resides in the built-in virtuser_query plugin. Administrators must immediately update to versions 1.6.16 or 1.7.1, or disable the vulnerable plugin.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2Fsqy06B/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/UU0QeJuiZzLSrepeckqoOFphKu2_VfMbe_WAS0XjyEw=452">
+                                    <span>
+                                        <strong>New Dell System Update flaw lets hackers gain root privileges (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A critical path traversal flaw in Dell System Update (CVE-2026-86360) allowed unauthenticated remote attackers to execute code as root on PowerEdge servers using the DSU deployment tool. Dell's advisory also addressed four other high-severity DSU vulnerabilities: two that enable remote code execution (CVE-2026-63697 and CVE-2026-71168) and two that enable privilege escalation (CVE-2026-86361 and CVE-2026-86362). None have been reported as exploited so far. Admins should upgrade to DSU 2.3.0.0 or later.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ffenrisk.com%2Fresearch%2Fopen-build-service-2%2F%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/OEvgIkbG913Y9zZaLHeqpJM4HvVFhxr0D9Mv4xBdZLI=452">
+                                    <span>
+                                        <strong>Open Build Service, one year later: command execution through Mercurial argument injection (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Fenrisk found CVE-2026-56004 in Open Build Service's obs_scm Mercurial backend. An attacker-controlled _service revision beginning with --config could set a pre-update hook and run shell commands on the service server. A space in the value bypassed Python argparse handling of dash-prefixed arguments. Exploitation required Mercurial, a reachable HTTP(S) repository, and a successful clone. Fenrisk confirmed build.opensuse.org was vulnerable. openSUSE patched the flaw on July 2 by adding -- before the revision and recommending rejection of dash-prefixed revisions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flyra.horse%2Fblog%2F2026%2F06%2Freddit-spam-internals%2F%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/1oFhLc9P3nPEqWZjmNrF5kUo2UUBJdFEt5pyqyFjAn0=452">
+                                    <span>
+                                        <strong>A peek into Reddit's anti-spam internals (16 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A 2021 Reddit glitch exposed internal removal reasons in Relay notifications. Screenshots reveal domain blocks, account bans, shadowbans, Spamurai rules, and URL inspection. Spamurai logged account age, karma, reports, ISP, email domain, browser details, language headers, TLS fingerprints, and referrers. This reproduced a Perspective API score and showed that appending two letters changed a spam score from 86% to 1%. Reddit also followed redirected URLs, scanned page content, and matched a Google Analytics ID tied to a spam ring.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fautomatictransmission.khoury.northeastern.edu%2F%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/YMBIUFt9qES2NuGC9AcaPdNIgDys75dNkJbwl2Cd_EI=452">
+                                    <span>
+                                        <strong>Your car is a smartphone on wheels. Here's who's listening (7 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Northeastern researchers and Consumer Reports captured Wi-Fi traffic from 21 vehicles through a Raspberry Pi access point, decrypted 30 companion iOS apps with mitmproxy, and found that 19 vehicles contacted at least one third party, including ad and tracking domains. Seven apps sent VINs, emails, phone numbers, or precise location to trackers, and GM's four apps shared VINs with ten companies, including Meta, Google, and Acxiom. Pairing a companion app roughly doubled a vehicle's tracker exposure on average, and of 17 manufacturers contacted, most shifted responsibility to owners. One notable exception: Honda improved its data collection practices to avoid sending precise geolocation information to a third party involved in user tracking.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fguardana%2Fguardana%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/QvYisYNXGR03X0d4vbrjQTyt6nFjRHB9FZ200Hk2C5M=452">
+                                    <span>
+                                        <strong>Guardana (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Guardana is an open-source AI security verification tool for security and platform engineers. It checks code and model artifacts, live AI systems, and recorded runs. It reports what it found, what it could not verify, and what it could not check. It verifies outside the request path. Guardana is not an inline guardrail, a general SAST or CVE scanner, or a compliance certification.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.doxx.net%2F%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/9jhOVkmBCKv5P4XWk3wc1iGC43-p6QEmJc1qhXfHhgY=452">
+                                    <span>
+                                        <strong>doxx.net (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    doxx.net has launched ADN, a private network with peer-to-peer messaging, file transfers, custom domains, and DNS threat blocking. It blocks malicious destinations before connections and uses proof-of-work accounts without usernames, passwords, or personal data.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fcoipond%2Fcoi%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/mlbI3D7b8nMTKFKQ-siQ1Q7vUnYUiow6XhKYUD7Rn3U=452">
+                                    <span>
+                                        <strong>Coi (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Coi protects host credentials and files by isolating AI coding agents such as Claude Code or Codex inside Linux system containers during autonomous sessions. The open-source tool uses Incus, a lightweight LXD fork, to grant root access, systemd, and native Docker, alongside kernel-level threat detection that automatically pauses or kills compromised containers.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FzPANb5/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/Sd73_UZ8gwnt1TcpynIeRDmkv-NFyl4nPG2RyBmWVxk=452">
+                                    <span>
+                                        <strong>Senate Passes Bipartisan Bill to Strengthen Healthcare Cybersecurity (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Senate passed the Health Care Cybersecurity and Resilience Act by unanimous consent. The bill moves to the House. It funds prevention, incident response, and security training. It directs HHS and CISA coordination, names ASPR as sector risk manager, and requires an HHS incident-response plan.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FXoAk8m/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/4-602bhdKF3wOFEerrHAM9Z7OqUhC9Fn_3STPwsRDJU=452">
+                                    <span>
+                                        <strong>ShinyHunters hacker in FBI data theft detained in Jordan, cooperating with bureau, sources say (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Jordanian authorities detained alleged ShinyHunters member Saif al-Din Khader, known as Rey. Two sources said he is helping the FBI identify other members through his devices and correspondence with a sample of stolen FBI data containing employee identities, job details, and medical and psychiatric records. The group's dark-web site disappeared after another alleged member was detained in the Netherlands.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fstratechery.com%2F2026%2Fapple-and-a-hackers-future%2F%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/zsrzeqY_3GYYVGkQKJq1eS037vvctvTPEvQSyEfkoQ4=452">
+                                    <span>
+                                        <strong>Apple and a Hacker's Future (17 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A Claude Code agent flagged a root-level Monero miner on Ben Thompson's always-on Mac Mini after attackers exploited CVE-2026-65400, a macOS screen sharing flaw, through an internet-exposed port 5900. Thompson kept screen sharing on because headless Macs need someone to click GUI-only TCC prompts, and he found that the automatic security updates setting did not cover the point release carrying the fix. He argues that Apple's planned Full Disk Access restrictions push macOS further toward a managed device, at odds with agent-driven computing.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftechcrunch.com%2F2026%2F10%2F04%2Fgoogle-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions%2F%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/7tkdX4gWUog3sjVFyypAOfaPwbTOGmg-5qNoc0Gy7LY=452">
+                                    <span>
+                                        <strong>Google froze its open source bug bounty program due to a ‘significant rise' in AI submissions (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Google paused its Open Source Software Vulnerability Rewards Program on October 1 after automated reports flooded maintainers and engineers.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.yahoo.com%2Fnews%2Fworld%2Farticles%2Fdata-breach-hits-denmarks-population-113327844.html%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/jp6XY1RuQoHCNh7B1-5-xvOaixT7K6F8JzBC3f5ivLY=452">
+                                    <span>
+                                        <strong>Data breach hits Denmark's population register, affecting 8.8 million (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Names, addresses, and CPR numbers for about 8.8 million people were exposed after attackers accessed Denmark's Central Population Register, reportedly using a Danish company's legitimate login credentials.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.phoronix.com%2Fnews%2FAMD-Zen-6-BTB-CTX-Linux-7.4%3Futm_source=tldrinfosec/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/kjW5Bt8jCJKXC0wFUCiZlSeyCFrm9qJuT1w0Aay0biM=452">
+                                    <span>
+                                        <strong>Linux 7.4 To Land New BTB CTX Isolation Feature Of AMD Zen 6 (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Linux 7.4 will support AMD Zen 6's BTB CTX Isolation, which separates user/kernel and guest/host branch predictor contexts.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/KLBjmtX71H1S0sq8IpD8jEs-CzriNfVUeRZA0FJlEYY=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/gXcqQt5CIQ_t1OfGAUo5uwgOox3ce0cB8H0kvGj9zuw=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/kKdH3u8asotaf_vUwJ5QgYjrpwx-ixa58Iz4J50Hl3U=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/wKKLMNpNvrN8BU7KlNeFE1fHi972uKyEWJQAS4qvPVk=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/z9CeV2NVX0n1G3PGKiBAfSu35QSAjIQiCSc-S5Vehr0=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/nZsxCGgiQ3wiQiavv9whNebLCgX1OLfm8tHYuu8v_8A=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/iHegwuONbrfBdQxiD6IA_5wPXECaeoJ3NSArG9LDk9s=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/hiZT3vDU1jedsXxrNDvuTNBJFNszLgM03943kuDj3OI=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/c7fetKluOWQrCVUpjQIXzXHr9JPh9xV57_0cpWYkdBc=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/EenRrEx8FyhPjajSJYouuUK43Lsr1S1YWLa-FP1XgDQ=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=884fa9da-c176-11f1-a15c-61a54db3131b%26pt=campaign%26pv=5%26spa=1791291729%26t=1791292457%26s=51ccbb2ef3737557e9c29f23fcf69a50f41966563ec6060cbc6456aa461f5b44/1/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/OYlNzrE_M6xdLcIqMqhHLwGgeya-XKH_t837wPdhnx8=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a11159c1be-d4cb1c3e-d74a-43ea-8692-5703bc59213b-000000/-v2SiXXILwn401KiY-3VCMRcZxQiz-KNoj6eWdesU_Y=452">
+</body></html>
