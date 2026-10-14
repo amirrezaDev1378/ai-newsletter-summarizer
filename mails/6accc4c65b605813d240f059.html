@@ -1,0 +1,545 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR Dev</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>The Deno team is joining Cloudflare to focus on a shared platform built around Workers, Durable Objects, and celld. Deno runtime development&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdev%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/6CQLo3-khrj4QmmwWL5y9Rmmq9O4dKtDBrV8VpRR5cM=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/1rzDtffIZYNDnvtlF3LIJieZzwluiGm0_Aiyu5w1sDw=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=5b8f4fe4-ab5b-11f1-9535-11350ff61227%26p=d0977686-c618-11f1-af9b-b57295e63de1%26pt=campaign%26t=1791804611%26s=d0aa68bb40623d3c9a9306e4ceba71d5124253f7e4605a4b3eb1ffbce22432a1/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/A2CW2CMNhEJ9RHKsi7CXLaM4Zq8gAz14QXk1MKzchXk=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.testmuai.com%2Fkane-cli%2F%3Futm_source=tldr%26utm_medium=content_collab%26utm_campaign=tldr-dev-primary-newsltr-12oct26%26utm_content=header_kane_cli_let%26utm_term=2026-10-12/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/Ydeam0CdzAlVHsEPn_0opx7h9W_U49laV-F7Pq1Y9_I=452"><img src="https://images.tldr.tech/testmu.png" alt="Testmu Ai"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>&nbsp;TLDR Dev <span>2026-10-12</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.testmuai.com%2Fkane-cli%2F%3Futm_source=tldr%26utm_medium=content_collab%26utm_campaign=tldr-dev-primary-newsltr-12oct26%26utm_content=header_kane_cli_let%26utm_term=2026-10-12/2/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/8m6SE9-o3tdA_k0uDNXWmRktny1Xb3brfg1pFIHA8pc=452">
+                                    <span>
+                                        <strong>Kane CLI: let your coding agent test its own work (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Your coding agent ships the feature. Then you click through it manually. Describe the check in natural language instead. Kane CLI runs it in real browsers or on iOS simulators and Android emulators and returns pass or fail with a video link (<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.testmuai.com%2Fkane-cli%2F%3Futm_source=tldr%26utm_medium=content_collab%26utm_campaign=tldr-dev-primary-newsltr-12oct26-2%26utm_content=Body_how_it_works%26utm_term=2026-10-12/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/SI9B6qlsjlHipsTPFlI3CWMZInqGd487K576UEDqmw8=452" rel="noopener noreferrer nofollow" target="_blank"><span>see how it works</span></a>).
+
+<p></p>
+
+<p>3 ways devs use it:</p>
+
+<p><strong>&gt; Agent loop:</strong> Claude Code, Cursor, and Codex call it to verify their own builds.</p>
+
+<p><strong>&gt; CI gate:</strong> Non-zero exit codes fail the pipeline when a flow breaks.</p>
+
+<p><strong>&gt; Playwright export:</strong> Turn any run into test code you own.</p>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.testmuai.com%2Fkane-cli%2F%3Futm_source=tldr%26utm_medium=content_collab%26utm_campaign=tldr-dev-primary-newsltr-12oct26-3%26utm_content=cta_200_credits%26utm_term=2026-10-12/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/nmOYeB2n2wKsJ-HFIKgvfLf_5KK2tQ0p52y3kgIQ_Ds=452" rel="noopener noreferrer nofollow" target="_blank"><span><br><strong>Start free with 200 credits →</strong></span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Articles &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fnishtahir.com%2Fbuild-your-own-decision-model%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/OL2I-tiylOQPqhjLPT727RWIKENmML2hXVCFMqK9hCA=452">
+                                    <span>
+                                        <strong>Build Your Own Decision Model (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A Qwen3-1.7B walkthrough turns multiple-choice questions into single-pass predictions by scoring only the allowed answer tokens. Fine-tuning improves accuracy on a 1,221-question CommonsenseQA sample from 59.4% to 62.4%, while temperature scaling makes the model's confidence better reflect its actual accuracy.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcopyconstruct.medium.com%2Fhow-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/icFyt1kWwSsJfLgzP31IGa0d2JIuoRc9lW7aPj6l7ic=452">
+                                    <span>
+                                        <strong>How to Effectively Debug When You No Longer Understand the Code (63 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Three production investigations, a latency regression, a memory leak, and a kernel-level hang, show how to steer coding agents through unfamiliar systems using runtime evidence. The framework separates facts from hypotheses, compares failures with a control, and requires every proposed cause to satisfy all known constraints. Adversarial reviews should seek contradictions, and reproductions must match the real failure's signals before they can be trusted.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.cockroachlabs.com%2Fblog%2Fexperiment-running-hospital-code%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/zuxJdwOQPs1b1dvISoWYQervPxY1dozp8nt9ZY3ogoQ=452">
+                                    <span>
+                                        <strong>Five Months Treating Bugs Like Patients and Coding Agents Like a Medical Team (20 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Cockroach Labs structures coding agents around a teaching hospital, with reviewed plans, separate implementation and review roles, structured handoffs, and an audit before merge. The pipeline landed over a million lines of code in five months with seven reverts, and human approval became mandatory after the first autonomous week before the team used it to build customer-facing migration tooling.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Advice</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fitsallaboutthebit.com%2Fi-am-sorry-but-you-still-have-to-think%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/nRvHdJgAFBEm8yLKM5b-9ywoNeGHpWI03iIPzvmfLzo=452">
+                                    <span>
+                                        <strong>I'm Sorry, but You Still Have to Think (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The AI-generated Campfire app rewrites make different choices about compatibility, queues, and concurrency, so throughput alone cannot establish which language performs better. Constant-arrival-rate tests expose tradeoffs between dropped notifications, timeouts, memory use, and delivery latency, showing why engineers still need to inspect code and specify failure behavior.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fpurplesyringa.moe%2Fblog%2Fgrieving-the-loss-of-details%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/DeLAyBsWWOsnHKfA3DeYtcd0DnU0BWWBo3mBXr7ZV3Q=452">
+                                    <span>
+                                        <strong>Grieving the Loss of Details (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A personal reflection explores the loss of professional identity when AI shifts attention from low-level knowledge and performance details toward architecture and delegation.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.dgt.is%2Fblog%2F2026-10-07-deepseek-freek-out%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/w90qyRn4uJhlpNvqgwOXmU4gJcB0ozVeFydUq9KqVfs=452">
+                                    <span>
+                                        <strong>Why Isn't the Industry Freaking Out About DeepSeek 4.1 Flash? (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    An account of using DeepSeek 4.1 Flash across a dozen projects argues that inexpensive models can handle much of the work typically assigned to premium frontier models. Lower session costs encourage unattended chores, exploratory testing, and long planning sessions, with a more expensive model sometimes brought in for a final review.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.uvi.io%2Fwebinars%2Fconfidently-wrong-and-expensive%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=webinar-oct-q4%26utm_content=send2/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/XskUQtwi8FgX_izaM3vB0JUikfA84JzxyqA_CFn_-8k=452">
+                                    <span>
+                                        <strong>Webinar: Why Context Layers Get Costly at Enterprise Scale (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The first agent worked. Now entity resolution, relevancy and live permissions are someone's full-time job. On October 20th, Nave Ben Naim, Uvi's founding engineer, covers what agents cost when they explore instead of answering: tokens, latency, and output you re-check. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.uvi.io%2Fwebinars%2Fconfidently-wrong-and-expensive%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=webinar-oct-q4%26utm_content=send2/2/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/pmF6VpIvUQrGVSZpQN0sR-ItWzRDRQMBxZL8Vzhutlg=452" rel="noopener noreferrer nofollow" target="_blank"><span>Grab a seat.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frea.tools%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/DE0RLnHALFAqe_Q7n-fZu0V3xf4e2Pq3UU67gUBeTOM=452">
+                                    <span>
+                                        <strong>REA (Website)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    REA gives coding agents tools to reverse engineer native binaries, JavaScript and Electron applications, and browser behavior. Its examples recover Windows Calculator's percentage rules and a browser game's acceleration logic, then use those findings to explain or rebuild the features.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Frociiu%2Ftalorys%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/NpLGg36eZH451Q2dG8kUmYaqwAhVLCrjVMQiJ8tVLIE=452">
+                                    <span>
+                                        <strong>Talorys (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Talorys is a single-user personal AI assistant that runs in your own Cloudflare account and deploys with one command. It combines chat, editable memory, tasks, notes, projects, and scheduled reminders, with core organizational features continuing to work when AI is unavailable.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Ffranzenzenhofer%2Fbig-arrow-on-the-screen%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/xPVD18UJqwH2JdGcJCQKKyvIWq2XLg48jp1NwcNZJJc=452">
+                                    <span>
+                                        <strong>Big Arrow on the Screen (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A macOS command-line tool lets coding agents draw temporary arrows, boxes, and text over the screen to show users where to click. Its transparent overlays allow clicks through to the underlying application and disappear automatically, with skills provided for Claude Code and Codex.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fdeno.com%2Fblog%2Fcloudflare%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/aqeb5lS7Ggm8dXgHSOdss16MaqzHJq1jW4McfhEI1fQ=452">
+                                    <span>
+                                        <strong>Deno Is Joining Cloudflare (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Deno team is joining Cloudflare to focus on a shared platform built around Workers, Durable Objects, and celld. Deno runtime development will end after one year of bug fixes and security updates, Deno Deploy will shut down in six months, and JSR will continue operating on Cloudflare infrastructure.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fastralord.github.io%2Fposts%2Fspeculative-decoding-the-art-of-guessing-well%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/Qu86VJsGcHLj2E-Id9G-0OmOc7yPWK9bHULGCiUxrYo=452">
+                                    <span>
+                                        <strong>Speculative Decoding: The Art of Guessing Well (70 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Speculative decoding accelerates generation by drafting several tokens cheaply and verifying them in one target-model pass while preserving the target's output distribution. This detailed walkthrough derives acceptance and speedup formulas, covers EAGLE-3, multi-token prediction, and diffusion drafters, and explains why training for acceptance is different from simply minimizing KL divergence.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fswingbit.github.io%2Fdirty_pages%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/NKUKDtObcf3lKvVdTkzha2UTBmbFP_EeO8AF7ojpvac=452">
+                                    <span>
+                                        <strong>The Dirty Pages Surprise: When a Read-Only Query Writes Terabytes (10 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A MonetDB count-distinct query saturates an NVMe drive with writes because Linux flushes dirty pages from temporary memory-mapped scratch files. Moving the scratch files to tmpfs cuts runtime from 73 minutes to 97 seconds, while workload-specific writeback tuning reaches about 100 seconds without moving them off disk.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.seangoedecke.com%2Fsoftwares-centaur-age-may-last-decades%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/RCxpF-kkMMWm9uP_Zbujt-lV7ZIL7hT14c74GD_cQKY=452">
+                                    <span>
+                                        <strong>Software's Centaur Age May Last Decades (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Human and AI teams may remain the strongest software builders for another decade or two.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fimportstatic.com%2Fdatabases%2Fpostgres-uuidv7-vs-uuidv4-bigint%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/_dAImbBz3SNs-IsxH_1LfqGgbAS3D0-tkk9zpCArq7U=452">
+                                    <span>
+                                        <strong>PostgreSQL uuidv7 Keys Load Like bigint, UUIDv4 Took Twice as Long (9 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    In a PostgreSQL 18 laptop benchmark loading 10 million rows, UUIDv7 took 32.3 seconds versus 29.7 for bigint and 60.7 for UUIDv4.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fcommandline.microsoft.com%2Fmicrosoft-decision-1-model-foundry%2F%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/nrOferS1sdHHFCJyOKYo2_Bi6ISIgvkNb_CuPCH_SZ8=452">
+                                    <span>
+                                        <strong>Introducing Microsoft-Decision-1, Our Model for Fast Decision-Making (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Microsoft-Decision-1 scores fixed answer options in a single pass for routing, classification, and workflow control.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fratfactor.com%2Fcards%2Fgit-commit-size%3Futm_source=tldrdev/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/zToOh0u35hjN_XrMsnCTDhNCgBkVhqhddXEZjkOdI0o=452">
+                                    <span>
+                                        <strong>How Big Is a Git Commit? (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Git commit storage depends on directory structure, filesystem overhead, and compression.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2F862b7771%2F3/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/7MjcrpFOjSvqlHV-2YxbQCaNkOAHQlJkD3q5Kk7PfyM=452">https://refer.tldr.tech/862b7771/3</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_cac73489d5e0%2F3/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/g0kQky5HJbFT4b_SQNbD6hbx8CvTUh8BL9hbKzqYfgc=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of web developers and engineering decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdev%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/-6Pftndj_a70Q8YIOeVvz3CrCuPNmvBgMSqux76C9qc=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/6KZiuZaaZbNtDAKTI6kDpFy8rQ9Yb0KC41cMu1b9RVA=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/w2INvoegGxTAtZVvX3ziH60fZeQsYmVIThDW08ev0K0=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/pG-NO-W-0kf4-oP3Vu3Vj6OlZQG0nkRuZ35CYpBpyMc=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<span>Priyam Mohanty</span>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fxu-jenny%2F/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/UWGKcGKZQHTd2wy36e4SvCR7QjovLOhBHeZWUwxo55c=452"><span>Jenny Xu</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdev%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/3qhEAmkN1FztKq1DE2C_2BXU8vLKpPef7eoT9-X8MxU=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Dev isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=e8d201ca-3e93-11ed-9a32-0241b9615763%26lc=5b8f4fe4-ab5b-11f1-9535-11350ff61227%26p=d0977686-c618-11f1-af9b-b57295e63de1%26pt=campaign%26pv=5%26spa=1791802885%26t=1791804611%26s=8d657314fa44911303489cd8bbc9eaf27a376bcfdf028294eb41eeb47d6c8ed4/1/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/M-rX1QX23VCNn9rS2fPlVZLAIAuJmexZlWDs4BNs5aU=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a12fe09a04-f515cd9d-d145-4af7-b933-a070c3e1078d-000000/NvPc5lCgzunIBFu9hBz8c_BEqqZrfgGKPQU7pU_h6yc=452">
+</body></html>
