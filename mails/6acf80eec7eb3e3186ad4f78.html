@@ -1,0 +1,536 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR InfoSec</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>GitLab fixed CVE-2026-97229, a CVSS 10.0 integer overflow vulnerability in regex validation for CI/CD configurations. In certain conditions, an&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/zzA-WGOKm4a38MLNavgXgCq7GVxMt4XR9GU1I-tFNuo=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/tQ3rtUSfT9LaATX8ms_PQ1oJBvWvFGYw4CCPfjxRERU=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=1a7df934-c7c5-11f1-9959-5b3a7ebe970e%26pt=campaign%26t=1791983850%26s=7071b9f8e9eecb73f89cc266aec99914bf79367d1fb5f7749613e2bd9e08ffad/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/HtDzBzqAMwvE_Poq-qjx3TXRC4T3_bDi_qFfg5vBnEE=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2F1password.com%2Fresources%2Fsecuring-the-agentic-enterprise%3Futm_source=tldr%26utm_medium=paid_newsletter%26utm_campaign=2026q3_unifiedaccess_bl_securing-the-agentic-enterprise_sa%26utm_content=newsletter_infosec_101426_header_contain_ai_agents%26utm_term=2026-10-14_tldr_infosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/jGSyiR17FfH4qPIvRa3Lb8jCvAuAlTC1InPn2QhV5FY=452"><img src="https://images.tldr.tech/1password-2.png" alt="1Password"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR Information Security <span>2026-10-14</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2F1password.com%2Fresources%2Fsecuring-the-agentic-enterprise%3Futm_source=tldr%26utm_medium=paid_newsletter%26utm_campaign=2026q3_unifiedaccess_bl_securing-the-agentic-enterprise_sa%26utm_content=newsletter_infosec_101426_header_contain_ai_agents%26utm_term=2026-10-14_tldr_infosec/2/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/SdiRlRSkIla1Se7fX_809lUicHDMcDJA2YPU3h8s9Wk=452">
+                                    <span>
+                                        <strong>Contain AI agents with intent-based access controls (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    AI agents need real access to do useful work. But when they inherit human credentials or standing privileges, even one routine task can create outsized risk. Our guide offers a solution.<p></p><p>In <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2F1password.com%2Fresources%2Fsecuring-the-agentic-enterprise%3Futm_source=tldr%26utm_medium=paid_newsletter%26utm_campaign=2026q3_unifiedaccess_bl_securing-the-agentic-enterprise_sa%26utm_content=newsletter_infosec_101426_body_intro_securing_agentic_enterprise%26utm_term=2026-10-14_tldr_infosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/ti3TkDJ3efKC-mW3a4eDjzkghDQ-CTB0gm37pXdFNIs=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Securing the Agentic Enterprise</strong></span></a>, you'll learn:</p>
+
+<ul>
+<li>How to identify risks of inherited credentials, standing access, and unpredictable agent behavior</li>
+<li>How intent-based, just-in-time, and just-enough access can limit an&nbsp; agent's blast radius</li>
+<li>How 1Password Privileged Access extends access governance to AI agents and other non-human identities</li>
+</ul>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2F1password.com%2Fresources%2Fsecuring-the-agentic-enterprise%3Futm_source=tldr%26utm_medium=paid_newsletter%26utm_campaign=2026q3_unifiedaccess_bl_securing-the-agentic-enterprise_sa%26utm_content=newsletter_infosec_101426_cta_read%26utm_term=2026-10-14_tldr_infosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/4xZ2Fv6dobTdxLizhRgVLevHNlF5Hd4NBqGAWGA-d90=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Read more</strong></span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🔓</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Attacks &amp; Vulnerabilities</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fthehackernews.com%2F2026%2F10%2Fgitlab-patches-cvss-100-flaw-that-could.html%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/Ok6TkMqNYYJcCh4NnQw7I4LFUovgzX3m-itiHlLqgkA=452">
+                                    <span>
+                                        <strong>GitLab Patches CVSS 10.0 Flaw That Could Let Unauthenticated Users Run Server Code (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    GitLab fixed CVE-2026-97229, a CVSS 10.0 integer overflow vulnerability in regex validation for CI/CD configurations. In certain conditions, an unauthenticated user could execute arbitrary code on a GitLab server. The fixes are included in CE/EE versions 19.2.8, 19.3.5, and 19.4.2. The release also addresses high-severity XSS, authorization, and response-cache poisoning vulnerabilities.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.theregister.com%2Fcyber-crime%2F2026%2F10%2F13%2Fowner-of-fashion-brands-hobbs-and-whistles-joins-autumn-pwned-collection%2F5302752%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/pp9YzXghVbdVPG6ntsYojc65KPZROAi3hjc9Q8-_ydM=452">
+                                    <span>
+                                        <strong>Owner of fashion brands Hobbs and Whistles joins autumn pwned collection (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    TFG London, owner of Hobbs, Phase Eight, and Whistles, detected a cyberattack on October 11. Several IT systems remain offline, website functions are limited, and orders placed on or after Sunday may be delayed. TFG has not found evidence that payment data was exposed. It is still checking whether customer data was compromised. Attack method, ransomware involvement, and restoration timing remain undisclosed.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FQwoarX/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/BAQRmVjRKyANWOcCFqsjAIOUSmlFGLS2XDydTr1uG-s=452">
+                                    <span>
+                                        <strong>Ghostscript Flaw Lets Hackers Hijack Servers via PDF Uploads (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Wordfence discovered a new vulnerability in the Ghostscript interpreter and rendering engine which could allow attackers to achieve remote code execution (RCE) using specially crafted PDFs. For WordPress sites to be vulnerable, an attacker must be able to upload PDFs which are then processed by a vulnerable version of Ghostscript to generate a preview or thumbnail. Other applications that use Ghostscript to generate previews or thumbnails from PDFs may also be vulnerable.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧠</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Strategies &amp; Tactics</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.doyensec.com%2F2026%2F10%2F13%2FSfape.html%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/8XiCvljn8g6-zBD_jsDDr-iMl48b55KoVQaTn9MdQDA=452">
+                                    <span>
+                                        <strong>Playing It SFAPE: Code Execution in Isolated User Mode (16 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Doyensec found a chain in Windows' SFAPE VBS enclave, used by Defender's Enhanced Phishing Protection and loaded by LSASS. A repeated call to Initialize wrote a fixed 32-bit value without validating the destination. The researchers corrupted the enclave-range check, then used a ClipboardInput race to gain a controlled memset, which led to VTL1 read and write primitives, replacement of the valid-target table, and arbitrary calls to existing VTL1 code through NtContinue. Microsoft fixed CVE-2026-83498 in September's Patch Tuesday and blocked older SFAPE images through the VBS Code Integrity policy.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fsecuritylabs.datadoghq.com%2Farticles%2Fbeyond-valid-credentials-how-exposed-aws-keys-are-tested-for-amazon-bedrock-access%2F%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/57SpAzO6xv5jkJCcqi68C4kfkjufreCqS_lfZycv_S8=452">
+                                    <span>
+                                        <strong>Beyond Valid Credentials: How Exposed AWS Keys are Tested for Bedrock Access (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    When attackers obtain AWS credentials, they frequently test them for access to other services of interest like SES, SNS, and Bedrock. Datadog examined three credential harvesting platforms and found that they utilize the ListFoundationModels, InvokeModel, and Converse API to determine access. It also found a script that checked for promotional credits available in the account.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftherecord.media%2Fnorth-korea-laptop-farms-worker-scams-doj-raids-texas%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/BLG0zcmh_KF29qo5ZPelVFnWDfwW08oTM8xoNM3wjNU=452">
+                                    <span>
+                                        <strong>Two arrested as DOJ takes down laptop farms responsible for $3 million in North Korean revenue (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The DOJ raided more than 40 Texas residences in late September and seized 187 laptops used by North Korean IT workers, while two US facilitators were arrested for helping funnel over $3 million from about 70 companies. A new FBI advisory said the scheme has adapted, with operatives subcontracting jobs to freelancers in South Asia and West Africa and recruiting financially stressed Americans, including active-duty military, to host laptops or sit interviews. Exposed workers have threatened violence or data leaks to extract payment, and some are now chasing identities that qualify for security-cleared roles.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Launches &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fpages.awscloud.com%2Fawsmp-gim-85hk-webinar-sec-grc-webinar-grc-webinar.html%3Ftrk=3df23b3d-8c60-4c12-acfc-67e2ea5e8849%26sc_channel=el/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/H8Sdw8sdyXP_rjVdu9IGQ1zz5aYLYo4Hkbsjfnwr6GY=452">
+                                    <span>
+                                        <strong>Modernize application and API security (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Watch this on-demand webinar from AWS and SANS Institute to explore how APIs, cloud-native development, and agentic AI reshape security risks. Learn strategies to evolve threat models, strengthen governance, and adapt controls. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fpages.awscloud.com%2Fawsmp-gim-85hk-webinar-sec-grc-webinar-grc-webinar.html%3Ftrk=3df23b3d-8c60-4c12-acfc-67e2ea5e8849%26sc_channel=el/2/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/dFnXLpxqeOfdJKdd12EnDrNngFEzlZmAMtUEtNsDeqo=452" rel="noopener noreferrer nofollow" target="_blank"><span>Watch now and explore AWS Partner solutions in AWS Marketplace.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.lastwall.com%2F%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/vXLwSg5olPh3B0AaIZ0EpkLiEvu6hagy6rL81qrBOT4=452">
+                                    <span>
+                                        <strong>Lastwall (Product Launch)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Lastwall provides identity security for defense and government organizations. Its IDCommand Suite combines zero-trust architecture, PKI, passwordless authentication, and risk scoring from 200 contextual signals. Quantum Shield secures data in transit with NIST-approved post-quantum cryptography.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FTheSecuredAnalyst%2Fsecurity-suite%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/2vRK7bqyjYMVYhS34T4x77KheGxdfJXbQRGjWA63Tv8=452">
+                                    <span>
+                                        <strong>Security-suite (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A comprehensive open-source security tools suite for OSINT reconnaissance, web security testing, API security assessment, and compliance checking with AI-powered analysis.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2Fcolbymchenry%2Fcodegraph%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/z2rlZ-UX113RwqXfpy926NuCYNM7L6pQ5d28aoEbhZE=452">
+                                    <span>
+                                        <strong>CodeGraph (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CodeGraph is a tool to build pre-indexed code knowledge graphs which can be fed to AI agents to speed up code exploration.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.ft.com%2Fcontent%2Fba28b7cd-293e-4eee-a073-ad81aaefced3%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/thAIM1Wb9Lt-BF8eKUU4j22OnZGRlDCwBsRjFBQFVEs=452">
+                                    <span>
+                                        <strong>AI Regulation Must Mimic Industrial Revolution Laws (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The UK's AI minister, Kanishka Narayan, is drafting plans for compulsory safety reporting and monitoring for frontier AI, and a potential requirement that labs grant pre-release access to models for review. Narayan compared this to the Industrial Revolution and said frontier labs shouldn't release tools they can't guarantee are safe. Narayan also confirmed that he reached an agreement with Anthropic to provide the AISI preview access to Mythos again.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2F36rDN6/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/nqf1ILs2dx-Nf1ulk4VgfzsOYxVoawyQ9I9xf2gbuIM=452">
+                                    <span>
+                                        <strong>Anthropic Warns Self-Replicating AI Could Spread to Your Smart Devices (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Anthropic warns that small AI models could soon self-replicate across consumer IoT devices, creating distributed botnets capable of running AI workloads. Anthropic distributed Gemma4-26B-A4B onto 15 off-brand Android TV boxes but could not demonstrate self-replication. On the hardware in question, inference would be a slow process, so defenders may be able to respond in time to stop any abuse.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.zetter-zeroday.com%2Ftrezor-wallets-also-compromised-with-implants%2F%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/E5aOntt_ND00P3fwzZ0JJIUuCYChDqSZDzsn3toT-mk=452">
+                                    <span>
+                                        <strong>Trezor Wallets Also Compromised with Implants (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Hardware hacker Joe Grand found implants in a Trezor One and a Trezor Model T bought from unauthorized sellers, contradicting Trezor's public claim that none of its devices had been compromised, despite Grand reporting the findings in August. The attackers replaced each device's microcontroller with malicious firmware derived from open source that displayed one of a dozen pre-generated seed phrases while passing integrity checks against a copy of the legitimate firmware stored on an external microSD card. Unlike the Ledger implants, which exfiltrated real seeds over a cellular link, these relied on predictable seeds, and Trezor's move to cut authorized resellers suggested the company feared a similar shift into trusted supply channels.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=quicklinks10142026%26sp=XBvsQ0k2WGouCBdcL8h4pZ7e/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/cT0jdImTvnipXoLkDPAHF9CJOqbhZNFfyyA26A0tkmw=452">
+                                    <span>
+                                        <strong>Reach 8 million tech professionals reading TLDR (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Ads get ignored on social media but not in TLDR! Reach security engineers and CISOs where they actually pay attention. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=quicklinks10142026%26sp=XBvsQ0k2WGouCBdcL8h4pZ7e/2/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/r6h_EFL3qphY8me5Ao8LvqF758XkGhLIKldFYPH9SCU=452" rel="noopener noreferrer nofollow" target="_blank"><span>Learn more about sponsorship opportunities</span></a>.
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Flinks.tldrnewsletter.com%2FviMmV4/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/1DOqTiR0EMu4WhHMCVEAn_eQAerVHBW65EKbj6brDns=452">
+                                    <span>
+                                        <strong>Refrigeration Controller Hack Spoils Food Across European Supermarkets (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Hackers remotely altered Danfoss refrigeration controllers at hundreds of European supermarkets, forcing freezers into defrost for up to six hours.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.cbsnews.com%2Fnews%2Fopenai-employee-arrest-recording-device%2F%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/aM0aT9em9zRzvllohP9FAuBWCXsBl4-ANxK2K3kSdjg=452">
+                                    <span>
+                                        <strong>FBI arrests OpenAI employee for allegedly planting recording device in company offices (3 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    An OpenAI engineer was arrested for allegedly hiding a toilet-paper-wrapped audio recorder in an executive conference room TV's USB port, after a complaint showed he had queried a productivity tool for leadership meeting locations and a chatbot account tied to his spouse had asked how to build and obfuscate the device.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.racket-lang.org%2F2026%2F10%2Finfrastructure-compromise.html%3Futm_source=tldrinfosec/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/zPMm-_GWnT_TohbEm5OGhL_QIcdQl48R6YCb_QddKs4=452">
+                                    <span>
+                                        <strong>Racket Infrastructure Compromise (2 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A crypto miner on a compromised Northwestern University build server exposed Racket's Apple and Windows signing keys, prompting the project to rotate both, have GlobalSign revoke the Windows certificate, and urge macOS users on versions 8.12 through 9.3 to reinstall before Apple revokes its certificate at semester's end.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Fdb071950%2F8/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/R0WlChEIS7ja8F6_Phn9nUbCyvt0ihXBXTTlH_2ILak=452">https://refer.tldr.tech/db071950/8</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_34942c605d66%2F8/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/nnd8xn_sdNWWdCC28I-Dn_0o77iwUfLDSW4jUKwTmQQ=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of cybersecurity professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrinfosec%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/yWJXZ-oUye4NvmWqgKxu5-s2ZEzzaw-7xCJYiJOmeAA=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/8S2HvdzfU2YH8y2sjd_5zGdFeWESClFF9iOgqwqItYw=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/5NbFxuew3clwmZUR65FXViGSHLkQXGWauYayhwl3JlU=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/ZK9MJ63TmbI5znCmnCu5V2X0g8_uYaWJ23B1rGaPCMY=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fprasannagautam%2F/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/PylWILV_trmefsqlirX8bvpPtbNNtTH0K_09LhCjPMs=452"><span>Prasanna Gautam</span></a>, <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fericfernandezdelcampo%2F/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/AimWalgI9cFKHRZGOfRByoU4hgBk8kfiy5rSy_r7Dp0=452"><span>Eric Fernandez</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fsammy-tbeile%2F/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/Oz17-_MvdsqyzWuxEQHk5fRJB5ZiEsNUHTHz6nlxtK0=452"><span>Sammy Tbeile</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Finfosec%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/nl5vL9-x2r2Zt1s53QT-zNzq03ubCldpMjk3cuZBaCs=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR Information Security isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=8d9cea11-3e94-11ed-9a32-0241b9615763%26lc=698c50c4-ab5b-11f1-b47d-fdf797f5eb30%26p=1a7df934-c7c5-11f1-9959-5b3a7ebe970e%26pt=campaign%26pv=5%26spa=1791982848%26t=1791983850%26s=d46f3d0b6a0f6e8c91f6978ef17adb8a2c64447c0b2b076e45c53617d2e6d1e4/1/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/855hrCsSi-fxMOGdY54bYQxWGncpjXg7qn3VyeZqSpY=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a13a8f92ca-dfb41272-2fdd-48bb-a299-edb8a8063616-000000/OobmIu5V07wO9maIrbUwHzi2LMzkd_1pdcQk6ELm_9M=452">
+</body></html>
