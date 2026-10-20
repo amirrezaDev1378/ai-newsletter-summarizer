@@ -1,0 +1,487 @@
+<!DOCTYPE html><html><head><meta><meta><meta><meta><title>TLDR DevOps</title><meta><meta><!--[if mso | ie]>
+		
+			<![endif]--></head><body>
+
+
+
+<div>Datadog&#039;s Scout 1.0 is an AI model specialized for investigating production issues that powers its Bits AI assistant. The model matches&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<div>
+<br>
+</div>
+
+<table><tbody><tr><td>
+
+<table width="600"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/gBUYbCwUgr-oH-nYSn2zmPlk15ArMVYra7nxHXMvJbE=452" rel="noopener noreferrer" target="_blank"><span>Sign Up</span></a>
+|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisetopnav/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/Fd0VNnP2sMr6d3BT2wTbglHAxUHsGzrud0p05BHabg4=452" rel="noopener noreferrer" target="_blank"><span>Advertise</span></a></span>|<span><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Fweb-version%3Fep=1%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=acd9865a-cb89-11f1-940f-63c1b92b3a0b%26pt=campaign%26t=1792409140%26s=c2634ff2956038ea8450e195a83ae927d6ddd5b598a57eeba0dbe528ef73660f/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/6i6SmctXLE2olW-QgxltFXNNkf_WDm38tBj_ozAocNs=452"><span>View Online</span></a></span>
+<br>
+</span></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td><span>T</span><span><span>L</span><span>D</span></span><span>R</span>
+<br>
+</td></tr></tbody></table>
+
+<br>
+
+<table width="100%"><tbody><tr><td height="20" width="100%"><strong>Together With </strong>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.atlassian.com%2Fforrester%2Fwave-coversational-ai-employee-services%3Futm_source=newsletter-email%26utm_medium=email%26utm_campaign=P%253Ajira-service-management*O%253Agdc*C%253Adl*H%253Afy27q2*I%253Atldr-devops-primary*Y%253Aitsm*E%253Acloud*%26utm_content=header_why_forrester_just%26utm_term=2026-10-19_tldr_devops%26utm_sfdc-campaign_id=701QB00000nStVJYA0/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/oruMF7WkBS_5NyWwT13LRb5XJilLI6k1Ywsv-zEN89w=452"><img src="https://images.tldr.tech/atlassian.png" alt="Atlassian"></a></td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+
+<h1><strong>TLDR DevOps <span>2026-10-19</span></strong></h1>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.atlassian.com%2Fforrester%2Fwave-coversational-ai-employee-services%3Futm_source=newsletter-email%26utm_medium=email%26utm_campaign=P%253Ajira-service-management*O%253Agdc*C%253Adl*H%253Afy27q2*I%253Atldr-devops-primary*Y%253Aitsm*E%253Acloud*%26utm_content=header_why_forrester_just%26utm_term=2026-10-19_tldr_devops%26utm_sfdc-campaign_id=701QB00000nStVJYA0/2/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/gML4YpJxcDi-84JHGcCSyNSQAleL565Vy8K_vIsT784=452">
+                                    <span>
+                                        <strong>Learn Why Forrester Just Named Atlassian a Leader in Conversational AI Platforms for Employee Services (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Atlassian was recognized as a Leader in The Forrester Wave™: <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.atlassian.com%2Fforrester%2Fwave-coversational-ai-employee-services%3Futm_source=newsletter-email%26utm_medium=email%26utm_campaign=P%253Ajira-service-management*O%253Agdc*C%253Adl*H%253Afy27q2*I%253Atldr-devops-primary*Y%253Aitsm*E%253Acloud*%26utm_content=body_intro_conversational_ai_platforms_employee%26utm_term=2026-10-19_tldr_devops%26utm_sfdc-campaign_id=701QB00000nStVJYA0/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/fzhrx3BRla0gyPnNnTCKVR-sILvTUfbfM8V1JJr-qZ8=452" rel="noopener noreferrer nofollow" target="_blank"><span>Conversational AI Platforms for Employee Services, Q3 2026</span></a>, with their “strength of strategy” and “strength of offering” ranking them as outliers in the field. Here's some of what Forrester <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.atlassian.com%2Fforrester%2Fwave-coversational-ai-employee-services%3Futm_source=newsletter-email%26utm_medium=email%26utm_campaign=P%253Ajira-service-management*O%253Agdc*C%253Adl*H%253Afy27q2*I%253Atldr-devops-primary*Y%253Aitsm*E%253Acloud*%26utm_content=body_outro_say%26utm_term=2026-10-19_tldr_devops%26utm_sfdc-campaign_id=701QB00000nStVJYA0/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/1ghc_Xt2f3aBpBQpCI_6DVtzoU7IuKQ4giPgPz8lYXU=452" rel="noopener noreferrer nofollow" target="_blank"><span>had to say</span></a>:
+
+<p></p>
+
+<ul>
+<li><strong>Strategy:</strong> Atlassian “is prioritizing connected user context across tools, proactive employee support, and embedding Rovo where people work.”</li>
+<li><strong>Capabilities:</strong> “Atlassian stands out for its context capabilities and ability to embed Rovo into key collaborative surfaces.”</li>
+<li><strong>Forrester's take:</strong> “Atlassian's agent is ideal for existing customers and those that want to automate more service experiences and experiment with cross-vendor agents.”</li>
+</ul>
+
+<p><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.atlassian.com%2Fforrester%2Fwave-coversational-ai-employee-services%3Futm_source=newsletter-email%26utm_medium=email%26utm_campaign=P%253Ajira-service-management*O%253Agdc*C%253Adl*H%253Afy27q2*I%253Atldr-devops-primary*Y%253Aitsm*E%253Acloud*%26utm_content=cta_report%26utm_term=2026-10-19_tldr_devops%26utm_sfdc-campaign_id=701QB00000nStVJYA0/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/vgT3Ol0fFO4m7bLH1j7mCfhdOxsTTIwvn0KZXXnr4jo=452" rel="noopener noreferrer nofollow" target="_blank"><span>Get the report.</span></a>
+
+
+</p>
+</span></span></div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>📱</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>News &amp; Trends</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.datadoghq.com%2Fblog%2Fai%2Fintroducing-scout-sre-specialized-model-bits-ai%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/VAwg5MEM6aR4dVjqKHAKVbYKEJ41rsYl_Uk3gJha-cY=452">
+                                    <span>
+                                        <strong>Introducing Scout 1.0: A new SRE model powering Bits AI with frontier performance at a fraction of the cost (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Datadog's Scout 1.0 is an AI model specialized for investigating production issues that powers its Bits AI assistant. The model matches the performance of general-purpose frontier models like GPT-6.1 Sol and Claude Opus 5.5 at three to eight times lower estimated inference cost. Datadog trained Scout using reinforcement learning on simulations built from historical incidents.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fnewrelic.com%2Fblog%2Fnews%2Fanthropic-otel-ai-observability%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/gAiFjQG16S70BG6I3eVWtEl51XpjOqUvBRprnA3dklk=452">
+                                    <span>
+                                        <strong>Claude Platform Tracing in New Relic (4 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    The Claude Platform now exports OpenTelemetry traces natively from Claude Managed Agents, the Messages API, and the Claude SDKs in public beta. New Relic AI Monitoring reads these traces to link model performance with application data in a single view. Users can add New Relic as a destination in the Claude Console to start receiving spans within about a minute without code changes.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fcloudflare-openai-discovery-agentic-web%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/ywB-BezzCqG1yNNAYpv2IMU4XZLaaOjstavaQoFKPwY=452">
+                                    <span>
+                                        <strong>Cloudflare and OpenAI: making AI discovery better for everyone (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A research pilot between Cloudflare and OpenAI has enabled the discovery and indexing of hundreds of millions of new web pages. The program used signals from roughly 1% of Cloudflare's network to help ChatGPT find content that was previously unknown. These signals identify useful pages and filter out nonexistent or duplicated content, which reduces unnecessary crawling load for site owners. Cloudflare states the metadata is used for search discovery rather than training AI models.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🚀</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Opinions &amp; Tutorials</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.datadoghq.com%2Fblog%2Fhow-datadog-defines-service-criticality-at-scale%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/f7MZWC1F11mY8pHOEWVdz4M5oPXj3KjGa8mCk-Tr3Tc=452">
+                                    <span>
+                                        <strong>How Datadog Defines Service Criticality at Scale (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    An LLM analyzed several hundred SEV-1 and SEV-2 postmortems for about USD 32 to derive four criticality signals. Services get high, low, or unknown ratings with confidence, owner overrides, and the tiers inform deployment and auto-merge decisions.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fplatformengineering.org%2Fblog%2Fagent-first-idp-how-big-tech-and-the-clouds-are-preparing-platforms-for-agents%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/hCziYjItqc0wqqrg-jP3cv8_-YUcxCjIOcaOFYIQ-4Y=452">
+                                    <span>
+                                        <strong>Agent-first IDP: how big tech and the clouds are preparing platforms for agents (22 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    This guide outlines how to evolve an internal developer platform into an Agentic Engineering Platform (AEP) suitable for AI agents. Real-world examples from Block, Uber, Spotify, and public clouds illustrate architectural decisions like managed entry points, agent identity, and trustworthy state. The playbook describes nine practices across four maturity levels, ranging from demand discovery and machine-readable contracts to policy enforcement and domain-specific agents.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.enterprisedb.com%2Fblog%2Ffinding-and-fixing-silent-throughput-ceiling-postgresql%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/7BLcKkHIUzQPb-iMnt4V2hiDlIh6WSx3yHVxcVWEvGk=452">
+                                    <span>
+                                        <strong>Finding (and Fixing) a Silent Throughput Ceiling in PostgreSQL (6 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    PostgreSQL throughput can stall under heavy concurrent inserts even when CPU and storage have spare capacity, as writers queue behind relation extension locks. In a HammerDB benchmark, distributing writes across hash partitions reduced contention and increased throughput 7.2× on the same hardware.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🧑‍💻</span></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Resources &amp; Tools</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.finout.io%2Ffinout-agents-demo%3Futm_source=tldr-newsletter-oct%26utm_medium=email%26utm_campaign=TLDR%26utm_content=DevOps-secondary/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/9pP1CCJchKCECtxDUAecf70rK77qykBiNaPLhbQEf2Y=452">
+                                    <span>
+                                        <strong>Finout's new AI agents cut cloud and AI costs without burning engineering hours (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Trawling through dashboards and Slack threads to find wasted spend = every engineer's nightmare. Finout's AI agents (beta) do that work daily across your cloud and AI spend, then hand each owner a ready case with savings and evidence. Lower bill, higher engineering efficiency. <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.finout.io%2Ffinout-agents-demo%3Futm_source=tldr-newsletter-oct%26utm_medium=email%26utm_campaign=TLDR%26utm_content=DevOps-secondary/2/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/wVvfwd78EXEm-RHL-ka_Z60njnrVFPLOYCHab8fpFjc=452" rel="noopener noreferrer nofollow" target="_blank"><span>Watch the walkthrough</span></a> or <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.finout.io%2Fbook-a-demo-page%3Futm_source=tldr-newsletter-oct%26utm_medium=email%26utm_campaign=TLDR%26utm_content=book_a_demo/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/N5YjvQqncljLQISbSSGG8ZhiHld6V31GHUbaji3y-mk=452" rel="noopener noreferrer nofollow" target="_blank"><span>book a demo.</span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.cloudflare.com%2Fdeploy-with-void%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/sJcErkrZnZQvWQn2So9vmcV9v0NmNUnkE3pv4yicfgQ=452">
+                                    <span>
+                                        <strong>Deploy with Void (5 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    VoidZero has open-sourced Void, a toolchain that extends Vite to handle full-stack application development and deployment. The package includes an SDK, a CLI, and a Platform for teams to self-host deployment environments within their own Cloudflare accounts. It automatically provisions resources like databases and queues during deployment.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fgithub.com%2FHKUDS%2FCLI-Anything%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/ohLmrrhd9v9MfygWVMxSqEGd-i_v_an8RWdCkTDrlkI=452">
+                                    <span>
+                                        <strong>CLI-Anything (GitHub Repo)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    CLI-Anything is a tool that converts software with a codebase into command-line interfaces for AI agents. The project currently supports 18 applications, including GIMP, Blender, and LibreOffice, with 2,461 passing tests. Users can install the CLI-Hub package manager to browse and deploy these community-built CLIs.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>🎁</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><strong><h1>Miscellaneous</h1></strong></div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fspacelift.io%2Fblog%2Fatlantis-at-scale%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/ujHDVKO3DXkoIBzRRamh2slPL1yVTFbH9sLnWxkAsrc=452">
+                                    <span>
+                                        <strong>Atlantis at Scale (13 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Details running Atlantis v0.47.1 as a single-replica StatefulSet with Redis locking and S3 plan storage. Limits include an alpha drift API with no scheduler and no cross-project dependency graph. Spacelift positions itself as the alternative.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fazure.microsoft.com%2Fen-us%2Fblog%2Fdeep-dive-into-azure-maia-300-architecture%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/c0VTV-tbCAxue668nrV5OlgceRXItdw6F09KF3IYR78=452">
+                                    <span>
+                                        <strong>Azure Maia 300 Architecture Deep Dive (8 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Microsoft's third-generation AI accelerator uses TSMC N2P with 288 GB HBM4 at 18 TB/s. Racks hold 96 accelerators at 167 kW, scaling to 12,288-chip superpods, with up to 7x token throughput.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div><span>⚡</span></div></div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<div>
+
+<h1><strong>Quick Links</strong></h1>
+</div>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.amazon.com%2Fdp%2F1966280297%3Fmaas=maas_adg_DB832E1F4D4864D58F129B0BB23BC5ED_afap_abs%26ref_=aa_maas%26tag=maas/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/cw9fZFI32RQG74GzTKwoZIQ6_DM0E9SyDaqqF9xy4GI=452">
+                                    <span>
+                                        <strong>Signals &amp; Levers: Systems Thinking Tools to Unblock Software Delivery (Sponsor)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Metrics look green, but releases keep slipping. Elisabeth Hendrickson and Joel Tosi show how to separate signal from noise, map why fixes backfire, and find levers that actually unblock delivery.<br><a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.amazon.com%2Fdp%2F1966280297%3Fmaas=maas_adg_DB832E1F4D4864D58F129B0BB23BC5ED_afap_abs%26ref_=aa_maas%26tag=maas/2/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/JrXE2jpHh4KpYccIXqX6_3zIjXJUtCOeqcQlbXdOLCk=452" rel="noopener noreferrer nofollow" target="_blank"><span><strong>Get the book</strong></span></a>
+</span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Faws.amazon.com%2Fabout-aws%2Fwhats-new%2F2026%2F10%2Fecs-service-metrics%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/twWBexy8Z7R6smMej0b5O-Nvekl5yyIMzmYBVMDW35Q=452">
+                                    <span>
+                                        <strong>Amazon ECS Adds LiveTaskCount Service Metric (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    A free metric counts tasks that are activating, running, or deactivating, without Container Insights.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<span>
+                                <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fblog.google%2Finnovation-and-ai%2Fmodels-and-research%2Fgoogle-deepmind%2Fwere-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models%2F%3Futm_source=tldrdevops/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/CTaBzut9tnflw3fG5eFdtKnr27jSN-2v5qAHUyqlSFE=452">
+                                    <span>
+                                        <strong>Powering European Scientific Discovery with Advanced AI Compute (1 minute read)</strong>
+                                    </span>
+</a>
+<br>
+<br>
+<span>
+                                    Google DeepMind and Google Cloud will give up to 200 European researchers access to AlphaFold 3, WeatherNext, and other models, plus USD 3 million in compute credits.
+                                </span>
+</span>
+</div>
+</td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Love TLDR? Tell your friends and get rewards!
+</p>
+</td></tr>
+<tr><td>
+<div>
+Share your referral link below with friends to get free TLDR swag!
+</div>
+</td></tr>
+<tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Frefer.tldr.tech%2Feb223a04%2F10/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/OYLy50q-R35lKb9mDs2UqL4FyASlsug4tHhgOsyQX3g=452">https://refer.tldr.tech/eb223a04/10</a>
+</div>
+</td></tr>
+<tr></tr>
+<tr><td>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fhub.sparklp.co%2Fsub_c9529ad538e8%2F10/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/dGdSY11e-bpoT1-F4-ldL7no9qKOEfXV_u0dRvfg3mg=452"><span>Track your referrals here.</span></a>
+</td></tr></tbody></table>
+
+
+
+
+<table width="100%"><tbody><tr><td>
+
+<p>
+Want to advertise in TLDR? 📰
+</p>
+<div>
+If your company is interested in reaching an audience of devops professionals and decision makers, you may want to <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fadvertise.tldr.tech%2F%3Futm_source=tldrdevops%26utm_medium=newsletter%26utm_campaign=advertisecta/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/AjzhuTVXRpu38FQj6hv59ffcsovSPT5Zbe7l1cs5mfQ=452"><strong><span>advertise with us</span></strong></a>.
+</div>
+<br>
+
+<!-- New "Want to work at TLDR?" section -->
+
+<p>
+Want to work at TLDR? 💼
+</p>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/zxlpQa00Kdm_Vfsyw7fWF-08sVDRCViHKVlq41y-sQo=452" rel="noopener noreferrer" target="_blank"><strong>Apply here</strong></a>,
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fjobs.ashbyhq.com%2Ftldr.tech%2Fc227b917-a6a4-40ce-8950-d3e165357871/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/99M7KIkRNbl0uViWLK0QdALD-zwfEA3LMAOtZM02qpY=452" rel="noopener noreferrer" target="_blank"><strong>create your own role</strong></a> or send a friend's resume to <a href="mailto:jobs@tldr.tech">jobs@tldr.tech</a> and get $1k if we hire them! TLDR is one of <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Ffeed%2Fupdate%2Furn:li:activity:7401699691039830016%2F/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/anl5jDoeRnNfctJXMEcFESZx1YDX76AjeY_t1-C6LPw=452" rel="noopener noreferrer" target="_blank"><strong>Inc.'s Best Bootstrapped businesses</strong></a> of 2025.
+</div>
+<br>
+
+<div>
+If you have any comments or feedback, just respond to this email!
+<br>
+<br> Thanks for reading,
+<br>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fkunaljaydesai%2F/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/So1wtjZM84Q9uMD-N6Y7Ga8CIBXmkJ1CuS0VCtE8DzY=452"><span>Kunal Desai</span></a> &amp; <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fwww.linkedin.com%2Fin%2Fmartin-hauskrecht%2F/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/rDIUrTazW23j6AEU_u8LtUuYw076eqz7RuMMeDeXBBw=452"><span>Martin Hauskrecht</span></a>
+<br>
+<br>
+</div>
+<br>
+</td></tr></tbody></table>
+
+<table width="100%"><tbody><tr><td>
+<div>
+<a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Ftldr.tech%2Fdevops%2Fmanage%3Femail=rezaamir731%2540gmail.com/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/-s06P8oSG9oR6Z8Ztrpjuq1ccSOf1L66Xj-GtiHCq8c=452">Manage your subscriptions</a> to our other newsletters on tech, startups, and programming. Or if TLDR DevOps isn't for you, please <a href="https://tracking.tldrnewsletter.com/CL0/https:%2F%2Fa.tldrnewsletter.com%2Funsubscribe%3Fep=1%26l=1c5ddf10-b6dc-11ed-a12f-33c00cd07e37%26lc=698ebc7e-ab5b-11f1-a691-a55dd85ad555%26p=acd9865a-cb89-11f1-940f-63c1b92b3a0b%26pt=campaign%26pv=5%26spa=1792407679%26t=1792409140%26s=2ad8a1925292e476258658ddbfabf8bdf9716db9a8ff87aa2c805c281383b7be/1/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/V-2e0wzaivG4trDRYqerUBjBPgEl69XIamEOoJqEDYk=452">unsubscribe</a>.
+<br>
+
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<img alt="" src="http://tracking.tldrnewsletter.com/CI0/010001a153e8fc27-5cdca64a-a4cd-4bb3-b193-bd092f002bea-000000/XlqIe0rXw9T3kTJP2F-py3fxbAbMOpqId2ENExaqSpM=452">
+</body></html>
